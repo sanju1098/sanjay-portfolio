@@ -17,6 +17,43 @@ export const workProfiles = [
 
 export const projects = [
   {
+    name: "Real-Time Chat Application",
+    subtitle: "Scalable real-time messaging platform",
+    live: "",
+    repo: "https://github.com/sanju1098/real-time-chat-fullstack",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788884254/d02d136f-9bbb-4796-bbe6-565df5af1fef.png",
+        alt: "Chat App - Home Page",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788883859/1097f58c-c84d-4b71-928a-b6a32a61a7fe.png",
+        alt: "Chat App - Typing Message",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788883727/770a20f4-555a-4b71-81e0-c9922dff106d.png",
+        alt: "Chat App - Login Page",
+      },
+    ],
+    description:
+      "Full-stack real-time chat application supporting 1:1 and group conversations with instant messaging, typing indicators, online presence, delivery and read receipts, JWT authentication, rate limiting, and Redis-powered horizontal Socket.io scaling.",
+    category: ["Full-Stack", "Node.js", "Express", "Socket.io"],
+    stack: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "Socket.io",
+      "MongoDB",
+      "Mongoose",
+      "Redis",
+      "JWT",
+      "Docker",
+      "Github Actions",
+    ],
+  },
+  {
     name: "PromptStack",
     subtitle: "AI prompt management platform",
     live: "https://prompt-stack-ai.vercel.app",
@@ -49,6 +86,7 @@ export const projects = [
     ],
     description:
       "Full-stack AI prompt management platform to create, organize, search, test and reuse prompt templates with dynamic variables, a template marketplace, workspace analytics and an interactive playground powered by Gemini and Groq.",
+    category: ["Full-Stack", "AI", "Next.js"],
     stack: [
       "Next.js",
       "React",
@@ -59,6 +97,31 @@ export const projects = [
       "Mongoose",
       "Gemini",
       "Groq",
+    ],
+  },
+  {
+    name: "Incident Management System",
+    subtitle: "Production-ready incident management API",
+    live: "",
+    repo: "https://github.com/sanju1098/incident-management-system",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788337601/f34b4e34-d9bd-4d0e-98f4-4c696aabf54c.png",
+        alt: "Incident Management System API",
+      },
+    ],
+    description:
+      "Production-ready backend API for incident management with JWT authentication, refresh tokens, role-based access control, user and team management, secure file uploads, validation, and protected REST endpoints.",
+    category: ["Backend", "Node.js", "Express"],
+    stack: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Zod",
+      "Cloudinary",
+      "REST APIs",
     ],
   },
   {
@@ -151,31 +214,7 @@ export const projects = [
       "Lucide React",
     ],
   },
-  {
-    name: "Incident Management System",
-    subtitle: "Production-ready incident management API",
-    category: ["Backend", "Node.js", "Express"],
-    live: "",
-    repo: "https://github.com/sanju1098/incident-management-system",
-    images: [
-      {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788337601/f34b4e34-d9bd-4d0e-98f4-4c696aabf54c.png",
-        alt: "Incident Management System API",
-      },
-    ],
-    description:
-      "Production-ready backend API for incident management with JWT authentication, refresh tokens, role-based access control, user and team management, secure file uploads, validation, and protected REST endpoints.",
-    stack: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Mongoose",
-      "JWT",
-      "Zod",
-      "Cloudinary",
-      "REST APIs",
-    ],
-  },
+
   {
     name: "AI Studio Verse",
     subtitle: "Multi-modal AI workspace",
