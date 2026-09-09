@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowDownToLine, ArrowRight, ExternalLink } from "lucide-react";
 import Typewriter from "typewriter-effect";
-import { featuredProjects, services, stats } from "@/content/home";
+import { services, stats } from "@/content/home";
 import Picture from "@/components/Picture";
 import resumeUrl from "@/assets/Resume.pdf";
+import { projects } from "@/content/project";
 
 const Index: React.FC = React.memo(() => {
   return (
@@ -192,7 +193,7 @@ const Index: React.FC = React.memo(() => {
           </div>
 
           <ul className="mt-6 grid gap-6 md:grid-cols-3">
-            {featuredProjects.map(project => {
+            {projects.slice(0, 3).map(project => {
               const projectUrl = project.live || project.repo;
 
               return (
@@ -225,7 +226,7 @@ const Index: React.FC = React.memo(() => {
                       </div>
 
                       <div className="flex flex-row flex-wrap gap-1.5">
-                        {project.category.map(category => (
+                        {project?.category?.map(category => (
                           <span
                             key={category}
                             className="chip-accent inline-flex flex-row gap-1">

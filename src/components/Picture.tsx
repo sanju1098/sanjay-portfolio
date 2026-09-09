@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { LoaderCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+const loadedImageSources = new Set<string>();
+const IMAGE_LOAD_TIMEOUT = 15000;
+
 const FALLBACK_IMAGE =
   "https://res.cloudinary.com/dwsalphhy/image/upload/v1788338164/ef104d58-b653-45be-afeb-510b4aa77c69.png";
 
@@ -26,13 +29,29 @@ const Picture: React.FC<PictureProps> = ({
   height,
   fallbackSrc = FALLBACK_IMAGE,
 }) => {
-  const [imageSrc, setImageSrc] = useState(src || fallbackSrc);
-  const [isLoading, setIsLoading] = useState(true);
+  const initialSrc = src || fallbackSrc;
+  const [imageSrc, setImageSrc] = useState(initialSrc);
+  const [isLoading, setIsLoading] = useState(
+    !loadedImageSources.has(initialSrc),
+  );
 
   useEffect(() => {
-    setImageSrc(src || fallbackSrc);
-    setIsLoading(true);
+    const nextSrc = src || fallbackSrc;
+    setImageSrc(nextSrc);
+    setIsLoading(!loadedImageSources.has(nextSrc));
   }, [src, fallbackSrc]);
+
+  useEffect(() => {
+    if (!isLoading) return;
+
+    const timeoutId = window.setTimeout(
+      () => setIsLoading(false),
+      IMAGE_LOAD_TIMEOUT,
+    );
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [imageSrc, isLoading]);
 
   const handleError = () => {
     if (imageSrc !== fallbackSrc) {
@@ -41,6 +60,11 @@ const Picture: React.FC<PictureProps> = ({
       return;
     }
 
+    setIsLoading(false);
+  };
+
+  const handleLoad = () => {
+    loadedImageSources.add(imageSrc);
     setIsLoading(false);
   };
 
@@ -64,7 +88,7 @@ const Picture: React.FC<PictureProps> = ({
         loading={loading}
         decoding="async"
         fetchPriority={fetchPriority}
-        onLoad={() => setIsLoading(false)}
+        onLoad={handleLoad}
         onError={handleError}
         className={cn(
           "block size-full object-contain transition-opacity duration-200",
