@@ -214,7 +214,6 @@ export const projects = [
       "Lucide React",
     ],
   },
-
   {
     name: "AI Studio Verse",
     subtitle: "Multi-modal AI workspace",
@@ -330,24 +329,35 @@ export const projects = [
   {
     name: "Weather Forecast",
     subtitle: "Real-time weather dashboard",
-    live: "https://reactjs-weather-appplication.netlify.app/",
-    repo: "https://github.com/sanju1098/Simple-Notes-App",
+    live: "https://weather-forecast-vui.vercel.app/",
+    repo: "https://github.com/sanju1098/React-Weather",
     images: [
       {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788353724/aa6d6da5-49df-4e5a-9082-68827c90dc06.png",
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1789275534/0320a567-de7b-4954-8c6e-b1d69945fbc1.png",
         alt: "WeatherForecast1",
       },
       {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788353731/01b9fcca-2872-482e-904c-8755ea56b209.png",
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1789275677/8d680d3e-e397-41df-96c2-4669b5dfd306.png",
         alt: "WeatherForecast2",
       },
       {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788353862/812ddf7e-00a9-438c-a42e-376ed9b66359.png",
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1789275715/ca51b830-0d7f-47b2-9101-76be863e1111.png",
         alt: "WeatherForecast3",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1789275855/1b074e63-e36a-4b2e-8566-01583a5b092e.png",
+        alt: "WeatherForecast4",
       },
     ],
     description:
-      "Responsive weather dashboard displaying current weather conditions and a five-day forecast using a public weather API.",
-    stack: ["React", "JavaScript", "CSS3", "Weather API"],
+      "Accessible, feature-rich weather dashboard with current conditions, a 5-day forecast, and air quality monitoring (AQI, PM2.5, PM10, NO₂, O₃), backed by the OpenWeather API.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Material-UI",
+      "Tailwind CSS",
+      "TanStack Query",
+    ],
   },
 ];
