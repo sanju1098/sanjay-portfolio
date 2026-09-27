@@ -3,13 +3,13 @@ import { Github, Zap } from "lucide-react";
 export const workProfiles = [
   {
     profileName: "GitHub",
-    className: "bg-gray-900 text-white hover:bg-gray-800",
+    className: "bg-gray-900 text-white hover:bg-gray-500",
     icon: <Github size={18} />,
     link: "https://github.com/sanju1098",
   },
   {
     profileName: "Stackblitz",
-    className: "bg-orange-500 text-white hover:bg-orange-600",
+    className: "bg-[#1574ef] text-white hover:bg-[#1574efad]",
     icon: <Zap size={18} />,
     link: "https://stackblitz.com/@sanju1098",
   },

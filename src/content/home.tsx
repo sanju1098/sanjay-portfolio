@@ -9,47 +9,47 @@ import {
 import { projects } from "./project";
 
 export const stats = [
-  { label: "Recent Build", value: projects[0].name },
-  { label: "Backend Focus", value: "Node.js, Express & REST APIs" },
-  { label: "Strengths", value: "Scalable UI Systems & Reusable Components" },
+  { label: "Role", value: "Senior Experience Engineer" },
+  { label: "Focus", value: "Frontend Architecture & Design Systems" },
+  { label: "Latest Project", value: projects[0].name },
   { label: "Currently Exploring", value: "AI-Powered Product Development" },
 ];
 
 export const services = [
   {
-    icon: <Code className="text-accent-foreground" size={24} />,
+    icon: <Code className="text-primary" size={24} />,
     title: "Frontend Development",
     description:
-      "Building responsive, accessible, and performant user interfaces with modern frameworks.",
+      "Building responsive, accessible React, Next.js, and TypeScript applications with micro-frontends, component-driven development, Storybook, Figma integration, and server-side rendering.",
   },
   {
-    icon: <Server className="text-accent-foreground" size={24} />,
+    icon: <Server className="text-primary" size={24} />,
     title: "Backend Development",
     description:
-      "Building practical backend applications and REST APIs with Node.js, Express, databases, and secure authentication.",
+      "Building RESTful APIs with Node.js, Express, MongoDB, Redis, Docker containerization, and NGINX. Experienced with API design, database management, and secure authentication patterns.",
   },
   {
-    icon: <Sparkles className="text-accent-foreground" size={24} />,
+    icon: <Sparkles className="text-primary" size={24} />,
     title: "AI-Powered Applications",
     description:
-      "Integrating LLMs and AI APIs to build intelligent features, chatbots, and AI-driven products.",
+      "Integrating Vercel AI SDK, Gemini, Claude, and GitHub Copilot to build AI-driven features, chatbots, and intelligent product experiences with LLM-based APIs and prompt engineering.",
   },
   {
-    icon: <Layers className="text-accent-foreground" size={24} />,
+    icon: <Layers className="text-primary" size={24} />,
     title: "Technical Architecture",
     description:
-      "Designing scalable and maintainable application architecture using modern tools and best practices.",
+      "Designing scalable micro-frontends, component libraries, and application architecture with TanStack Query for data fetching, Redux Toolkit for state management, and code splitting for performance.",
   },
   {
-    icon: <Paintbrush className="text-accent-foreground" size={24} />,
+    icon: <Paintbrush className="text-primary" size={24} />,
     title: "UI/UX & Design Systems",
     description:
-      "Crafting intuitive interfaces and reusable component libraries for consistent, scalable UIs.",
+      "Crafting WCAG-compliant reusable component libraries, building design systems with Tailwind CSS, ShadCN UI, Material UI, and Styled Components. Adopted across multiple engineering teams with comprehensive Storybook documentation.",
   },
   {
-    icon: <ShieldCheck className="text-accent-foreground" size={24} />,
+    icon: <ShieldCheck className="text-primary" size={24} />,
     title: "Testing & Performance",
     description:
-      "Writing robust tests with Jest and React Testing Library while optimizing for speed and scalability.",
+      "Writing comprehensive unit tests with Jest and React Testing Library, maintaining high quality gates in GitHub Actions CI/CD. Optimizing Core Web Vitals, improving Lighthouse performance scores through lazy loading, code splitting, and image optimization.",
   },
 ];

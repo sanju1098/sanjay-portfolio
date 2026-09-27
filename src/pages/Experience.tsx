@@ -15,12 +15,12 @@ const Experience: React.FC = React.memo(() => {
           aria-hidden
         />
 
-        <div className="relative mx-auto max-w-7xl rise text-center md:text-left">
-          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-gradient md:text-7xl">
+        <div className="relative mx-auto max-w-7xl rise">
+          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-7xl">
             Professional experience
           </h1>
 
-          <p className="mt-8 max-w-[62ch] text-pretty leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-xl">
             A record of building high-load frontend systems, accessible
             interfaces, and dependable product experiences.
           </p>
@@ -32,10 +32,10 @@ const Experience: React.FC = React.memo(() => {
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
               <p className="label-mono">Selected roles</p>
-              <h2 className="mt-4 max-w-[12ch] text-balance font-display text-3xl font-semibold leading-[1.05] tracking-tight text-gradient md:text-5xl">
+              <h2 className="mt-4 max-w-[12ch] text-balance font-display text-3xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-5xl">
                 Professional background
               </h2>
-              <p className="mt-4 max-w-[36ch] text-pretty leading-relaxed text-muted-foreground md:text-lg">
+              <p className="mt-4 max-w-[36ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-xl">
                 Four teams, one throughline: frontend systems shaped by
                 ownership, scale, and shipped outcomes.
               </p>
@@ -65,16 +65,16 @@ const Experience: React.FC = React.memo(() => {
                       className="size-11 shrink-0 rounded-sm border border-border bg-card object-contain p-1"
                     />
                     <div className="min-w-0">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                      <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
                         {index === 0 ? "Current role" : "Previous role"}
                       </p>
                       <h3 className="text-xl font-medium leading-tight text-card-foreground md:text-2xl">
                         {exp.role}
                       </h3>
-                      <p className="font-mono text-xs text-accent">
+                      <p className="font-mono text-lg text-accent">
                         {exp.company.trim()}
                       </p>
-                      <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                      <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
                         {exp.location}
                       </p>
                     </div>
@@ -86,28 +86,22 @@ const Experience: React.FC = React.memo(() => {
 
                 <div className="mt-5 flex flex-wrap gap-1.5">
                   {exp.stack.map(technology => (
-                    <span className="chip text-[10px]" key={technology}>
+                    <span className="chip" key={technology}>
                       {technology}
                     </span>
                   ))}
                 </div>
 
                 <div className="mt-5">
-                  <p className="font-mono text-[12px] uppercase tracking-[0.18em] text-muted-foreground">
+                  <p className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">
                     Key contributions
                   </p>
-                  <ul className="mt-3 space-y-2.5">
+                  <ul className="mt-3 space-y-2.5 list-disc list-inside marker:text-accent">
                     {exp.responsibilities.map(responsibility => (
                       <li
                         key={responsibility}
-                        className="flex gap-3 text-base leading-relaxed text-muted-foreground">
-                        <span
-                          className="mt-2.5 size-1 shrink-0 rounded-full bg-accent"
-                          aria-hidden
-                        />
-                        <span className="max-w-[62ch] text-pretty text-[14px]">
-                          {responsibility}
-                        </span>
+                        className="text-base leading-relaxed text-muted-foreground max-w-[62ch] text-pretty">
+                        {responsibility}
                       </li>
                     ))}
                   </ul>

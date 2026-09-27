@@ -14,12 +14,12 @@ const Skills: React.FC = React.memo(() => {
           aria-hidden
         />
 
-        <div className="relative mx-auto max-w-7xl rise text-center md:text-left">
-          <h1 className="mt-6 max-w-[18ch] font-display text-4xl font-semibold leading-[1.02] tracking-tight text-gradient md:text-7xl">
+        <div className="relative mx-auto max-w-7xl rise">
+          <h1 className="mt-6 max-w-[18ch] font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-7xl">
             Tools for thoughtful shipping.
           </h1>
 
-          <p className="mt-8 max-w-[62ch] text-pretty leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-xl">
             A practical toolkit for building polished interfaces, scalable
             systems, and dependable product experiences.
           </p>
@@ -39,38 +39,44 @@ const Skills: React.FC = React.memo(() => {
                       ? "lg:col-span-7"
                       : "lg:col-span-12"
                 }`}>
-                <div className="flex items-start justify-between gap-4 border-b border-border pb-5">
-                  <div className="flex items-start gap-4">
-                    <div className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-secondary">
+                <div
+                  className="absolute top-0 right-0 size-32 bg-accent/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"
+                  aria-hidden
+                />
+                <div className="relative">
+                  <div className="flex items-center gap-4 pb-6 border-b-2 border-accent/20">
+                    <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent ring-2 ring-accent/30 transition-all duration-300 group-hover:scale-110 group-hover:ring-accent/50">
                       {category.icon}
                     </div>
                     <div>
-                      <h2 className="mt-2 font-display text-xl font-medium text-card-foreground">
+                      <h2 className="font-display text-2xl font-bold text-card-foreground">
                         {category.title}
                       </h2>
+                      <p className="mt-1 text-sm text-accent font-mono uppercase tracking-wider">
+                        {category.skills.length} tools
+                      </p>
                     </div>
                   </div>
+
+                  <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground">
+                    {category.description}
+                  </p>
+
+                  <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3">
+                    {category.skills.map(skill => (
+                      <div
+                        key={skill.name}
+                        className="group/skill relative flex flex-col items-center gap-3 rounded-xl border border-border/50 bg-background/60 p-4 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/60 hover:bg-accent/5 hover:shadow-md">
+                        <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-panel ring-1 ring-border transition-all duration-200 group-hover/skill:ring-accent/40 group-hover/skill:scale-110">
+                          {skill.icon}
+                        </div>
+                        <span className="text-center font-medium text-sm leading-tight text-muted-foreground transition-colors group-hover/skill:text-accent">
+                          {skill.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-
-                <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                  {category.description}
-                </p>
-
-                <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
-                  {category.skills.map(skill => (
-                    <li
-                      key={skill.name}
-                      tabIndex={0}
-                      className="flex min-h-16 items-center gap-3 rounded-sm border border-border/70 bg-background/40 px-3 py-2.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/50 hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                      <span className="flex size-10 shrink-0 items-center justify-center rounded-sm bg-panel">
-                        {skill.icon}
-                      </span>
-                      <span className="min-w-0 font-mono text-xs font-medium leading-tight text-muted-foreground transition-colors group-hover:text-card-foreground">
-                        {skill.name}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>

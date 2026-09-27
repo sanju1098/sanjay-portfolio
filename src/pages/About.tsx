@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, Mail, MapPin } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { certificates, workAchievements } from "@/content/about";
 
 const About: React.FC = React.memo(() => {
@@ -15,86 +15,67 @@ const About: React.FC = React.memo(() => {
           aria-hidden
         />
 
-        <div className="relative mx-auto max-w-7xl rise text-center md:text-left">
-          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-gradient md:text-7xl">
+        <div className="relative mx-auto max-w-7xl rise">
+          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-7xl">
             About me
           </h1>
 
-          <p className="mt-8 max-w-[62ch] text-pretty leading-relaxed text-muted-foreground md:text-lg">
-            Frontend Engineer with 4.5+ years of experience specializing in
-            high-performance React, Next.js, and TypeScript applications across
-            enterprise, airline, and AI platforms. I also build backend
-            applications and REST APIs with Node.js and Express.
+          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-xl">
+            Frontend Engineer building responsive, accessible web applications
+            with React, TypeScript, and Next.js across enterprise, airline, and
+            AI-driven platforms. Contributed to significant booking conversion
+            improvements, high Lighthouse performance scores, and enhanced WCAG
+            accessibility. Experienced in design systems, CI/CD with GitHub
+            Actions, SonarQube, Docker, and Agile/Scrum cross-functional teams.
           </p>
         </div>
       </section>
 
-      <section id="about" className="px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <p className="label-mono">Summary</p>
-            <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-gradient md:text-5xl">
-              What I bring
-            </h2>
-            <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground md:text-lg">
-              Proven impact delivering an 18% booking conversion lift, 90+
-              Lighthouse scores, 35% API call reductions, and production-grade
-              accessibility at scale.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:col-span-8">
-            <div className="bg-panel p-6 ring-1 ring-border md:col-span-2">
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                What I do
-              </h3>
-              <p className="mt-5 text-pretty leading-relaxed text-foreground">
-                Currently a Senior Experience Engineer driving frontend
-                architecture, micro-frontends, and design systems. I specialize
-                in building reusable component libraries (75+ WCAG-compliant
-                components published), optimizing Core Web Vitals, and shipping
-                production AI applications with Next.js, Vercel AI SDK, and
-                Gemini. I am also expanding my backend experience by building
-                Node.js and Express applications and REST APIs.
+      <section id="about" className="p-6 pb-24">
+        <div className="mx-auto max-w-7xl space-y-8">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="p-7">
+              <p className="label-mono">Summary</p>
+              <h2 className="mt-4 font-display text-2xl font-bold tracking-tight text-card-foreground md:text-3xl">
+                What I bring
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+                Shipping production-ready frontends with measurable impact:
+                significant booking conversion lift for P&O Cruises and Cunard,
+                excellent Lighthouse performance scores with improved LCP,
+                enhanced WCAG accessibility standards, and design systems
+                adopted across multiple engineering teams. Experienced with
+                micro-frontends, component-driven development, Storybook, Figma,
+                and server-side rendering. I build for scale, not just for
+                demos.
               </p>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "React / Next.js",
-                  "TypeScript",
-                  "Design Systems",
-                  "TanStack Query",
-                  "Vercel AI SDK",
-                  "WCAG Accessibility",
-                  "Node.js / Express",
-                  "Docker / CI/CD",
-                ].map(item => (
-                  <span
-                    key={item}
-                    className="chip bg-accent/10 text-secondary-foreground">
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-6 space-y-2 text-sm text-muted-foreground">
-                <p className="inline-flex items-center gap-2">
-                  <MapPin className="size-4" aria-hidden /> Bengaluru, India
-                </p>
-                <br />
-                <p className="inline-flex items-center gap-2">
-                  <Mail className="size-4" aria-hidden />{" "}
-                  sanjaykumar.sr1011@gmail.com
-                </p>
-              </div>
             </div>
 
-            {/* Achievements Section */}
-            <div className="bg-panel p-6 ring-1 ring-border rounded-xl">
+            <div className="bg-panel p-7 ring-1 ring-border rounded-xl">
+              <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                What I do
+              </h3>
+              <p className="mt-5 text-base text-pretty leading-relaxed text-foreground">
+                Currently a Senior Experience Engineer at Publicis Sapient
+                driving frontend architecture, micro-frontends, and design
+                systems within an experimentation pod. I specialize in building
+                reusable Adobe Target component libraries with zero-rollout
+                components for scroll-polls across booking, CRF, and shores
+                modules with zero production incidents. Maintained high quality
+                gates in GitHub Actions CI/CD and improved SonarQube scores
+                through code splitting, lazy loading, and image optimization. I
+                also build Node.js/Express REST APIs and ship AI-powered
+                products with Next.js, Vercel AI SDK, and Gemini.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="bg-panel p-7 ring-1 ring-border rounded-xl">
               <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground font-semibold">
                 Achievements
               </h3>
-              <div className="mt-6 space-y-4">
+              <div className="mt-6 space-y-1 grid gap-1  grid-cols-1 md:grid-cols-2">
                 {workAchievements.map(item => {
                   const targetUrl = item.redirectLink || item.image;
 
@@ -124,9 +105,9 @@ const About: React.FC = React.memo(() => {
                           href={targetUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-muted/60 px-3 py-1.5 text-xs font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-all w-full">
+                          className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-muted/60 px-3 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-all w-full">
                           {item.buttonName || "View"}
-                          <ExternalLink className="size-3.5" aria-hidden />
+                          <ExternalLink className="size-4" aria-hidden />
                         </a>
                       )}
                     </div>
@@ -135,12 +116,11 @@ const About: React.FC = React.memo(() => {
               </div>
             </div>
 
-            {/* Certificates Section */}
-            <div className="bg-panel p-6 ring-1 ring-border rounded-xl">
+            <div className="bg-panel p-7 ring-1 ring-border rounded-xl">
               <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground font-semibold">
                 Certificates
               </h3>
-              <div className="mt-6 space-y-4">
+              <div className="mt-6 space-y-1 grid gap-1  grid-cols-1 md:grid-cols-2">
                 {certificates.map(item => (
                   <div
                     key={item.name}
@@ -167,9 +147,9 @@ const About: React.FC = React.memo(() => {
                         href={item.redirectLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-muted/60 px-3 py-1.5 text-xs font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-all w-full">
+                        className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-muted/60 px-3 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-all w-full">
                         {item.buttonName || "View"}
-                        <ExternalLink className="size-3.5" aria-hidden />
+                        <ExternalLink className="size-4" aria-hidden />
                       </a>
                     )}
                   </div>
