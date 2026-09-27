@@ -13,14 +13,13 @@ import resumeUrl from "@/assets/Resume.pdf";
 
 const profile = {
   email: "sanjaykumar.sr1011@gmail.com",
-  phone: "Available by email",
   resumeUrl,
 };
 
 const socialLinks = [
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/sanjay-kumar-s-r/",
+    href: "https://linkedin.com/in/sanjay-kumar-s-r",
     icon: Linkedin,
   },
   {
@@ -50,13 +49,14 @@ const Contact: React.FC = React.memo(() => {
           aria-hidden
         />
 
-        <div className="relative mx-auto max-w-7xl rise text-center md:text-left">
-          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-gradient md:text-7xl">
+        <div className="relative mx-auto max-w-7xl rise">
+          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-7xl">
             Get in touch
           </h1>
-          <p className="mt-8 max-w-[62ch] text-pretty leading-relaxed text-muted-foreground md:text-lg">
-            Open to senior frontend roles, backend-focused collaborations, and
-            building AI-powered products with thoughtful teams.
+          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-xl">
+            Open to senior frontend engineering roles, full-stack opportunities,
+            and building AI-powered products with React, Next.js, TypeScript,
+            and modern backend technologies.
           </p>
         </div>
       </section>
@@ -67,35 +67,29 @@ const Contact: React.FC = React.memo(() => {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="label-mono">Connection</p>
-            <h2 className="mt-4 max-w-[12ch] font-display text-3xl font-semibold leading-tight tracking-tight text-gradient md:text-5xl">
+            <h2 className="mt-4 max-w-[12ch] font-display text-3xl font-bold leading-tight tracking-tight text-card-foreground md:text-5xl">
               Direct lines
             </h2>
-            <p className="mt-5 max-w-[42ch] text-pretty leading-relaxed text-muted-foreground">
-              My inbox is open for technical discussions, frontend
-              opportunities, and practical Node.js and Express projects.
+            <p className="mt-5 max-w-[42ch] text-base text-pretty leading-relaxed text-muted-foreground">
+              My inbox is open for frontend engineering opportunities,
+              full-stack collaborations, technical discussions about React,
+              TypeScript, design systems, performance optimization, and
+              AI-powered product development.
             </p>
 
             <dl className="mt-8 space-y-5">
-              <div>
-                <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                  Email
-                </dt>
-                <dd className="mt-1">
-                  <a
-                    href={`mailto:${profile.email}`}
-                    className="font-mono text-sm text-card-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent">
-                    {profile.email}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                  Availability
-                </dt>
-                <dd className="mt-1 font-mono text-sm text-card-foreground">
-                  {profile.phone}
-                </dd>
-              </div>
+              <dt className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                Email
+              </dt>
+              <dd className="mt-1">
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="font-mono text-base text-card-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent">
+                  {profile.email}
+                </a>
+              </dd>
+
+              <div></div>
             </dl>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -105,10 +99,10 @@ const Contact: React.FC = React.memo(() => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-sm border border-border bg-secondary px-3 py-2 text-sm text-secondary-foreground transition-colors hover:border-accent hover:bg-accent/10 hover:text-accent">
+                  className="inline-flex items-center gap-2 rounded-sm border border-border bg-secondary px-4 py-2.5 text-base text-secondary-foreground transition-colors hover:border-accent hover:bg-accent/10 hover:text-accent">
                   <Icon className="size-4" aria-hidden />
                   {name}
-                  <ArrowUpRight className="size-3.5 opacity-60" aria-hidden />
+                  <ArrowUpRight className="size-4 opacity-60" aria-hidden />
                 </a>
               ))}
             </div>
@@ -146,7 +140,7 @@ const Contact: React.FC = React.memo(() => {
                   <h3 className="font-display text-xl font-medium text-card-foreground">
                     Send a message
                   </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-base text-muted-foreground">
                     I will get back to you by email.
                   </p>
                 </div>
@@ -156,7 +150,7 @@ const Contact: React.FC = React.memo(() => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                    className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     Name
                   </label>
                   <input
@@ -170,7 +164,7 @@ const Contact: React.FC = React.memo(() => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                    className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     Email
                   </label>
                   <input
@@ -187,7 +181,7 @@ const Contact: React.FC = React.memo(() => {
               <div className="mt-4">
                 <label
                   htmlFor="message"
-                  className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                  className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
                   Message
                 </label>
                 <textarea
@@ -205,7 +199,7 @@ const Contact: React.FC = React.memo(() => {
               </Button>
               <p
                 aria-live="polite"
-                className="mt-4 min-h-5 font-mono text-[10px] uppercase tracking-widest text-accent">
+                className="mt-4 min-h-5 font-mono text-xs uppercase tracking-widest text-accent">
                 {sent ? "Opening your email client..." : ""}
               </p>
             </form>

@@ -19,15 +19,15 @@ const Layout = () => {
 
   useEffect(() => {
     const pageTitles: Record<string, string> = {
-      "/": "Sanjay Kumar | Portfolio",
-      "/about": "About | Sanjay Kumar",
-      "/projects": "Projects | Sanjay Kumar",
-      "/skills": "Skills | Sanjay Kumar",
-      "/experience": "Experience | Sanjay Kumar",
-      "/contact": "Contact | Sanjay Kumar",
+      "/": "Sanjay.SR | Portfolio",
+      "/about": "About | Sanjay.SR",
+      "/projects": "Projects | Sanjay.SR",
+      "/skills": "Skills | Sanjay.SR",
+      "/experience": "Experience | Sanjay.SR",
+      "/contact": "Contact | Sanjay.SR",
     };
 
-    document.title = pageTitles[location.pathname] || "Page | Sanjay Kumar";
+    document.title = pageTitles[location.pathname] || "Page | Sanjay.SR";
   }, [location.pathname]);
 
   return (

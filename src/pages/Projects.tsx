@@ -27,18 +27,18 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = React.memo(
         aria-roledescription="carousel"
         aria-label={`${name} screenshots`}
         tabIndex={0}
-        className="relative overflow-hidden rounded-xl bg-muted/30 ring-1 ring-border/70"
+        className="relative h-full overflow-hidden bg-muted/20"
         onKeyDown={e => {
           if (e.key === "ArrowLeft") go(index - 1);
           if (e.key === "ArrowRight") go(index + 1);
         }}>
         <div
-          className="flex transition-transform duration-500 ease-machined"
+          className="flex h-full transition-transform duration-500 ease-machined"
           style={{ transform: `translateX(-${index * 100}%)` }}>
           {displayImages.map((img, i) => (
             <div
               key={`${img.src}-${i}`}
-              className="flex aspect-16/10 w-full shrink-0 items-center justify-center bg-black/5 p-2 dark:bg-black/20"
+              className="flex h-full w-full shrink-0 items-center justify-center bg-muted/10 p-4"
               aria-hidden={i !== index}
               role="group"
               aria-roledescription="slide"
@@ -49,7 +49,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = React.memo(
                 width={1200}
                 height={750}
                 loading="lazy"
-                className="h-full w-full object-contain"
+                className="h-full w-full"
               />
             </div>
           ))}
@@ -112,7 +112,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = React.memo(
 const Projects: React.FC = React.memo(() => {
   return (
     <>
-      <section className="relative overflow-hidden px-6 pb-16 pt-32 md:pb-20 md:pt-44">
+      <section className="relative overflow-hidden px-6 pb-16 pt-32 md:pb-10 md:pt-44">
         <div
           className="pointer-events-none absolute inset-0 grid-field"
           aria-hidden
@@ -124,27 +124,25 @@ const Projects: React.FC = React.memo(() => {
 
         <div className="relative mx-auto max-w-7xl rise">
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            {/* Project Heading */}
-            <div className="max-w-3xl text-center md:text-left">
-              <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-gradient md:text-7xl">
+            <div className="max-w-3xl">
+              <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-7xl">
                 Projects
               </h1>
 
-              <p className="mt-8 max-w-[62ch] text-pretty leading-relaxed text-muted-foreground md:text-lg">
+              <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-xl">
                 A curated portfolio of products, experiments, and UI systems
                 built across AI, frontend, and enterprise delivery.
               </p>
             </div>
 
-            {/* More Work */}
             <div className="w-full md:w-auto">
               <div className="flex flex-col items-start gap-3 md:items-end">
                 <div className="text-left md:text-right">
-                  <p className="font-display text-sm font-medium text-card-foreground">
+                  <p className="font-display text-base font-medium text-card-foreground">
                     Want to see more?
                   </p>
 
-                  <p className="mt-1 max-w-xs text-xs leading-relaxed text-muted-foreground">
+                  <p className="mt-1 max-w-xs text-sm leading-relaxed text-muted-foreground">
                     Explore more of my work and experiments on GitHub and
                     StackBlitz.
                   </p>
@@ -157,7 +155,7 @@ const Projects: React.FC = React.memo(() => {
                       href={profile.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`group inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium shadow-sm ring-1 ring-border/70 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-95 ${profile.className}`}>
+                      className={`group inline-flex items-center gap-2 rounded-full px-5 py-3 text-base font-medium shadow-sm ring-1 ring-border/70 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-95 ${profile.className}`}>
                       <span className="transition-transform duration-200 group-hover:scale-110">
                         {profile.icon}
                       </span>
@@ -180,60 +178,79 @@ const Projects: React.FC = React.memo(() => {
 
       <section id="projects" className="px-6 pb-20 pt-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid min-w-0 gap-12 md:grid-cols-2">
+          <div className="space-y-6">
             {projects.map(p => (
               <article
                 key={p.name}
-                className="group min-w-0 overflow-visible rounded-xl">
-                <ProjectCarousel images={p.images} name={p.name} />
-
-                <div className="mt-6 flex items-start justify-between gap-4 sm:gap-6">
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-3">
-                      <h3 className="min-w-0 text-pretty font-display text-xl font-medium text-card-foreground">
-                        {p.name}
-                      </h3>
-                    </div>
-                    <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                      {p.subtitle}
-                    </p>
-                    <p className="mt-4 max-w-[52ch] text-pretty text-sm leading-relaxed text-muted-foreground">
-                      {p.description}
-                    </p>
-                    <div className="mt-4 flex max-w-full flex-wrap gap-2">
-                      {p.stack.map(s => (
-                        <span className="chip whitespace-nowrap" key={s}>
-                          {s}
-                        </span>
-                      ))}
+                className="group relative overflow-hidden rounded-2xl bg-panel ring-1 ring-border transition-all duration-300 hover:ring-accent/30 hover:shadow-lg hover:shadow-accent/5">
+                <div className="grid gap-0 lg:grid-cols-12">
+                  <div className="lg:col-span-5 bg-muted/10">
+                    <div className="relative h-full min-h-80 lg:min-h-95">
+                      <div className="absolute inset-0 transform transition-transform duration-300 group-hover:scale-[1.02]">
+                        <ProjectCarousel images={p.images} name={p.name} />
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex shrink-0 items-start gap-2 pt-1">
-                    {p.repo && (
-                      <a
-                        href={p.repo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex h-10 w-10 min-w-10 shrink-0 aspect-square items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:border-accent hover:bg-accent/10 hover:text-accent active:scale-95">
-                        <Github className="size-4" aria-hidden />
-                        <span className="sr-only">
-                          View {p.name} source code on GitHub
+                  <div className="lg:col-span-7 p-6 lg:p-8 flex flex-col justify-between">
+                    <div>
+                      <div className="mb-3">
+                        <span className="inline-flex items-center rounded-full bg-accent/90 backdrop-blur-sm px-3 py-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-white shadow-lg">
+                          {p.subtitle}
                         </span>
-                      </a>
-                    )}
-                    {p.live && (
-                      <a
-                        href={p.live}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex h-10 w-10 min-w-10 shrink-0 aspect-square items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:border-accent hover:bg-accent/10 hover:text-accent active:scale-95">
-                        <ArrowUpRight className="size-4" aria-hidden />
-                        <span className="sr-only">
-                          Open {p.name} live demo in a new tab
-                        </span>
-                      </a>
-                    )}
+                      </div>
+
+                      <h3 className="text-2xl lg:text-3xl font-display font-bold text-card-foreground transition-colors group-hover:text-accent">
+                        {p.name}
+                      </h3>
+
+                      <p className="mt-4 text-base leading-relaxed text-muted-foreground line-clamp-3">
+                        {p.description}
+                      </p>
+
+                      <div className="mt-6">
+                        <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground mb-3">
+                          Tech Stack
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {p.stack.slice(0, 6).map(s => (
+                            <span
+                              className="inline-flex items-center rounded-md bg-muted px-3 py-1.5 text-xs font-medium text-foreground"
+                              key={s}>
+                              {s}
+                            </span>
+                          ))}
+                          {p.stack.length > 6 && (
+                            <span className="inline-flex items-center rounded-md bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground">
+                              +{p.stack.length - 6} more
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 flex items-center gap-3">
+                      {p.live && (
+                        <a
+                          href={p.live}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/25 active:scale-95">
+                          <span>View Live Demo</span>
+                          <ArrowUpRight className="size-4" aria-hidden />
+                        </a>
+                      )}
+                      {p.repo && (
+                        <a
+                          href={p.repo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:border-accent/50 hover:bg-muted active:scale-95">
+                          <Github className="size-4" aria-hidden />
+                          <span>Source Code</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </article>

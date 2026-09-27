@@ -1,4 +1,4 @@
-import { Github, Heart, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const footerLinks = [
   {
@@ -24,9 +24,8 @@ const Footer = () => {
   return (
     <footer className="border-t border-hairline bg-panel/40 px-6 py-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
-        <p className="flex items-center gap-2 text-sm text-muted-foreground">
-          Made with <Heart size={14} className="text-red-500" aria-hidden />{" "}
-          using React & Tailwind CSS
+        <p className="font-mono text-xs text-muted-foreground/70">
+          React · TypeScript · Tailwind
         </p>
 
         <nav aria-label="Social links" className="flex items-center gap-2">
@@ -37,13 +36,13 @@ const Footer = () => {
               target={label === "Email" ? undefined : "_blank"}
               rel={label === "Email" ? undefined : "noopener noreferrer"}
               aria-label={label}
-              className="inline-flex size-9 items-center justify-center rounded-sm text-muted-foreground ring-1 ring-border transition-colors hover:bg-secondary hover:text-accent">
+              className="inline-flex size-9 items-center justify-center rounded-lg text-muted-foreground ring-1 ring-border transition-colors hover:bg-secondary hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
               <Icon className="size-4" aria-hidden />
             </a>
           ))}
         </nav>
 
-        <p className="text-sm text-muted-foreground">
+        <p className="text-base text-muted-foreground">
           Copyright © {currentYear}{" "}
           <span className="font-medium text-card-foreground">
             Sanjay Kumar S R
