@@ -30,6 +30,7 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 ## Key Features
 
 ### Design & UX
+
 - Professional emerald (#059669) accent color throughout
 - Seamless dark/light mode with system preference detection
 - Mobile-first, tablet, and desktop optimized responsive design
@@ -37,6 +38,7 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 - Space Grotesk & JetBrains Mono professional typography
 
 ### Performance
+
 - Optimized Largest Contentful Paint (LCP)
 - Image optimization with priority loading and lazy loading
 - Route-based code splitting for faster loads
@@ -44,6 +46,7 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 - Smooth, performant stagger animations
 
 ### Pages & Sections
+
 - **Home** (`/`) - Hero section, stats, services overview, featured projects
 - **About** (`/about`) - Professional summary, achievements, certifications
 - **Projects** (`/projects`) - Horizontal card layout with image carousels, tech stacks
@@ -52,6 +55,7 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 - **Contact** (`/contact`) - Contact form, phone, email, LinkedIn, GitHub
 
 ### Technical Highlights
+
 - Horizontal project cards with image carousel (5 cols) + content (7 cols)
 - Object-contain images with no cropping and full image visibility
 - Qualitative descriptions instead of metrics display
@@ -64,6 +68,7 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 ## Tech Stack
 
 ### Frontend
+
 - **React 19** - Latest React with concurrent features
 - **TypeScript 5** - Type-safe development
 - **Vite** - Lightning-fast build tool
@@ -71,16 +76,19 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 - **React Router** - Client-side routing
 
 ### UI Components
+
 - **Radix UI** - Accessible component primitives
 - **Lucide React** - Beautiful icon library
 - **Custom Components** - Picture, ProjectCarousel, AnimatedBackground
 
 ### Data & Forms
+
 - **TanStack Query** - Data fetching and caching
 - **React Hook Form** - Form state management
 - **Zod** - Schema validation
 
 ### Development Tools
+
 - **ESLint** - Code linting
 - **Prettier** - Code formatting
 - **GitHub Actions** - CI/CD pipeline
@@ -127,27 +135,31 @@ sanjay-portfolio-master/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ (recommended: Node.js 22)
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/sanju1098/sanjay-portfolio-master.git
    cd sanjay-portfolio-master
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Start development server:**
+
    ```bash
    npm run dev
    ```
-   
+
    Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### Build for Production
@@ -177,27 +189,26 @@ npm run lint
 ### Emerald Color Palette
 
 ```css
---accent: #059669;           /* Primary emerald */
---primary: #059669;          /* Primary actions */
---ring: #059669;             /* Focus indicators */
---theme-color: #059669;      /* Mobile browser theme */
+--accent: #059669; /* Primary emerald */
+--primary: #059669; /* Primary actions */
+--ring: #059669; /* Focus indicators */
+--theme-color: #059669; /* Mobile browser theme */
 ```
 
 ### Typography
 
 ```css
---font-display: "Space Grotesk"  /* Headings */
---font-sans: "Space Grotesk"     /* Body text */
---font-mono: "JetBrains Mono"    /* Code & labels */
+--font-display: "Space Grotesk" /* Headings */ --font-sans: "Space Grotesk"
+  /* Body text */ --font-mono: "JetBrains Mono" /* Code & labels */;
 ```
 
 ### Dark Mode (Default)
 
 ```css
---background: oklch(0.14 0.01 240);      /* Dark background */
---foreground: oklch(0.96 0.004 240);     /* Light text */
---panel: oklch(0.18 0.012 242);          /* Card background */
---border: oklch(0.30 0.015 242);         /* Borders */
+--background: oklch(0.14 0.01 240); /* Dark background */
+--foreground: oklch(0.96 0.004 240); /* Light text */
+--panel: oklch(0.18 0.012 242); /* Card background */
+--border: oklch(0.3 0.015 242); /* Borders */
 ```
 
 ---
@@ -206,22 +217,23 @@ npm run lint
 
 ### Why These Choices?
 
-| Decision | Reason |
-|----------|--------|
-| **Emerald (#059669)** | Professional, tech-forward, distinctive from generic green |
-| **Horizontal Project Cards** | Better content visibility, modern SaaS aesthetic |
-| **Object-Contain Images** | No cropping ensures all project images display fully |
-| **No Metrics** | Qualitative descriptions more impactful than numbers |
-| **Left-Aligned Content** | Editorial feel, less template-like |
-| **Asymmetric Grids** | Visual rhythm, avoids monotony |
-| **Focus Indicators** | WCAG compliance, better keyboard navigation |
-| **Skip to Content** | Accessibility for keyboard users |
+| Decision                     | Reason                                                     |
+| ---------------------------- | ---------------------------------------------------------- |
+| **Emerald (#059669)**        | Professional, tech-forward, distinctive from generic green |
+| **Horizontal Project Cards** | Better content visibility, modern SaaS aesthetic           |
+| **Object-Contain Images**    | No cropping ensures all project images display fully       |
+| **No Metrics**               | Qualitative descriptions more impactful than numbers       |
+| **Left-Aligned Content**     | Editorial feel, less template-like                         |
+| **Asymmetric Grids**         | Visual rhythm, avoids monotony                             |
+| **Focus Indicators**         | WCAG compliance, better keyboard navigation                |
+| **Skip to Content**          | Accessibility for keyboard users                           |
 
 ---
 
 ## Testing & Quality
 
 ### Accessibility
+
 - Keyboard navigation with visible focus indicators
 - Skip-to-content link for screen readers
 - ARIA labels on all interactive elements
@@ -229,6 +241,7 @@ npm run lint
 - Semantic HTML structure
 
 ### Performance
+
 - Optimized LCP (Largest Contentful Paint)
 - Code splitting per route
 - Lazy loading for below-fold images
@@ -236,6 +249,7 @@ npm run lint
 - Minimal animation overhead
 
 ### SEO
+
 - Complete meta tags (title, description, keywords)
 - Open Graph tags for social sharing
 - Twitter Card metadata
@@ -267,10 +281,12 @@ npm run build
 ## Continuous Integration
 
 GitHub Actions workflow (`.github/workflows/portfolio.yml`) runs on:
+
 - Pull requests to `master`
 - Pushes to `master`
 
 **Workflow steps:**
+
 1. Checkout code
 2. Setup Node.js 22
 3. Install dependencies
