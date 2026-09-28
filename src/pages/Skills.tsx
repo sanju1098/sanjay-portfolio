@@ -32,7 +32,7 @@ const Skills: React.FC = React.memo(() => {
             {skillCategories.map((category, index) => (
               <article
                 key={category.title || index}
-                className={`group rounded-md bg-panel p-6 ring-1 ring-border panel-hover md:p-7 ${
+                className={`group relative overflow-hidden rounded-md bg-panel p-6 ring-1 ring-border panel-hover md:p-7 ${
                   index === 0 || index === 2
                     ? "lg:col-span-5"
                     : index === 1 || index === 3
