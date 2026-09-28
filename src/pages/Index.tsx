@@ -11,7 +11,7 @@ const Index: React.FC = React.memo(() => {
     <>
       <section
         id="main-content"
-        className="relative overflow-hidden px-6 pb-20 pt-32 md:pb-8 md:pt-44">
+        className="relative overflow-hidden px-6 pt-32 pb-8 md:pt-44">
         <div
           className="pointer-events-none absolute inset-0 grid-field"
           aria-hidden
@@ -63,12 +63,11 @@ const Index: React.FC = React.memo(() => {
             </div>
 
             <dl className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat, index) => {
+              {stats.map(stat => {
                 return (
                   <div
                     key={stat.label}
-                    style={{ animationDelay: `${index * 100}ms` }}
-                    className="rounded-md border border-border bg-panel p-4 panel-hover opacity-0 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-forwards">
+                    className="rounded-md border border-border bg-panel p-4 panel-hover">
                     <dt className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
                       {stat.label}
                     </dt>

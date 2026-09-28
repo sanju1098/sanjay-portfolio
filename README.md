@@ -144,7 +144,7 @@ sanjay-portfolio-master/
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/sanju1098/sanjay-portfolio-master.git
+   git clone https://github.com/sanju1098/sanjay-portfolio.git
    cd sanjay-portfolio-master
    ```
 
@@ -184,100 +184,6 @@ npm run lint
 
 ---
 
-## Theme Configuration
-
-### Emerald Color Palette
-
-```css
---accent: #059669; /* Primary emerald */
---primary: #059669; /* Primary actions */
---ring: #059669; /* Focus indicators */
---theme-color: #059669; /* Mobile browser theme */
-```
-
-### Typography
-
-```css
---font-display: "Space Grotesk" /* Headings */ --font-sans: "Space Grotesk"
-  /* Body text */ --font-mono: "JetBrains Mono" /* Code & labels */;
-```
-
-### Dark Mode (Default)
-
-```css
---background: oklch(0.14 0.01 240); /* Dark background */
---foreground: oklch(0.96 0.004 240); /* Light text */
---panel: oklch(0.18 0.012 242); /* Card background */
---border: oklch(0.3 0.015 242); /* Borders */
-```
-
----
-
-## Design Decisions
-
-### Why These Choices?
-
-| Decision                     | Reason                                                     |
-| ---------------------------- | ---------------------------------------------------------- |
-| **Emerald (#059669)**        | Professional, tech-forward, distinctive from generic green |
-| **Horizontal Project Cards** | Better content visibility, modern SaaS aesthetic           |
-| **Object-Contain Images**    | No cropping ensures all project images display fully       |
-| **No Metrics**               | Qualitative descriptions more impactful than numbers       |
-| **Left-Aligned Content**     | Editorial feel, less template-like                         |
-| **Asymmetric Grids**         | Visual rhythm, avoids monotony                             |
-| **Focus Indicators**         | WCAG compliance, better keyboard navigation                |
-| **Skip to Content**          | Accessibility for keyboard users                           |
-
----
-
-## Testing & Quality
-
-### Accessibility
-
-- Keyboard navigation with visible focus indicators
-- Skip-to-content link for screen readers
-- ARIA labels on all interactive elements
-- WCAG color contrast compliance
-- Semantic HTML structure
-
-### Performance
-
-- Optimized LCP (Largest Contentful Paint)
-- Code splitting per route
-- Lazy loading for below-fold images
-- DNS prefetch for Google Fonts
-- Minimal animation overhead
-
-### SEO
-
-- Complete meta tags (title, description, keywords)
-- Open Graph tags for social sharing
-- Twitter Card metadata
-- Robots meta tag (index, follow)
-- Semantic HTML5 elements
-
----
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push to GitHub
-2. Import project in [Vercel](https://vercel.com)
-3. Configure build settings:
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-4. Deploy
-
-### Manual Deployment
-
-```bash
-npm run build
-# Upload dist/ folder to your hosting provider
-```
-
----
-
 ## Continuous Integration
 
 GitHub Actions workflow (`.github/workflows/portfolio.yml`) runs on:
@@ -309,7 +215,6 @@ MIT License - feel free to use this portfolio as inspiration or template for you
 - LinkedIn: [linkedin.com/in/sanjay-kumar-s-r](https://www.linkedin.com/in/sanjay-kumar-s-r/)
 - GitHub: [github.com/sanju1098](https://github.com/sanju1098)
 - Email: sanjaykumar.sr1011@gmail.com
-- Phone: +91 9035322765
 
 ---
 
@@ -319,16 +224,6 @@ MIT License - feel free to use this portfolio as inspiration or template for you
 - **Icons:** [Lucide React](https://lucide.dev)
 - **UI Components:** [Radix UI](https://www.radix-ui.com/)
 - **Fonts:** [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) & [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
-
----
-
-## Performance Stats
-
-- **Lighthouse Score:** 90+ (Performance, Accessibility, Best Practices, SEO)
-- **Design Patterns:** Component-driven, Micro-frontends ready
-- **Responsive Breakpoints:** Mobile (320px+), Tablet (640px+), Desktop (1024px+)
-- **Components:** 50+ reusable components
-- **Bundle Size:** Optimized with code splitting
 
 ---
 
