@@ -17,8 +17,46 @@ export const workProfiles = [
 
 export const projects = [
   {
+    name: "AstraMind – RAG PDF Chatbot",
+    subtitle: "Retrieval Augmented Generation",
+    repo: "https://github.com/sanju1098/astramind-rag-chatbot",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1791707366/0bd9a13c-bb04-49d8-8f71-e4634ad852a9.png",
+        alt: "AstraMind - Home Page",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1791708342/de172949-d252-4175-a0aa-fdf202b48c05.png",
+        alt: "AstraMind - About Page",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1791707838/ddae6ff2-6f55-4ebe-b01f-a5a05c6bec69.png",
+        alt: "AstraMind - Chat Page",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1791708187/ac09cfc2-9a64-4701-ac2f-49fa1325d09b.png",
+        alt: "AstraMind - Upload Page",
+      },
+    ],
+    description:
+      "Full-stack RAG chatbot that answers questions from uploaded PDFs. Documents are parsed, chunked and embedded with Gemini, stored in Neon, and retrieved via cosine-similarity vector search (HNSW index) to ground streamed responses. Includes a paginated document library with cascade delete and Drizzle-managed migrations.",
+    category: ["Full-Stack", "AI/RAG", "Next.js", "Vector Search"],
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Vercel AI SDK",
+      "Google Gemini",
+      "Neon",
+      "Drizzle ORM",
+      "LangChain",
+    ],
+  },
+  {
     name: "Real-Time Chat Application",
-    subtitle: "Scalable real-time messaging platform",
+    subtitle: "Real-time messaging platform",
     live: "",
     repo: "https://github.com/sanju1098/real-time-chat-fullstack",
     images: [
@@ -101,7 +139,7 @@ export const projects = [
   },
   {
     name: "Incident Management System",
-    subtitle: "Production-ready incident management API",
+    subtitle: "Backend - Incident management",
     live: "",
     repo: "https://github.com/sanju1098/incident-management-system",
     images: [
@@ -126,7 +164,7 @@ export const projects = [
   },
   {
     name: "Next Auth App",
-    subtitle: "Full-stack authentication demo with NextAuth & MongoDB",
+    subtitle: "Full-stack authentication with NextAuth & MongoDB",
     live: "",
     repo: "https://github.com/sanju1098/next-auth-app",
     images: [
@@ -145,39 +183,6 @@ export const projects = [
       "Mongoose",
       "Tailwind CSS",
       "bcryptjs",
-    ],
-  },
-  {
-    name: "AstraMind",
-    subtitle: "AI-powered document intelligence platform",
-    live: "https://astramindai.lovable.app/",
-    repo: "https://github.com/sanju1098/astramindai",
-    images: [
-      {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788350250/7a459e23-bf20-4294-8e72-e3d15facc20a.png",
-        alt: "AstraMind - Home Page",
-      },
-      {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788350277/4bca6083-b47b-46bd-ac4a-f2cc0f255b5d.png",
-        alt: "AstraMind - Login Page",
-      },
-      {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788350279/72b0a05d-631b-4411-884d-9ce0bccd334b.png",
-        alt: "AstraMind - About Page",
-      },
-    ],
-    description:
-      "AI-powered document intelligence platform that lets users upload PDFs, chat with their content, search contextually, and receive sourced answers using RAG and vector embeddings.",
-    stack: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "TanStack Query",
-      "Framer Motion",
-      "PostgreSQL",
-      "RAG",
-      "Vector Embeddings",
     ],
   },
   {
