@@ -204,7 +204,7 @@ const Projects: React.FC = React.memo(() => {
                         {p.name}
                       </h3>
 
-                      <p className="mt-4 text-base leading-relaxed text-muted-foreground line-clamp-3">
+                      <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                         {p.description}
                       </p>
 
@@ -213,18 +213,13 @@ const Projects: React.FC = React.memo(() => {
                           Tech Stack
                         </p>
                         <div className="flex flex-wrap gap-2">
-                          {p.stack.slice(0, 6).map(s => (
+                          {p.stack.map(s => (
                             <span
                               className="inline-flex items-center rounded-md bg-muted px-3 py-1.5 text-xs font-medium text-foreground"
                               key={s}>
                               {s}
                             </span>
                           ))}
-                          {p.stack.length > 6 && (
-                            <span className="inline-flex items-center rounded-md bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground">
-                              +{p.stack.length - 6} more
-                            </span>
-                          )}
                         </div>
                       </div>
                     </div>
