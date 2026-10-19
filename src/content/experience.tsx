@@ -3,7 +3,7 @@ export const workExperiences = [
     company: "Publicis Sapient ",
     logo: "https://res.cloudinary.com/dwsalphhy/image/upload/v1773920349/ps_logo.jpg",
     role: "Senior Experience Engineer",
-    timeline: "Sep 2025  - Present",
+    timeline: "Sep 2025 - Present",
     location: "Bangalore, Karnataka",
     stack: [
       "Next.js",
@@ -25,7 +25,7 @@ export const workExperiences = [
     company: "Morgan Stanley (Contract via Russell Tobin Associates)",
     logo: "https://res.cloudinary.com/dwsalphhy/image/upload/v1769932884/RTLogo_zwlsuh.jpg",
     role: "Senior Application Development Engineer",
-    timeline: "May 2025  - Sep 2025",
+    timeline: "May 2025 - Sep 2025",
     location: "Bangalore, Karnataka",
     stack: [
       "React",
@@ -49,7 +49,7 @@ export const workExperiences = [
     company: "Unisys India Private Limited",
     logo: "https://res.cloudinary.com/dwsalphhy/image/upload/v1769932899/UnisysLogo_qxx1ts.jpg",
     role: "Application Development Engineer",
-    timeline: "June 2023  - April 2025",
+    timeline: "June 2023 - April 2025",
     location: "Bangalore, Karnataka",
     stack: [
       "React",
