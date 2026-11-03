@@ -16,11 +16,11 @@ const About: React.FC = React.memo(() => {
         />
 
         <div className="relative mx-auto max-w-7xl rise">
-          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-7xl">
+          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-6xl">
             About me
           </h1>
 
-          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-xl">
+          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
             Frontend Engineer building responsive, accessible web applications
             with React, TypeScript, and Next.js across enterprise, airline, and
             AI-driven platforms. Contributed to significant booking conversion
@@ -36,7 +36,7 @@ const About: React.FC = React.memo(() => {
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="p-7">
               <p className="label-mono">Summary</p>
-              <h2 className="mt-4 font-display text-2xl font-bold tracking-tight text-card-foreground md:text-3xl">
+              <h2 className="mt-4 font-display text-2xl font-bold tracking-tight text-card-foreground md:text-4xl">
                 What I bring
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">

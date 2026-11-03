@@ -29,7 +29,7 @@ const NotFound = () => {
         </div>
 
         <p className="label-mono mt-6">404</p>
-        <h1 className="mt-4 font-display text-5xl font-semibold tracking-tight text-gradient md:text-7xl">
+        <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-gradient md:text-6xl">
           Page missing
         </h1>
         <p className="mt-4 text-muted-foreground md:text-lg">

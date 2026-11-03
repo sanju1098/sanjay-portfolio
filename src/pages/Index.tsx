@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowDownToLine, ArrowRight, ExternalLink } from "lucide-react";
+import {
+  ArrowDownToLine,
+  ArrowRight,
+  ExternalLink,
+  LoaderCircle,
+} from "lucide-react";
 import { services, stats } from "@/content/home";
-import Picture from "@/components/Picture";
 import resumeUrl from "@/assets/Resume.pdf";
 import { projects } from "@/content/project";
 
 const Index: React.FC = React.memo(() => {
+  const [loadedImageSrcs, setLoadedImageSrcs] = useState<Set<string>>(
+    () => new Set(),
+  );
+
+  const markImageLoaded = (src: string) => {
+    setLoadedImageSrcs(previous =>
+      previous.has(src) ? previous : new Set(previous).add(src),
+    );
+  };
+
   return (
     <>
       <section
@@ -24,12 +38,10 @@ const Index: React.FC = React.memo(() => {
         <div className="relative mx-auto max-w-7xl">
           <div className="rise">
             <div className="inline-block">
-              <p className="font-mono text-sm uppercase tracking-[0.2em] text-accent mb-2">
-                Frontend Engineer
-              </p>
+              <p className="label-mono mb-2">Frontend Engineer</p>
             </div>
 
-            <h1 className="mt-4 max-w-[24ch] text-balance font-display text-5xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-7xl">
+            <h1 className="mt-4 max-w-[24ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-6xl">
               Building high-performance interfaces and scalable systems.
             </h1>
 
@@ -68,7 +80,7 @@ const Index: React.FC = React.memo(() => {
                   <div
                     key={stat.label}
                     className="rounded-md border border-border bg-panel p-4 panel-hover">
-                    <dt className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    <dt className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">
                       {stat.label}
                     </dt>
                     <dd className="mt-2 text-base font-medium text-card-foreground">
@@ -117,7 +129,7 @@ const Index: React.FC = React.memo(() => {
             <h2 className="font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
               What I do
             </h2>
-            <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-xl">
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
               I build reliable, accessible, and performant user interfaces with
               React, TypeScript, and Next.js. Specializing in component-driven
               development, design systems, micro-frontends, performance
@@ -167,19 +179,47 @@ const Index: React.FC = React.memo(() => {
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {projects.slice(0, 3).map(project => {
               const projectUrl = project.live || project.repo;
+              const image = project.images[0];
+              const imageSrc = image?.src ?? "";
+              const isImageLoading =
+                imageSrc.length > 0 && !loadedImageSrcs.has(imageSrc);
 
               return (
                 <div key={project.name}>
                   <div className="block h-full rounded-md bg-panel p-6 ring-1 ring-border/70 panel-hover">
-                    <Picture
-                      src={project.images[0]?.src}
-                      alt={
-                        project.images[0]?.alt ||
-                        `${project.name} project preview`
-                      }
-                      loading="lazy"
-                      className="aspect-video w-full rounded-sm object-contain object-center"
-                    />
+                    <span
+                      className="relative block aspect-video w-full rounded-sm"
+                      aria-busy={isImageLoading}>
+                      {isImageLoading && (
+                        <span
+                          className="absolute inset-0 z-10 flex items-center justify-center bg-background/60"
+                          role="status"
+                          aria-label="Loading image">
+                          <LoaderCircle
+                            className="size-8 animate-spin text-accent"
+                            aria-hidden
+                          />
+                        </span>
+                      )}
+                      {imageSrc && (
+                        <img
+                          ref={image => {
+                            if (image?.complete && image.naturalWidth > 0) {
+                              markImageLoaded(imageSrc);
+                            }
+                          }}
+                          src={imageSrc}
+                          alt={image?.alt || `${project.name} project preview`}
+                          loading="lazy"
+                          decoding="async"
+                          onLoad={() => markImageLoaded(imageSrc)}
+                          onError={() => markImageLoaded(imageSrc)}
+                          className={`block size-full rounded-sm object-contain object-center transition-opacity duration-200 ${
+                            isImageLoading ? "opacity-0" : "opacity-100"
+                          }`}
+                        />
+                      )}
+                    </span>
 
                     <div className="mt-5 flex flex-col items-start gap-2">
                       <div className="flex items-center gap-2">
@@ -199,9 +239,7 @@ const Index: React.FC = React.memo(() => {
 
                       <div className="flex flex-row flex-wrap gap-1.5">
                         {project?.category?.map(category => (
-                          <span
-                            key={category}
-                            className="chip-accent inline-flex flex-row gap-1">
+                          <span key={category} className="chip-accent">
                             {category}
                           </span>
                         ))}
