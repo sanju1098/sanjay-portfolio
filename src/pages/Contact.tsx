@@ -50,10 +50,10 @@ const Contact: React.FC = React.memo(() => {
         />
 
         <div className="relative mx-auto max-w-7xl rise">
-          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-7xl">
+          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-6xl">
             Get in touch
           </h1>
-          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-xl">
+          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
             Open to senior frontend engineering roles, full-stack opportunities,
             and building AI-powered products with React, Next.js, TypeScript,
             and modern backend technologies.
@@ -67,7 +67,7 @@ const Contact: React.FC = React.memo(() => {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="label-mono">Connection</p>
-            <h2 className="mt-4 max-w-[12ch] font-display text-3xl font-bold leading-tight tracking-tight text-card-foreground md:text-5xl">
+            <h2 className="mt-4 max-w-[12ch] font-display text-3xl font-bold leading-tight tracking-tight text-card-foreground md:text-4xl">
               Direct lines
             </h2>
             <p className="mt-5 max-w-[42ch] text-base text-pretty leading-relaxed text-muted-foreground">
@@ -150,7 +150,7 @@ const Contact: React.FC = React.memo(() => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">
                     Name
                   </label>
                   <input
@@ -164,7 +164,7 @@ const Contact: React.FC = React.memo(() => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">
                     Email
                   </label>
                   <input
@@ -181,7 +181,7 @@ const Contact: React.FC = React.memo(() => {
               <div className="mt-4">
                 <label
                   htmlFor="message"
-                  className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">
                   Message
                 </label>
                 <textarea

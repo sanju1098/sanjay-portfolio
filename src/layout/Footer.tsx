@@ -24,10 +24,6 @@ const Footer = () => {
   return (
     <footer className="border-t border-hairline bg-panel/40 px-6 py-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
-        <p className="font-mono text-xs text-muted-foreground/70">
-          React · TypeScript · Tailwind
-        </p>
-
         <nav aria-label="Social links" className="flex items-center gap-2">
           {footerLinks.map(({ label, href, icon: Icon }) => (
             <a
@@ -42,7 +38,7 @@ const Footer = () => {
           ))}
         </nav>
 
-        <p className="text-base text-muted-foreground">
+        <p className="text-sm text-muted-foreground">
           Copyright © {currentYear}{" "}
           <span className="font-medium text-card-foreground">
             Sanjay Kumar S R
