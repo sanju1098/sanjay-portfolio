@@ -192,20 +192,20 @@ export const projects = [
     repo: "https://github.com/sanju1098/chatuuu",
     images: [
       {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788349425/0d06a8bd-2286-46c0-b192-e13f67aa6de1.png",
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1793942095/277dff30-76a2-449b-a3c9-8a9dbbe7c4d6.png",
         alt: "Chatuuu UI - Home Page",
       },
       {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788349571/27f392ad-1075-46f6-9d06-e724c221fc29.png",
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1793942659/9dd70a0f-316f-4f4e-a0c7-7d5988f0165a.png",
+        alt: "Chatuuu UI - Loading Page",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1793942139/bacf5d51-c234-497a-9256-eae21404a2b1.png",
         alt: "Chatuuu UI - Response Page",
       },
       {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788349672/41daaf08-0a1e-4412-817a-d66fcafdf8de.png",
-        alt: "Chatuuu UI - Response Loading State",
-      },
-      {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788349740/987e45f1-45b8-46f9-9fd5-c91fcf6dbed6.png",
-        alt: "Chatuuu UI - Code Response",
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1793943469/d47d8b84-1e13-4e4d-ab5a-0ae9c83bd586.png",
+        alt: "Chatuuu UI - Reference Links Page",
       },
     ],
     description:
