@@ -39,8 +39,8 @@ const Projects: React.FC = React.memo(() => {
               </h1>
 
               <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-                A curated portfolio of products, experiments, and UI systems
-                built across AI, frontend, and enterprise delivery.
+                Personal builds outside my day job: mostly frontend and AI apps,
+                with some full-stack experiments.
               </p>
             </div>
 

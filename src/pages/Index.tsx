@@ -23,9 +23,7 @@ const Index: React.FC = React.memo(() => {
 
   return (
     <>
-      <section
-        id="main-content"
-        className="relative overflow-hidden px-6 pt-32 pb-8 md:pt-44">
+      <section className="relative overflow-hidden px-6 pt-32 pb-8 md:pt-44">
         <div
           className="pointer-events-none absolute inset-0 grid-field"
           aria-hidden
@@ -38,28 +36,32 @@ const Index: React.FC = React.memo(() => {
         <div className="relative mx-auto max-w-7xl">
           <div className="rise">
             <div className="inline-block">
-              <p className="label-mono mb-2">Frontend Engineer</p>
+              <p className="label-mono mb-2">Sanjay Kumar S R</p>
             </div>
 
             <h1 className="mt-4 max-w-[24ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-6xl">
-              Building high-performance interfaces and scalable systems.
+              Senior frontend engineer building accessible, scalable interfaces.
             </h1>
 
             <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-              Frontend engineer building responsive, accessible web applications
-              with React, TypeScript, and Next.js. Contributed to significant
-              booking conversion improvements for P&O Cruises and Cunard,
-              maintained high quality gates in SonarQube CI/CD pipelines, and
-              built Adobe Target experiments within experimentation pods. I also
-              build REST APIs with Node.js and Express, and ship AI-powered
-              products with Vercel AI SDK, Gemini, and Claude.
+              5+ years building accessible, high-performance web apps in React,
+              TypeScript, and Next.js.
+              <br />
+              At Publicis Sapient, the Cruise Detail Page variant I shipped
+              lifted booking conversion by 27% for P&O Cruises and 18% for
+              Cunard.
+              <br />
+              Earlier: a 75+ component design system used by three teams, and a
+              Lighthouse score taken from 63 to 90+.
+              <br />
+              Now building on the backend and AI side with Node.js, Express, and
+              the Vercel AI SDK.
             </p>
 
             <div className="mt-10 flex flex-col flex-wrap gap-3 md:flex-row">
               <a
                 href={resumeUrl}
-                download="Sanjay Kumar S R_Resume"
-                target="_blank"
+                download="Sanjay Kumar S R_Resume.pdf"
                 rel="noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-medium text-primary-foreground ring-1 ring-primary transition-all hover:brightness-110 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
                 <ArrowDownToLine className="size-4" aria-hidden />
@@ -99,25 +101,25 @@ const Index: React.FC = React.memo(() => {
           <div className="rounded-md border border-border bg-panel p-7 shadow-panel">
             <p className="label-mono">Product-first engineering</p>
             <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
-              I mix product thinking with front-end execution.
+              Product thinking, frontend craft.
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-              I design reusable WCAG-compliant component libraries, optimize
-              Core Web Vitals and Lighthouse performance scores, and build
-              scalable micro-frontend architectures that help teams ship faster
-              without sacrificing accessibility, performance, or quality. I use
-              TanStack Query for data fetching, Redux Toolkit for state
-              management, and secure multi-step forms with RBAC and Zod
-              validation.
+              I ship features that are measured, not just built: A/B-tested
+              personalization at Publicis Sapient, and 10+ controlled releases
+              behind feature flags with zero production incidents. I also build
+              the foundations: reusable components, TanStack Query for data,
+              Redux Toolkit for state, and validated multi-step forms.
             </p>
           </div>
 
           <div className="rounded-md border border-border bg-panel p-7 shadow-panel">
             <p className="label-mono">Core focus</p>
             <ul className="mt-5 space-y-3 text-base text-muted-foreground md:text-lg list-disc list-inside marker:text-accent">
-              <li>UI systems and reusable components</li>
-              <li>Performance, accessibility, and design quality</li>
-              <li>AI products, enterprise apps, and product delivery</li>
+              <li>
+                Design systems that ship 2.5x more tested components per sprint
+              </li>
+              <li>Accessibility: WCAG compliance raised from 50% to 80%</li>
+              <li>Streaming AI interfaces serving 1,000+ daily messages</li>
             </ul>
           </div>
         </div>
@@ -130,10 +132,12 @@ const Index: React.FC = React.memo(() => {
               What I do
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              I build reliable, accessible, and performant user interfaces with
-              React, TypeScript, and Next.js. Specializing in component-driven
-              development, design systems, micro-frontends, performance
-              optimization, and AI-powered product experiences.
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                My core is frontend engineering: React, TypeScript, and Next.js,
+                with design systems, accessibility, and performance built in.
+                I’m extending that into backend and AI work with Node.js,
+                Express, and the Vercel AI SDK.
+              </p>
             </p>
           </>
 
@@ -261,11 +265,12 @@ const Index: React.FC = React.memo(() => {
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 rounded-md bg-panel p-10 ring-1 ring-border/70 md:flex-row md:items-center">
           <div>
             <h2 className="font-display text-2xl font-medium text-card-foreground md:text-3xl">
-              Building something ambitious?
+              Hiring for a senior frontend role?
             </h2>
             <p className="mt-3 max-w-[52ch] text-base text-muted-foreground">
-              Open to senior frontend roles and backend-focused collaborations
-              across web, AI, and other emerging technology.
+              I’m open to senior frontend roles where the interface is central
+              to the product. I’m also growing on the backend, so full-stack
+              scope is welcome.
             </p>
           </div>
           <Link

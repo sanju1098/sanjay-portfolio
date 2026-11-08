@@ -13,7 +13,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-6 py-20">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-6 py-20">
       <div
         className="pointer-events-none absolute inset-0 grid-field opacity-60"
         aria-hidden
@@ -53,7 +53,7 @@ const NotFound = () => {
           </button>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

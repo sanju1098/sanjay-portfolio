@@ -1,6 +1,7 @@
 import React from "react";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { certificates, workAchievements } from "@/content/about";
+import { Link } from "react-router-dom";
 
 const About: React.FC = React.memo(() => {
   return (
@@ -20,53 +21,80 @@ const About: React.FC = React.memo(() => {
             About me
           </h1>
 
-          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            Frontend Engineer building responsive, accessible web applications
-            with React, TypeScript, and Next.js across enterprise, airline, and
-            AI-driven platforms. Contributed to significant booking conversion
-            improvements, high Lighthouse performance scores, and enhanced WCAG
-            accessibility. Experienced in design systems, CI/CD with GitHub
-            Actions, SonarQube, Docker, and Agile/Scrum cross-functional teams.
-          </p>
+          <div className="mt-8 max-w-[62ch] space-y-4 text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              I’m Sanjay, a senior frontend engineer with 5+ years of
+              experience.
+            </p>
+            <p>
+              I started on VMware’s CSP Marketplace products, improving
+              accessibility and form reliability. Then I built a design system
+              for airline and cargo platforms at Unisys. Now I work on
+              personalization and A/B testing for Cunard and P&O Cruises at
+              Publicis Sapient.
+            </p>
+            <p>
+              I care about interfaces that are fast, accessible, and easy to
+              maintain, and I’m growing into backend and AI work.
+            </p>
+          </div>
         </div>
       </section>
 
       <section id="about" className="p-6 pb-24">
         <div className="mx-auto max-w-7xl space-y-8">
+          <div className="flex flex-col gap-3 rounded-xl bg-panel p-7 ring-1 ring-border md:flex-row md:items-baseline md:gap-10">
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground font-semibold">
+              Education
+            </h2>
+
+            <div>
+              <p className="text-base font-medium text-card-foreground">
+                Bachelor of Engineering in Computer Science
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                T John Institute of Technology, Bengaluru, Karnataka
+                <span className="mx-2" aria-hidden>
+                  |
+                </span>
+                2016 – 2020
+              </p>
+            </div>
+          </div>
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="p-7">
-              <p className="label-mono">Summary</p>
               <h2 className="mt-4 font-display text-2xl font-bold tracking-tight text-card-foreground md:text-4xl">
                 What I bring
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Shipping production-ready frontends with measurable impact:
-                significant booking conversion lift for P&O Cruises and Cunard,
-                excellent Lighthouse performance scores with improved LCP,
-                enhanced WCAG accessibility standards, and design systems
-                adopted across multiple engineering teams. Experienced with
-                micro-frontends, component-driven development, Storybook, Figma,
-                and server-side rendering. I build for scale, not just for
-                demos.
+                I build production frontends that are accessible, fast, and easy
+                for other engineers to extend. That means reusable components
+                other teams adopt, accessibility checked with NVDA and
+                VoiceOver, and features measured through A/B testing. I’ve also
+                mentored junior engineers on React architecture and component
+                design.
               </p>
             </div>
 
             <div className="bg-panel p-7 ring-1 ring-border rounded-xl">
-              <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                What I do
-              </h3>
+              <h2 className="mt-4 font-display text-2xl font-bold tracking-tight text-card-foreground md:text-4xl">
+                Right now
+              </h2>
               <p className="mt-5 text-base text-pretty leading-relaxed text-foreground">
-                Currently a Senior Experience Engineer at Publicis Sapient
-                driving frontend architecture, micro-frontends, and design
-                systems within an experimentation pod. I specialize in building
-                reusable Adobe Target component libraries with zero-rollout
-                components for scroll-polls across booking, CRF, and shores
-                modules with zero production incidents. Maintained high quality
-                gates in GitHub Actions CI/CD and improved SonarQube scores
-                through code splitting, lazy loading, and image optimization. I
-                also build Node.js/Express REST APIs and ship AI-powered
-                products with Next.js, Vercel AI SDK, and Gemini.
+                I’m a Senior Experience Engineer at Publicis Sapient, building
+                Next.js features for Cunard and P&O Cruises. I ship
+                personalization variants and A/B tests, released safely behind
+                AEM feature flags and brand- and locale-specific configurations,
+                with Jest tests and SonarQube quality gates in CI. Outside
+                client work, I’m learning backend with Node.js and Express and
+                building AI apps, like AstraMind, a RAG PDF chatbot.
               </p>
+              <Link
+                to="/experience"
+                className="mt-5 inline-flex items-center gap-2 font-mono text-base uppercase tracking-widest text-accent hover:underline">
+                Full experience
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
             </div>
           </div>
 

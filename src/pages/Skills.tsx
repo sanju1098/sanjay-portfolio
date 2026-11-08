@@ -41,8 +41,8 @@ const Skills: React.FC = React.memo(() => {
           </h1>
 
           <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            A practical toolkit for building polished interfaces, scalable
-            systems, and dependable product experiences.
+            Frontend is my core. The backend and AI skills here are the ones I’m
+            growing alongside it.
           </p>
         </div>
       </section>

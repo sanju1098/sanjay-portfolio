@@ -8,7 +8,7 @@ export const workProfiles = [
     link: "https://github.com/sanju1098",
   },
   {
-    profileName: "Stackblitz",
+    profileName: "StackBlitz",
     className: "bg-[#1574ef] text-white hover:bg-[#1574efad]",
     icon: <Zap size={18} />,
     link: "https://stackblitz.com/@sanju1098",
@@ -39,14 +39,14 @@ export const projects = [
       },
     ],
     description:
-      "Full-stack RAG chatbot that answers questions from uploaded PDFs. Documents are parsed, chunked and embedded with Gemini, stored in Neon, and retrieved via cosine-similarity vector search (HNSW index) to ground streamed responses. Includes a paginated document library with cascade delete and Drizzle-managed migrations.",
+      "Full-stack RAG chatbot that answers questions from uploaded PDFs. Documents are parsed, chunked, and embedded with Gemini, stored in Neon, and retrieved through cosine-similarity vector search (HNSW index) to ground streamed responses. Includes a paginated document library with cascade delete and Drizzle-managed migrations.",
     category: ["Full-Stack", "AI/RAG", "Next.js", "Vector Search"],
     stack: [
       "Next.js 16",
       "React 19",
       "TypeScript",
       "Tailwind CSS",
-      "shadcn/ui",
+      "ShadCN UI",
       "Vercel AI SDK",
       "Google Gemini",
       "Neon",
@@ -57,7 +57,6 @@ export const projects = [
   {
     name: "Real-Time Chat Application",
     subtitle: "Real-time messaging platform",
-    live: "",
     repo: "https://github.com/sanju1098/real-time-chat-fullstack",
     images: [
       {
@@ -74,7 +73,7 @@ export const projects = [
       },
     ],
     description:
-      "Full-stack real-time chat application supporting 1:1 and group conversations with instant messaging, typing indicators, online presence, delivery and read receipts, JWT authentication, rate limiting, and Redis-powered horizontal Socket.io scaling.",
+      "Full-stack real-time chat application supporting one-to-one and group conversations, typing indicators, online presence, delivery and read receipts, JWT authentication, rate limiting, and Redis-powered horizontal Socket.IO scaling.",
     category: ["Full-Stack", "Node.js", "Express", "Socket.io"],
     stack: [
       "React",
@@ -88,7 +87,7 @@ export const projects = [
       "Redis",
       "JWT",
       "Docker",
-      "Github Actions",
+      "GitHub Actions",
     ],
   },
   {
@@ -123,14 +122,14 @@ export const projects = [
       },
     ],
     description:
-      "Full-stack AI prompt management platform to create, organize, search, test and reuse prompt templates with dynamic variables, a template marketplace, workspace analytics and an interactive playground powered by Gemini and Groq.",
+      "Full-stack AI prompt management platform for creating, organizing, searching, testing, and reusing prompt templates. Includes dynamic variables, a template marketplace, workspace analytics, and an interactive playground powered by Gemini and Groq.",
     category: ["Full-Stack", "AI", "Next.js"],
     stack: [
       "Next.js",
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "shadcn/ui",
+      "ShadCN UI",
       "MongoDB",
       "Mongoose",
       "Gemini",
@@ -139,8 +138,7 @@ export const projects = [
   },
   {
     name: "Incident Management System",
-    subtitle: "Backend - Incident management",
-    live: "",
+    subtitle: "Incident management API",
     repo: "https://github.com/sanju1098/incident-management-system",
     images: [
       {
@@ -149,7 +147,7 @@ export const projects = [
       },
     ],
     description:
-      "Production-ready backend API for incident management with JWT authentication, refresh tokens, role-based access control, user and team management, secure file uploads, validation, and protected REST endpoints.",
+      "Backend API for incident management with JWT authentication, refresh tokens, role-based access control, user and team management, file uploads, validation, and protected REST endpoints.",
     category: ["Backend", "Node.js", "Express"],
     stack: [
       "Node.js",
@@ -165,7 +163,6 @@ export const projects = [
   {
     name: "Next Auth App",
     subtitle: "Full-stack authentication with NextAuth & MongoDB",
-    live: "",
     repo: "https://github.com/sanju1098/next-auth-app",
     images: [
       {
@@ -174,7 +171,7 @@ export const projects = [
       },
     ],
     description:
-      "A small Next.js application demonstrating authentication with NextAuth (email/password and credentials providers) and MongoDB via Mongoose, including register, login, profile editing, and a protected dashboard.",
+      "A Next.js authentication example using NextAuth and MongoDB with Mongoose. Includes registration, login, profile editing, and a protected dashboard.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -248,7 +245,7 @@ export const projects = [
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "shadcn/ui",
+      "ShadCN UI",
       "Gemini API",
       "Vite",
     ],
@@ -313,7 +310,7 @@ export const projects = [
       "SCSS",
       "Firebase",
       "Firebase Auth",
-      "shadcn/ui",
+      "ShadCN UI",
     ],
   },
   {
@@ -324,12 +321,12 @@ export const projects = [
     images: [
       {
         src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788353523/71ba34df-b778-4973-90ab-4527badaad22.png",
-        alt: "sleep-with-delay NPM package",
+        alt: "sleep-with-delay npm package",
       },
     ],
     description:
       "Lightweight TypeScript utility package providing sleep and delayed function execution helpers for testing, animations, asynchronous workflows, and controlled execution timing.",
-    stack: ["TypeScript", "JavaScript", "Node.js", "NPM", "Rollup"],
+    stack: ["TypeScript", "JavaScript", "Node.js", "npm", "Rollup"],
   },
   {
     name: "Weather Forecast",
@@ -339,28 +336,28 @@ export const projects = [
     images: [
       {
         src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1789275534/0320a567-de7b-4954-8c6e-b1d69945fbc1.png",
-        alt: "WeatherForecast1",
+        alt: "Weather forecast dashboard screenshot",
       },
       {
         src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1789275677/8d680d3e-e397-41df-96c2-4669b5dfd306.png",
-        alt: "WeatherForecast2",
+        alt: "Weather forecast dashboard screenshot",
       },
       {
         src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1789275715/ca51b830-0d7f-47b2-9101-76be863e1111.png",
-        alt: "WeatherForecast3",
+        alt: "Weather forecast dashboard screenshot",
       },
       {
         src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1789275855/1b074e63-e36a-4b2e-8566-01583a5b092e.png",
-        alt: "WeatherForecast4",
+        alt: "Weather forecast dashboard screenshot",
       },
     ],
     description:
-      "Accessible, feature-rich weather dashboard with current conditions, a 5-day forecast, and air quality monitoring (AQI, PM2.5, PM10, NO₂, O₃), backed by the OpenWeather API.",
+      "Weather dashboard with current conditions, a five-day forecast, and air quality monitoring (AQI, PM2.5, PM10, NO₂, O₃), backed by the OpenWeather API.",
     stack: [
       "React",
       "TypeScript",
       "Vite",
-      "Material-UI",
+      "Material UI",
       "Tailwind CSS",
       "TanStack Query",
     ],

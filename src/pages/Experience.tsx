@@ -51,8 +51,8 @@ const Experience: React.FC = React.memo(() => {
           </h1>
 
           <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            A record of building high-load frontend systems, accessible
-            interfaces, and dependable product experiences.
+            5+ years building frontend for enterprise, airline, and cruise
+            products: accessible, fast, and designed to be reused.
           </p>
         </div>
       </section>
@@ -62,13 +62,8 @@ const Experience: React.FC = React.memo(() => {
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
               <h2 className="max-w-[12ch] text-balance font-display text-3xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-4xl">
-                Professional background
+                Career so far
               </h2>
-              <p className="mt-4 max-w-[36ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-                Four teams, one throughline: frontend systems shaped by
-                ownership, scale, and shipped outcomes.
-              </p>
-
               <nav aria-label="Jump to role" className="mt-8 hidden lg:block">
                 <ul className="border-l border-border">
                   {workExperiences.map((exp, index) => (
@@ -83,7 +78,7 @@ const Experience: React.FC = React.memo(() => {
                             ? "border-accent font-medium text-card-foreground"
                             : "border-transparent text-muted-foreground hover:text-card-foreground"
                         }`}>
-                        {exp.company.trim()}
+                        {exp.company}
                       </a>
                     </li>
                   ))}
@@ -94,7 +89,7 @@ const Experience: React.FC = React.memo(() => {
 
           <ol className="space-y-10 lg:col-span-8">
             {workExperiences.map((exp, index) => {
-              const company = exp.company.trim();
+              const company = exp.company;
               const isCurrent = index === 0;
               const isImageLoading = !loadedImageSrcs.has(exp.logo);
               return (
