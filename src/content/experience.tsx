@@ -1,6 +1,6 @@
 export const workExperiences = [
   {
-    company: "Publicis Sapient ",
+    company: "Publicis Sapient",
     logo: "https://res.cloudinary.com/dwsalphhy/image/upload/v1773920349/ps_logo.jpg",
     role: "Senior Experience Engineer",
     timeline: "Sep 2025 - Present",
@@ -12,13 +12,13 @@ export const workExperiences = [
       "AEM",
       "A/B testing",
       "Storybook",
-      "TailwindCSS",
+      "Tailwind CSS",
     ],
     responsibilities: [
-      "Developed and delivered personalization and A/B experimentation features for Carnival Cruise Line’s digital platforms, supporting Cunard and P&O Cruises within a React/Next.js microfrontend architecture.",
-      "Built reusable and accessible UI components using React and TypeScript, documenting and demonstrating components in Storybook to promote consistency, maintainability, and scalable frontend development across teams.",
-      "Integrated AEM-driven dynamic content and REST APIs to support localized and content-rich customer experiences across Cunard’s GB, US, DE, AU, and JP locales and P&O Cruises’ GB locale.",
-      "Collaborated with Design, Product, and QA teams to deliver responsive, accessible, and production-ready features across booking and customer journey workflows, contributing to design reviews, code reviews, release validation, and frontend performance improvements.",
+      "Build and deliver personalization and A/B testing features for Carnival Cruise Line’s digital platforms, supporting Cunard and P&O Cruises in a React/Next.js microfrontend architecture.",
+      "Build accessible React and TypeScript components, documenting them in Storybook to support consistency and reuse across teams.",
+      "Integrate AEM-driven content and REST APIs for Cunard’s GB, US, DE, AU, and JP locales and P&O Cruises’ GB locale.",
+      "Collaborate with Design, Product, and QA teams to deliver responsive, accessible features across booking and customer journeys, contributing to design reviews, code reviews, release validation, and frontend performance improvements.",
     ],
   },
   {
@@ -31,7 +31,7 @@ export const workExperiences = [
       "React",
       "Vite",
       "TypeScript",
-      "TailwindCSS",
+      "Tailwind CSS",
       "ShadCN UI",
       "React Hook Form",
       "Zod",
@@ -39,7 +39,7 @@ export const workExperiences = [
       "REST APIs",
     ],
     responsibilities: [
-      "Architected and delivered a scalable Tech Events platform using React.js, TypeScript, Tailwind CSS, and ShadCN UI, establishing a modular frontend architecture for event discovery, registration, and event administration workflows.",
+      "Architected and delivered a Tech Events platform using React, TypeScript, Tailwind CSS, and ShadCN UI, with modular workflows for event discovery, registration, and administration.",
       "Designed complex multi-step event management workflows with conditional fields, schema-driven validation, and dynamic UI behavior using React Hook Form and Zod, ensuring consistent data handling across user and administrative journeys.",
       "Engineered rich event-management experiences including calendar and list views, advanced filtering, pagination, role-based access control, protected routes, and CSV export workflows, integrating frontend modules with RESTful backend services.",
       "Improved application responsiveness and reliability through TanStack Query data management, intelligent caching, background refetching, memoization, lazy loading, and rendering optimizations, while maintaining clean component architecture and API integration patterns.",
@@ -63,10 +63,10 @@ export const workExperiences = [
     ],
     responsibilities: [
       "Engineered the Iberia Airline Order View RS platform using React, TypeScript, Redux Toolkit, and REST APIs, implementing real-time airline order workflows aligned with IATA NDC v21.3.4 and handling complex transactional data flows.",
-      "Integrated Microsoft Entra ID SSO for secure authentication and access management, while contributing to Docker-based application deployments and environment-specific frontend configurations.",
+      "Integrated Microsoft Entra ID single sign-on for authentication and access management, and contributed to Docker-based deployments and environment-specific frontend configuration.",
       "Designed and delivered the Digital Engineer AI conversational platform using Next.js and Vercel AI SDK, implementing streaming responses, chat history, dynamic routing, API integrations, and resilient state management for real-time interactions.",
-      "Integrated Microsoft Entra ID SSO and containerized applications using Docker, contributing to secure authentication, environment-specific deployments, performance optimization, and reliable CI/CD delivery.",
-      "Designed and published the Unisys Component Library / Design System as versioned NPM packages, developing 75+ reusable and accessible web components with Storybook documentation, global theming, and cross-application integration.",
+      "Contributed to frontend performance improvements and environment-specific configuration.",
+      "Designed and published the Unisys Component Library as versioned npm packages, developing 75+ reusable web components with Storybook documentation, global theming, and cross-application integration.",
       "Established frontend quality and accessibility practices using Jest, React Testing Library, WCAG standards, and NVDA testing, collaborating with backend, QA, UX, and product teams to deliver reliable and accessible enterprise applications.",
     ],
   },
@@ -94,16 +94,4 @@ export const workExperiences = [
       "Ensured frontend quality through Jest, React Testing Library, and Enzyme, while participating in peer code reviews, debugging, performance optimization, and Agile/Scrum delivery across the application lifecycle.",
     ],
   },
-  // {
-  //   company: "Sixth Circle Technologies Pvt Ltd",
-  //   logo: "https://res.cloudinary.com/dwsalphhy/image/upload/v1769932887/SCTLogo_om1txh.jpg",
-  //   role: "Intern Web Developer",
-  //   timeline: "February 2021 – September 2021",
-  //   location: "Bangalore, Karnataka",
-  //   stack: ["React", "Python", "Django", "PostgreSQL"],
-  //   responsibilities: [
-  //     "Collaborated on the Shop Manager prototype by developing responsive UI screens and defining technical requirements, integrating frontend workflows with REST APIs built using Python, Django, and Django REST Framework.",
-  //     "Designed PostgreSQL schemas and developed end-to-end Product and Order workflows, including API integration, database operations, and Braintree payment integration, with thorough API testing using Postman.",
-  //   ],
-  // },
 ];

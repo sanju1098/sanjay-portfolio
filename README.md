@@ -4,10 +4,9 @@
 
 ![Portfolio Banner](public/logo.svg)
 
-**Professional portfolio showcasing 5+ years of frontend engineering expertise**
+**Frontend engineer focused on React, accessible interfaces, and design systems**
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-059669?style=for-the-badge&logo=vercel)](https://sanjaysr.vercel.app/)
-[![License](https://img.shields.io/badge/License-MIT-059669?style=for-the-badge)](LICENSE)
 [![React](https://img.shields.io/badge/React-19-059669?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-059669?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
@@ -17,13 +16,12 @@
 
 ## Overview
 
-A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (Sanjay.SR)**, a Senior Experience Engineer specializing in:
+A portfolio for **Sanjay Kumar S R (Sanjay.SR)**, a Senior Experience Engineer focused on frontend engineering:
 
-- **Frontend Architecture** - React, TypeScript, Next.js, Micro-frontends
-- **Design Systems** - Component libraries, Storybook, WCAG compliance
-- **Performance Optimization** - Core Web Vitals, Lighthouse scores, LCP improvements
-- **AI-Powered Applications** - Vercel AI SDK, Gemini, Claude integration
-- **Backend Development** - Node.js, Express, MongoDB, REST APIs
+- **Frontend engineering** - React, TypeScript, Next.js, and micro-frontends
+- **UI systems** - Reusable components, Storybook, and accessibility
+- **Product delivery** - Responsive interfaces for enterprise and airline products
+- **Supporting full-stack experience** - REST APIs, Node.js, databases, and AI integrations
 
 ---
 
@@ -31,37 +29,31 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 
 ### Design & UX
 
-- Professional emerald (#059669) accent color throughout
-- Seamless dark/light mode with system preference detection
-- Mobile-first, tablet, and desktop optimized responsive design
-- WCAG compliant with keyboard navigation and skip-to-content link
-- Space Grotesk & JetBrains Mono professional typography
+- Responsive layouts and dark/light themes with system preference detection
+- Keyboard-visible focus styling and a skip-to-content link
+- Space Grotesk and JetBrains Mono typography
 
 ### Performance
 
-- Optimized Largest Contentful Paint (LCP)
-- Image optimization with priority loading and lazy loading
-- Route-based code splitting for faster loads
-- DNS prefetch for optimized font and resource loading
-- Smooth, performant stagger animations
+- Lazy-loaded routes and project imagery
+- Font preconnect hints
+- Lightweight page transition and loading states
 
 ### Pages & Sections
 
 - **Home** (`/`) - Hero section, stats, services overview, featured projects
-- **About** (`/about`) - Professional summary, achievements, certifications
+- **About** (`/about`) - Professional summary, achievements, and certifications
 - **Projects** (`/projects`) - Horizontal card layout with image carousels, tech stacks
-- **Skills** (`/skills`) - 5 categories: Frontend (15), Backend (7), AI Tools (4), Quality (12), Dev Tools (7)
+- **Skills** (`/skills`) - Frontend, backend, quality, DevOps, tools, and AI
 - **Experience** (`/experience`) - Career timeline with responsibilities
-- **Contact** (`/contact`) - Contact form, phone, email, LinkedIn, GitHub
+- **Contact** (`/contact`) - Email, LinkedIn, GitHub, StackBlitz, and a mailto form
 
 ### Technical Highlights
 
-- Horizontal project cards with image carousel (5 cols) + content (7 cols)
-- Object-contain images with no cropping and full image visibility
-- Qualitative descriptions instead of metrics display
-- Emerald outline focus indicators for keyboard navigation
-- Complete SEO meta tags, Open Graph, and Twitter Cards
-- Skip-to-content link for keyboard accessibility
+- Project cards with screenshot carousels and technology lists
+- Responsive project imagery using `object-contain`
+- Page titles and descriptions, Open Graph, and Twitter metadata
+- Shared main landmark and skip-to-content link
 
 ---
 
@@ -69,7 +61,7 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 
 ### Frontend
 
-- **React 19** - Latest React with concurrent features
+- **React 19** - UI library
 - **TypeScript 5** - Type-safe development
 - **Vite** - Lightning-fast build tool
 - **Tailwind CSS 4** - Utility-first styling with custom theme
@@ -77,9 +69,9 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 
 ### UI Components
 
-- **Radix UI** - Accessible component primitives
-- **Lucide React** - Beautiful icon library
-- **Custom Components** - Picture, ProjectCarousel, AnimatedBackground
+- **Radix UI** - Component primitives
+- **Lucide React** - Icon library
+- **Local UI components** - Buttons, dialogs, inputs, toasts, and tooltips
 
 ### Data & Forms
 
@@ -95,48 +87,11 @@ A professionally crafted, high-performance portfolio for **Sanjay Kumar S R (San
 
 ---
 
-## Project Structure
-
-```
-sanjay-portfolio-master/
-├── public/
-│   └── logo.svg              # Emerald-themed logo
-├── src/
-│   ├── components/           # Reusable components
-│   │   ├── Picture.tsx       # Optimized image component
-│   │   └── ProjectCarousel.tsx
-│   ├── content/              # Content data
-│   │   ├── home.tsx          # Stats, services
-│   │   ├── project.tsx       # Project data
-│   │   ├── skills.tsx        # Skills categories
-│   │   └── routes.tsx        # Route configuration
-│   ├── layout/               # Layout components
-│   │   ├── Header.tsx        # Navigation header
-│   │   └── Footer.tsx        # Footer with social links
-│   ├── pages/                # Page components
-│   │   ├── Index.tsx         # Home page
-│   │   ├── About.tsx         # About page
-│   │   ├── Projects.tsx      # Projects showcase
-│   │   ├── Skills.tsx        # Skills grid
-│   │   ├── Experience.tsx    # Career timeline
-│   │   └── Contact.tsx       # Contact form
-│   ├── index.css             # Global styles & theme
-│   ├── App.tsx               # Root component
-│   └── main.tsx              # Entry point
-├── index.html                # HTML template with SEO meta tags
-├── package.json              # Dependencies
-├── tsconfig.json             # TypeScript configuration
-├── tailwind.config.ts        # Tailwind configuration
-└── vite.config.ts            # Vite configuration
-```
-
----
-
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ (recommended: Node.js 22)
+- Node.js 20.19+ or 22.12+
 - npm or yarn
 
 ### Installation
@@ -145,7 +100,7 @@ sanjay-portfolio-master/
 
    ```bash
    git clone https://github.com/sanju1098/sanjay-portfolio.git
-   cd sanjay-portfolio-master
+   cd sanjay-portfolio
    ```
 
 2. **Install dependencies:**
@@ -197,13 +152,8 @@ GitHub Actions workflow (`.github/workflows/portfolio.yml`) runs on:
 2. Setup Node.js 22
 3. Install dependencies
 4. Build project
-5. Run linting
 
----
-
-## License
-
-MIT License - feel free to use this portfolio as inspiration or template for your own projects.
+The workflow builds the project; run linting locally with `npm run lint`.
 
 ---
 

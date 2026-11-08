@@ -60,7 +60,7 @@ export const skillCategories = [
     title: "Frontend Development",
     icon: <Globe className="w-8 h-8 text-blue-500" />,
     description:
-      "Primary expertise: Building modern, performant interfaces built with the React ecosystem, design systems, and solid state and form handling",
+      "Primary expertise: Building modern interfaces with the React ecosystem, design systems, and reliable state and form handling.",
     skills: [
       { name: "React.js", icon: <ReactIcon /> },
       { name: "Next.js", icon: <NextJSIcon /> },
@@ -136,7 +136,7 @@ export const skillCategories = [
       "Version control, package managers, design tools, and content platforms",
     skills: [
       { name: "Git & GitHub", icon: <GitIcon /> },
-      { name: "Npm", icon: <NpmIcon /> },
+      { name: "npm", icon: <NpmIcon /> },
       { name: "Yarn", icon: <YarnIcon /> },
       { name: "Pnpm", icon: <PnpmIcon /> },
       { name: "Postman", icon: <PostmanIcon /> },

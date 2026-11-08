@@ -9,10 +9,10 @@ import {
 import { projects } from "./project";
 
 export const stats = [
-  { label: "Role", value: "Senior Experience Engineer" },
-  { label: "Focus", value: "Frontend Architecture & Design Systems" },
-  { label: "Latest Project", value: projects[0].name },
-  { label: "Currently Exploring", value: "AI-Powered Product Development" },
+  { label: "Role", value: "Senior Experience Engineer, Publicis Sapient" },
+  { label: "Focus", value: "Design systems, accessibility, performance" },
+  { label: "Featured Project", value: projects[0].name },
+  { label: "Currently Exploring", value: "Backend and AI product development" },
 ];
 
 export const services = [
@@ -20,36 +20,36 @@ export const services = [
     icon: <Code className="text-primary" size={24} />,
     title: "Frontend Development",
     description:
-      "Building responsive, accessible React, Next.js, and TypeScript applications with micro-frontends, component-driven development, Storybook, Figma integration, and server-side rendering.",
-  },
-  {
-    icon: <Server className="text-primary" size={24} />,
-    title: "Backend Development",
-    description:
-      "Building RESTful APIs with Node.js, Express, MongoDB, Redis, Docker containerization, and NGINX. Experienced with API design, database management, and secure authentication patterns.",
-  },
-  {
-    icon: <Sparkles className="text-primary" size={24} />,
-    title: "AI-Powered Applications",
-    description:
-      "Integrating Vercel AI SDK, Gemini, Claude, and GitHub Copilot to build AI-driven features, chatbots, and intelligent product experiences with LLM-based APIs and prompt engineering.",
-  },
-  {
-    icon: <Layers className="text-primary" size={24} />,
-    title: "Technical Architecture",
-    description:
-      "Designing scalable micro-frontends, component libraries, and application architecture with TanStack Query for data fetching, Redux Toolkit for state management, and code splitting for performance.",
+      "Building responsive, server-rendered interfaces with React, Next.js, and TypeScript, from validated multi-step forms to role-based protected routes.",
   },
   {
     icon: <Paintbrush className="text-primary" size={24} />,
-    title: "UI/UX & Design Systems",
+    title: "Design Systems & UI Engineering",
     description:
-      "Crafting WCAG-compliant reusable component libraries, building design systems with Tailwind CSS, ShadCN UI, Material UI, and Styled Components. Adopted across multiple engineering teams with comprehensive Storybook documentation.",
+      "Building reusable component libraries and documenting patterns in Storybook, with ShadCN UI, Material UI, Tailwind CSS, and Styled Components.",
+  },
+  {
+    icon: <Layers className="text-primary" size={24} />,
+    title: "Frontend Architecture",
+    description:
+      "Structuring apps for maintainability with modular components, TanStack Query for server state, Redux Toolkit for client state, and documented architecture decisions.",
   },
   {
     icon: <ShieldCheck className="text-primary" size={24} />,
-    title: "Testing & Performance",
+    title: "Accessibility, Testing & Performance",
     description:
-      "Writing comprehensive unit tests with Jest and React Testing Library, maintaining high quality gates in GitHub Actions CI/CD. Optimizing Core Web Vitals, improving Lighthouse performance scores through lazy loading, code splitting, and image optimization.",
+      "Accessibility work verified with NVDA and VoiceOver, Jest and React Testing Library tests behind SonarQube quality gates, and faster loads through code splitting and lazy loading.",
+  },
+  {
+    icon: <Server className="text-primary" size={24} />,
+    title: "Backend Foundations",
+    description:
+      "Building Node.js and Express APIs and working with authentication, including Microsoft Entra ID SSO.",
+  },
+  {
+    icon: <Sparkles className="text-primary" size={24} />,
+    title: "AI Product Integrations",
+    description:
+      "Building streaming conversational interfaces with the Vercel AI SDK and LLM APIs, including AstraMind, a RAG PDF chatbot using Gemini and pgvector.",
   },
 ];
