@@ -87,6 +87,7 @@ const Projects: React.FC = React.memo(() => {
 
       <section id="projects" className="px-6 pb-20 pt-8">
         <div className="mx-auto max-w-7xl">
+          <h2 className="sr-only">Featured Projects</h2>
           <div className="space-y-6">
             {projects.map(p => {
               const displayImages =
