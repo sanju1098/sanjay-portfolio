@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:image="http://www.sitemaps.org/schemas/sitemap/0.92">
+  <!-- Homepage -->
+  <url>
+    <loc>https://sanjaysr.vercel.app/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sanjaysr.vercel.app/logo.svg</image:loc>
+      <image:title>Sanjay.SR Portfolio</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://sanjaysr.vercel.app/about</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects Page -->
+  <url>
+    <loc>https://sanjaysr.vercel.app/projects</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Skills Page -->
+  <url>
+    <loc>https://sanjaysr.vercel.app/skills</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Experience Page -->
+  <url>
+    <loc>https://sanjaysr.vercel.app/experience</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://sanjaysr.vercel.app/contact</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Project: AstraMind - RAG PDF Chatbot -->
+  <url>
+    <loc>https://chatuuu-ai.vercel.app/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project: Real-Time Chat Application -->
+  <url>
+    <loc>https://github.com/sanju1098/real-time-chat-fullstack</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Project: PromptStack -->
+  <url>
+    <loc>https://prompt-stack-ai.vercel.app</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project: Incident Management System -->
+  <url>
+    <loc>https://github.com/sanju1098/incident-management-system</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Project: Next Auth App -->
+  <url>
+    <loc>https://github.com/sanju1098/next-auth-app</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Project: Chatuuu -->
+  <url>
+    <loc>https://chatuuu-ai.vercel.app/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project: AI Studio Verse -->
+  <url>
+    <loc>https://ai-studio-verse.vercel.app</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project: TravelGenie.AI -->
+  <url>
+    <loc>https://travel-genie-ai-gem.vercel.app</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Project: BookTheShow -->
+  <url>
+    <loc>https://booktheshow.vercel.app</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Project: sleep-with-delay (npm package) -->
+  <url>
+    <loc>https://www.npmjs.com/package/sleep-with-delay</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Project: Weather Forecast -->
+  <url>
+    <loc>https://weather-forecast-vui.vercel.app</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
