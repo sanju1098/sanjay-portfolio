@@ -58,7 +58,7 @@ import {
 export const skillCategories = [
   {
     title: "Frontend Development",
-    icon: <Globe className="w-8 h-8 text-blue-500" />,
+    icon: <Globe className="h-8 w-8 text-blue-500" />,
     description:
       "Primary expertise: Building modern interfaces with the React ecosystem, design systems, and reliable state and form handling.",
     skills: [
@@ -84,7 +84,7 @@ export const skillCategories = [
 
   {
     title: "Backend Development",
-    icon: <Server className="w-8 h-8 text-green-600" />,
+    icon: <Server className="h-8 w-8 text-green-600" />,
     description:
       "Secondary expertise: Server-side development with Node.js, API design, and data stores",
     skills: [
@@ -98,7 +98,7 @@ export const skillCategories = [
 
   {
     title: "Quality & Performance",
-    icon: <FlaskConical className="w-8 h-8 text-indigo-500" />,
+    icon: <FlaskConical className="h-8 w-8 text-indigo-500" />,
     description:
       "Testing, code quality, accessibility standards, and performance optimization",
     skills: [
@@ -116,7 +116,7 @@ export const skillCategories = [
 
   {
     title: "DevOps & Build Tools",
-    icon: <Rocket className="w-8 h-8 text-orange-500" />,
+    icon: <Rocket className="h-8 w-8 text-orange-500" />,
     description:
       "CI/CD pipelines, containerization, and build tooling for reliable delivery",
     skills: [
@@ -131,7 +131,7 @@ export const skillCategories = [
 
   {
     title: "Tools & Platforms",
-    icon: <Wrench className="w-8 h-8 text-yellow-500" />,
+    icon: <Wrench className="h-8 w-8 text-yellow-500" />,
     description:
       "Version control, package managers, design tools, and content platforms",
     skills: [
@@ -146,7 +146,7 @@ export const skillCategories = [
 
   {
     title: "AI Application Development",
-    icon: <Bot className="w-8 h-8 text-purple-500" />,
+    icon: <Bot className="h-8 w-8 text-purple-500" />,
     description:
       "LLM-powered features and AI-assisted development with modern SDKs and coding assistants",
     skills: [

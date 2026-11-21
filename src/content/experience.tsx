@@ -22,7 +22,7 @@ export const workExperiences = [
     ],
   },
   {
-    company: "Morgan Stanley (Contract via Russell Tobin Associates)",
+    company: "Morgan Stanley (via Russell Tobin)",
     logo: "https://res.cloudinary.com/dwsalphhy/image/upload/v1769932884/RTLogo_zwlsuh.jpg",
     role: "Senior Application Development Engineer",
     timeline: "May 2025 - Sep 2025",

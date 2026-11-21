@@ -1,50 +1,79 @@
-import { Github, Linkedin, Mail } from "lucide-react";
-
-const footerLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com/sanju1098",
-    icon: Github,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/sanjay-kumar-s-r/",
-    icon: Linkedin,
-  },
-  {
-    label: "Email",
-    href: "mailto:sanjaykumar.sr1011@gmail.com",
-    icon: Mail,
-  },
-];
+import { EMAIL, footerLinks } from "@/content/layout";
+import { ArrowUp, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  return (
-    <footer className="border-t border-hairline bg-panel/40 px-6 py-8">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
-        <nav aria-label="Social links" className="flex items-center gap-2">
-          {footerLinks.map(({ label, href, icon: Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target={label === "Email" ? undefined : "_blank"}
-              rel={label === "Email" ? undefined : "noopener noreferrer"}
-              aria-label={label}
-              className="inline-flex size-9 items-center justify-center rounded-lg text-muted-foreground ring-1 ring-border transition-colors hover:bg-secondary hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-              <Icon className="size-4" aria-hidden />
-            </a>
-          ))}
-        </nav>
+  const scrollToTop = () => {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
-        <p className="text-sm text-muted-foreground">
-          Copyright © {currentYear}{" "}
-          <span className="font-medium text-card-foreground">
-            Sanjay Kumar S R
-          </span>
-          . All rights reserved.
-        </p>
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  };
+
+  return (
+    <footer className="border-t border-border bg-panel/40 px-6 pt-14 pb-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 md:grid-cols-2">
+          <div>
+            <p className="font-display text-2xl font-semibold tracking-tight text-card-foreground">
+              Sanjay<span className="text-accent">.</span>SR
+            </p>
+            <p className="mt-3 max-w-[40ch] text-sm leading-relaxed text-muted-foreground">
+              Senior frontend engineer building accessible, scalable interfaces.
+            </p>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="mt-5 inline-flex items-center gap-2 font-mono text-sm text-card-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent">
+              <Mail className="size-4" aria-hidden />
+              {EMAIL}
+            </a>
+          </div>
+
+          <nav aria-label="Social links" className="md:justify-self-end">
+            <ul className="mt-4 grid-cols-2 space-y-2.5 gap-x-6">
+              <p className="label-mono">Elsewhere</p>
+              {footerLinks.map(({ name, href, icon: Icon }) => (
+                <li key={name}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2.5 text-sm transition-colors hover:text-foreground">
+                    <Icon
+                      className="size-4 transition-colors group-hover:text-accent"
+                      aria-hidden
+                    />
+                    {name}
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        <div className="mt-4 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-center sm:flex-row sm:text-left">
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} Sanjay Kumar S R
+          </p>
+
+          <p className="font-mono text-xs text-muted-foreground">
+            Built with React, TypeScript, and Tailwind CSS
+          </p>
+
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="group flex items-center justify-center gap-1 font-mono text-sm! text-primary uppercase transition-all duration-300 hover:border-accent/40 hover:text-accent">
+            Back to top
+            <ArrowUp
+              className="size-5 transition-transform duration-300 group-hover:-translate-y-1"
+              aria-hidden
+            />
+          </button>
+        </div>
       </div>
     </footer>
   );

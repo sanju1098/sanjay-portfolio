@@ -42,8 +42,12 @@ import { CgLoadbarDoc } from "react-icons/cg";
 import { TbApi, TbGitFork } from "react-icons/tb";
 import { MdSpeed } from "react-icons/md";
 import { GiTestTubes } from "react-icons/gi";
-import { Accessible } from "@mui/icons-material";
-import { ClipboardList, Package, ShieldCheck } from "lucide-react";
+import {
+  ClipboardList,
+  Package,
+  ShieldCheck,
+  Accessibility,
+} from "lucide-react";
 
 export const JavaScriptIcon = (props: any) => (
   <SiJavascript size={35} color="#F7DF1E" {...props} />
@@ -191,7 +195,7 @@ export const RollupIcon = (props: any) => (
   <Package size={35} color="#dc3336" {...props} />
 );
 export const AccessibilityIcon = (props: any) => (
-  <Accessible sx={{ fontSize: "35px", color: "#0f5f9f" }} {...props} />
+  <Accessibility size={35} color="#0f5f9f" {...props} />
 );
 export const ClaudeIcon = (props: any) => (
   <svg

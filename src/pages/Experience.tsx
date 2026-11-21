@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { LoaderCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { workExperiences } from "@/content/experience";
+import {
+  Card,
+  CardContent,
+  AccentLine,
+  SectionHeader,
+} from "@/components/ui/card";
 
 const Experience: React.FC = React.memo(() => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [loadedImageSrcs, setLoadedImageSrcs] = useState<Set<string>>(
-    () => new Set(),
-  );
+  // const [loadedImageSrcs, setLoadedImageSrcs] = useState<Set<string>>(
+  //   () => new Set(),
+  // );
 
-  const markImageLoaded = (src: string) => {
-    setLoadedImageSrcs(previous =>
-      previous.has(src) ? previous : new Set(previous).add(src),
-    );
-  };
+  // const markImageLoaded = (src: string) => {
+  //   setLoadedImageSrcs(previous =>
+  //     previous.has(src) ? previous : new Set(previous).add(src),
+  //   );
+  // };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,148 +41,187 @@ const Experience: React.FC = React.memo(() => {
 
   return (
     <>
-      <section className="relative overflow-hidden px-6 pb-16 pt-32 md:pb-20 md:pt-44">
-        <div
-          className="pointer-events-none absolute inset-0 grid-field"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-130 glow-accent"
-          aria-hidden
-        />
-
-        <div className="relative mx-auto max-w-7xl rise">
-          <h1 className="mt-6 max-w-[18ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-6xl">
-            Professional experience
-          </h1>
-
-          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            5+ years building frontend for enterprise, airline, and cruise
-            products: accessible, fast, and designed to be reused.
-          </p>
+      <section className="relative px-6 pt-32 pb-14 md:pt-40 md:pb-20">
+        <div className="rise mx-auto max-w-7xl">
+          <SectionHeader
+            label="CAREER / PROFESSIONAL JOURNEY"
+            heading="A journey through"
+            headingHighlight=" engineering."
+            subtext="Over 5 years of professional experience building and evolving digital products across enterprise, airline, and cruise domains. From crafting scalable frontend architectures to collaborating across teams, each role has shaped how I approach engineering challenges and product development."
+          />
         </div>
       </section>
 
-      <section id="experience" className="px-6 pb-20 pt-10 md:pb-24 md:pt-14">
+      <section
+        id="experience"
+        className="px-6 pb-24"
+        aria-labelledby="experience-heading">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
-              <h2 className="max-w-[12ch] text-balance font-display text-3xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-4xl">
-                Career so far
-              </h2>
-              <nav aria-label="Jump to role" className="mt-8 hidden lg:block">
-                <ul className="border-l border-border">
-                  {workExperiences.map((exp, index) => (
-                    <li key={`nav-${exp.company}-${index}`}>
-                      <a
-                        href={`#role-${index}`}
-                        aria-current={
-                          activeIndex === index ? "true" : undefined
-                        }
-                        className={`-ml-px block border-l-2 py-2 pl-4 text-sm transition-colors ${
-                          activeIndex === index
-                            ? "border-accent font-medium text-card-foreground"
-                            : "border-transparent text-muted-foreground hover:text-card-foreground"
-                        }`}>
-                        {exp.company}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
+              <Card variant="panel" padding="lg">
+                <AccentLine />
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-xs tracking-[0.18em] text-accent uppercase">
+                    OVERVIEW
+                  </span>
+                  <span className="h-px w-8 bg-border" aria-hidden />
+                </div>
+
+                <h2
+                  id="experience-heading"
+                  className="mt-5 max-w-[12ch] font-display font-bold tracking-tight text-card-foreground"
+                  style={{
+                    fontSize: "clamp(1.75rem, 2.5vw + 0.5rem, 2.75rem)",
+                    lineHeight: "1.05",
+                  }}>
+                  Career so far.
+                </h2>
+
+                <p className="mt-4 max-w-sm text-sm leading-6 text-muted-foreground">
+                  A progression of roles, teams, and challenges shaping how I
+                  approach product engineering.
+                </p>
+
+                <nav aria-label="Jump to role" className="mt-8 hidden lg:block">
+                  <ul className="border-l border-border">
+                    {workExperiences.map((exp, index) => (
+                      <li key={`nav-${exp.company}-${index}`}>
+                        <a
+                          href={`#role-${index}`}
+                          aria-current={
+                            activeIndex === index ? "location" : undefined
+                          }
+                          className={`-ml-px flex items-center justify-between border-l-2 py-3 pr-3 pl-4 text-sm transition-all duration-300 ${
+                            activeIndex === index
+                              ? "border-accent text-card-foreground"
+                              : "border-transparent text-muted-foreground hover:text-card-foreground"
+                          }`}>
+                          <span>{exp.company}</span>
+                          <ArrowUpRight
+                            className={`size-3.5 transition-all duration-300 ${
+                              activeIndex === index
+                                ? "translate-x-0 text-accent opacity-100"
+                                : "-translate-x-1 opacity-0"
+                            }`}
+                            aria-hidden
+                          />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </Card>
             </div>
           </div>
 
-          <ol className="space-y-10 lg:col-span-8">
+          <ol className="space-y-6 lg:col-span-8">
             {workExperiences.map((exp, index) => {
               const company = exp.company;
               const isCurrent = index === 0;
-              const isImageLoading = !loadedImageSrcs.has(exp.logo);
+              // const isImageLoading = !loadedImageSrcs.has(exp.logo);
+
               return (
                 <li
                   key={`${company}-${index}`}
                   id={`role-${index}`}
                   data-role-item
                   data-index={index}
-                  className="relative scroll-mt-28 border-b border-l border-border/60 pb-8 pl-7 sm:pl-8">
-                  <span
-                    className={`absolute -left-1.25 top-1.5 size-2.5 rounded-full ${
-                      isCurrent
-                        ? "bg-accent ring-4 ring-accent/20"
-                        : "bg-border"
-                    }`}
-                    aria-hidden
-                  />
+                  className="group relative scroll-mt-28">
+                  <Card variant="interactive" padding="lg" className="relative">
+                    <div className="flex items-center justify-between gap-3 border-b border-border bg-background px-4 py-3">
+                      <div className="flex items-center gap-3">
+                        <span className="flex gap-1.5" aria-hidden>
+                          <span className="size-2 rounded-full bg-muted-foreground/40 transition-colors duration-300 group-hover:bg-accent" />
+                          <span className="size-2 rounded-full bg-muted-foreground/40 transition-colors duration-300 group-hover:bg-accent" />
+                          <span className="size-2 rounded-full bg-accent" />
+                        </span>
 
-                  <div className="flex items-start gap-3.5">
-                    <span
-                      className="relative block size-11 shrink-0 rounded-sm border border-border bg-card p-1"
-                      aria-busy={isImageLoading}>
-                      {isImageLoading && (
-                        <span
-                          className="absolute inset-0 z-10 flex items-center justify-center bg-background/60"
-                          role="status"
-                          aria-label="Loading image">
-                          <LoaderCircle
-                            className="size-5 animate-spin text-accent"
-                            aria-hidden
-                          />
+                        <span className="font-mono text-[11px] tracking-wide text-muted-foreground">
+                          {exp.timeline}
+                        </span>
+                      </div>
+
+                      {isCurrent && (
+                        <span className="inline-flex items-center rounded-md border border-accent/20 bg-accent/10 px-2.5 py-0.5 font-mono text-[10px] font-medium text-accent">
+                          CURRENT
                         </span>
                       )}
-                      <img
-                        ref={image => {
-                          if (image?.complete && image.naturalWidth > 0) {
-                            markImageLoaded(exp.logo);
-                          }
-                        }}
-                        src={exp.logo}
-                        alt={`${company} logo`}
-                        width={44}
-                        height={44}
-                        loading="lazy"
-                        decoding="async"
-                        onLoad={() => markImageLoaded(exp.logo)}
-                        onError={() => markImageLoaded(exp.logo)}
-                        className={`block size-full object-contain transition-opacity duration-200 ${
-                          isImageLoading ? "opacity-0" : "opacity-100"
-                        }`}
-                      />
-                    </span>
-                    <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <h3 className="text-lg font-medium leading-tight text-card-foreground md:text-2xl">
-                          {exp.role}
-                        </h3>
-                        {isCurrent && (
-                          <span className="chip-accent">Current</span>
-                        )}
-                      </div>
-                      <p className="mt-0.5 font-mono text-base text-accent">
-                        {company}
-                      </p>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {exp.timeline}
-                        <span className="mx-2 text-border" aria-hidden>
-                          |
-                        </span>
-                        {exp.location}
-                      </p>
                     </div>
-                  </div>
 
-                  <div className="mt-5">
-                    <ul
-                      aria-label={`Key contributions at ${company}`}
-                      className="list-outside list-disc space-y-2.5 pl-5 text-base marker:text-accent">
-                      {exp.responsibilities.map((responsibility, i) => (
-                        <li
-                          key={`${i}-${responsibility}`}
-                          className="text-pretty leading-normal text-muted-foreground">
-                          {responsibility}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    <CardContent className="flex-1">
+                      <div className="flex items-start gap-4 sm:gap-5">
+                        {/* <span
+                          className="relative block size-12 shrink-0 overflow-hidden rounded-lg border border-border bg-background p-1.5 sm:size-14"
+                          aria-busy={isImageLoading}>
+                          {isImageLoading && (
+                            <span
+                              className="absolute inset-0 z-10 flex items-center justify-center bg-background/70"
+                              role="status">
+                              <LoaderCircle
+                                className="size-5 animate-spin text-accent"
+                                aria-hidden
+                              />
+                              <span className="sr-only">
+                                Loading company logo
+                              </span>
+                            </span>
+                          )}
+
+                          <img
+                            ref={image => {
+                              if (image?.complete && image.naturalWidth > 0) {
+                                markImageLoaded(exp.logo);
+                              }
+                            }}
+                            src={exp.logo}
+                            alt={`${company} logo`}
+                            width={44}
+                            height={44}
+                            loading="lazy"
+                            decoding="async"
+                            onLoad={() => markImageLoaded(exp.logo)}
+                            onError={() => markImageLoaded(exp.logo)}
+                            className={`block size-full object-contain transition-opacity duration-300 ${
+                              isImageLoading ? "opacity-0" : "opacity-100"
+                            }`}
+                          />
+                        </span> */}
+
+                        <div className="min-w-0 flex-1 pb-3">
+                          <h3 className="font-display text-xl leading-tight font-semibold tracking-tight text-card-foreground sm:text-2xl">
+                            {exp.role}
+                          </h3>
+
+                          <p className="mt-1.5 text-base font-medium text-accent">
+                            {company}
+                          </p>
+
+                          <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] leading-relaxed text-muted-foreground sm:text-xs">
+                            {exp.location}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="border-t border-border py-3">
+                        <p className="mb-2 font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
+                          Key contributions
+                        </p>
+
+                        <ul
+                          aria-label={`Key contributions at ${company}`}
+                          className="list-outside list-disc space-y-3 pl-5 marker:text-accent">
+                          {exp.responsibilities.map((responsibility, i) => (
+                            <li
+                              key={`${i}-${responsibility}`}
+                              className="text-sm leading-5 text-muted-foreground">
+                              {responsibility}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </li>
               );
             })}

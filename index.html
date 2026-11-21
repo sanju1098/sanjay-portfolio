@@ -2,17 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="theme-color" content="#059669" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
 
-    <title>
-      Sanjay.SR | Senior Frontend Engineer - React, TypeScript, Next.js
-    </title>
-    <meta
-      name="title"
-      content="Sanjay.SR | Senior Frontend Engineer - React, TypeScript, Next.js" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("sanjay-theme");
+          var light = stored
+            ? stored === "light"
+            : !matchMedia("(prefers-color-scheme: dark)").matches;
+          var list = document.documentElement.classList;
+          list.toggle("light", light);
+          list.toggle("dark", !light);
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", light ? "#f7f7f2" : "#111315");
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+  html { background: #f7f7f2; }
+  html.dark { background: #111315; }
+</style>
+
+    <title>Sanjay Kumar S R | Senior Frontend Engineer</title>
     <meta
       name="description"
       content="Senior Frontend Engineer building accessible React, TypeScript, and Next.js experiences, design systems, and frontend features." />
@@ -22,52 +37,94 @@
     <link rel="canonical" href="https://sanjaysr.vercel.app/" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sanjay Kumar S R" />
     <meta property="og:url" content="https://sanjaysr.vercel.app/" />
     <meta
       property="og:title"
-      content="Sanjay.SR | Senior Frontend Engineer - React, TypeScript, Next.js" />
+      content="Sanjay Kumar S R | Senior Frontend Engineer" />
     <meta
       property="og:description"
       content="Senior Frontend Engineer building accessible React, TypeScript, and Next.js experiences, design systems, and frontend features." />
-    <meta property="og:image" content="https://sanjaysr.vercel.app/logo.svg" />
+    <meta
+      property="og:image"
+      content="https://sanjaysr.vercel.app/og-image.svg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Sanjay Kumar S R, Senior Frontend Engineer" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://sanjaysr.vercel.app/" />
     <meta
       name="twitter:title"
-      content="Sanjay.SR | Senior Frontend Engineer - React, TypeScript, Next.js" />
+      content="Sanjay Kumar S R | Senior Frontend Engineer" />
     <meta
       name="twitter:description"
-      content="Senior Frontend Engineer specializing in React, TypeScript, Next.js, design systems, and accessible product interfaces." />
-    <meta name="twitter:image" content="https://sanjaysr.vercel.app/logo.svg" />
+      content="Senior Frontend Engineer building accessible React, TypeScript, and Next.js experiences, design systems, and frontend features." />
+    <meta
+      name="twitter:image"
+      content="https://sanjaysr.vercel.app/og-image.svg" />
 
-    <!-- JSON-LD Schema Markup -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Sanjay Kumar S R",
-        "description": "Senior Frontend Engineer building accessible React, TypeScript, and Next.js experiences, design systems, and frontend features.",
-        "url": "https://sanjaysr.vercel.app/",
-        "image": "https://sanjaysr.vercel.app/logo.svg",
-        "jobTitle": "Senior Frontend Engineer",
-        "worksFor": "Publicis Sapient",
-        "email": "sanjaykumar.sr1011@gmail.com",
-        "sameAs": [
-          "https://github.com/sanju1098",
-          "https://www.linkedin.com/in/sanjay-kumar-s-r/"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Sanjay Kumar S R",
+            "url": "https://sanjaysr.vercel.app/",
+            "description": "Senior Frontend Engineer building accessible React, TypeScript, and Next.js experiences, design systems, and frontend features.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://sanjaysr.vercel.app/?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Person",
+            "name": "Sanjay Kumar S R",
+            "description": "Senior Frontend Engineer building accessible React, TypeScript, and Next.js experiences, design systems, and frontend features.",
+            "url": "https://sanjaysr.vercel.app/",
+            "image": "https://sanjaysr.vercel.app/og-image.svg",
+            "jobTitle": "Senior Frontend Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Publicis Sapient"
+            },
+            "email": "sanjaykumar.sr1011@gmail.com",
+            "sameAs": [
+              "https://github.com/sanju1098",
+              "https://www.linkedin.com/in/sanjay-kumar-s-r/",
+              "https://stackblitz.com/@sanju1098"
+            ]
+          }
         ]
       }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx" defer></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,3 +1,6 @@
+import { Zap } from "lucide-react";
+import { footerLinks } from "./layout";
+
 export const workAchievements = [
   {
     name: "Silver Badge - Espresa",
@@ -74,5 +77,14 @@ export const certificates = [
     redirectLink: "https://www.hackerrank.com/profile/sanjay__kumar",
     buttonName: "View Certificates",
     issueDate: "Sep 08, 2025",
+  },
+];
+
+export const socialLinks = [
+  ...footerLinks,
+  {
+    name: "StackBlitz",
+    href: "https://stackblitz.com/@sanju1098",
+    icon: Zap,
   },
 ];
