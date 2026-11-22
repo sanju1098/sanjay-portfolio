@@ -95,7 +95,8 @@ const NotFound = () => {
             </span>
           </div>
           <pre className="text-xs leading-relaxed">
-            {`$ router.navigate("${location.pathname}")\n✗ Route not found\n  at AppRouter.matchRoutes\n  at LazyRoute.load\n\nHint: Check the URL or try one of the links below.`}
+            {/* {`$ router.navigate("${location.pathname}")\n✗ Route not found\n  at AppRouter.matchRoutes\n  at LazyRoute.load\n\nHint: Check the URL or try one of the links below.`} */}
+            Check the URL or try one of the links below
           </pre>
         </div>
 
