@@ -36,11 +36,11 @@ class ErrorBoundary extends Component<Props, State> {
       return (
         <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-6 py-20">
           <div
-            className="pointer-events-none absolute inset-0 grid-field opacity-60"
+            className="grid-field pointer-events-none absolute inset-0 opacity-60"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute inset-x-0 top-0 h-72 glow-accent"
+            className="glow-accent pointer-events-none absolute inset-x-0 top-0 h-72"
             aria-hidden
           />
 
@@ -50,7 +50,7 @@ class ErrorBoundary extends Component<Props, State> {
             </div>
 
             <p className="label-mono mt-6">System error</p>
-            <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-gradient md:text-5xl">
+            <h1 className="text-gradient mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
               Something went wrong
             </h1>
             <p className="mt-4 text-muted-foreground md:text-lg">

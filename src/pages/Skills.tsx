@@ -1,97 +1,102 @@
 import React from "react";
 import { skillCategories } from "@/content/skills";
-
-const WIDE = {
-  span: "lg:col-span-7",
-  cols: "grid-cols-2 sm:grid-cols-3",
-};
-
-const NARROW = {
-  span: "lg:col-span-5",
-  cols: "grid-cols-2",
-};
-
-const layouts = [
-  WIDE, // Frontend
-  NARROW, // Backend
-  WIDE, // Quality & Performance
-  NARROW, // DevOps & Build Tools
-  WIDE, // Tools & Platforms
-  NARROW, // AI Application Development
-];
-
-const fallback = { span: "lg:col-span-12", cols: "grid-cols-2 sm:grid-cols-4" };
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  AccentLine,
+  SectionHeader,
+} from "@/components/ui/card";
 
 const Skills: React.FC = React.memo(() => {
   return (
     <>
-      <section className="relative overflow-hidden px-6 pb-16 pt-32 md:pb-20 md:pt-44">
-        <div
-          className="pointer-events-none absolute inset-0 grid-field"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-130 glow-accent"
-          aria-hidden
-        />
-
-        <div className="relative mx-auto max-w-7xl rise">
-          <h1 className="mt-6 max-w-[18ch] font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-6xl">
-            Tools for thoughtful shipping.
-          </h1>
-
-          <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            Frontend is my core. The backend and AI skills here are the ones I’m
-            growing alongside it.
-          </p>
+      <section className="relative px-6 pt-32 pb-14 md:pt-40 md:pb-20">
+        <div className="rise relative mx-auto max-w-7xl">
+          <SectionHeader
+            label="TECHNICAL TOOLKIT / CAPABILITIES"
+            heading="The tools behind"
+            headingHighlight=" the work."
+            subtext="A growing toolkit shaped by building digital products. Strongest in frontend engineering, with expanding experience across backend development, quality, infrastructure, and AI-powered applications."
+            action={
+              <div className="flex flex-col gap-5 lg:flex-row lg:items-end">
+                <div className="flex items-center gap-3 font-mono text-xs tracking-wide text-muted-foreground">
+                  <span className="text-card-foreground">
+                    {String(skillCategories.length).padStart(2, "0")}
+                  </span>
+                  <span className="h-px w-8 bg-border" aria-hidden />
+                  <span>Skill categories</span>
+                </div>
+                <div className="flex flex-wrap gap-2 lg:justify-end">
+                  <span className="inline-flex items-center rounded-md border border-accent/30 bg-accent/10 px-3 py-2 font-mono text-[11px] tracking-wide text-accent">
+                    Frontend focused
+                  </span>
+                  <span className="inline-flex items-center rounded-md border border-border bg-secondary/50 px-3 py-2 font-mono text-[11px] tracking-wide text-muted-foreground">
+                    Full-stack growth
+                  </span>
+                </div>
+              </div>
+            }
+          />
         </div>
       </section>
 
-      <section id="skills" className="px-6 pb-20 pt-4">
+      <section
+        id="skills"
+        className="px-6 pb-24"
+        aria-labelledby="skills-heading">
         <div className="mx-auto max-w-7xl">
+          <h2 id="skills-heading" className="sr-only">
+            Technical skills and tools
+          </h2>
+
           <div className="grid gap-6 lg:grid-cols-12">
             {skillCategories.map((category, index) => {
-              const { span, cols } = layouts[index] ?? fallback;
-
               return (
-                <article
+                <Card
                   key={category.title || index}
-                  className={`group relative overflow-hidden rounded-md bg-panel p-7 ring-1 ring-border/70 panel-hover ${span}`}>
-                  <div
-                    className="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-accent/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
-                    aria-hidden
+                  variant="interactive"
+                  padding="lg"
+                  className="lg:col-span-6 lg:col-start-auto">
+                  <AccentLine />
+                  <CardHeader
+                    title={category.title}
+                    count={`${String(category.skills.length).padStart(2, "0")} ITEMS`}
+                    icon={
+                      <div className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-background text-accent transition-colors duration-300 group-hover:border-accent/40 group-hover:bg-accent/10">
+                        {category.icon}
+                      </div>
+                    }
                   />
+                  <CardContent className="flex flex-1 flex-col">
+                    <p className="max-w-[52ch] text-sm leading-7 text-muted-foreground sm:text-base">
+                      {category.description}
+                    </p>
 
-                  <header className="relative flex items-start gap-4 border-b border-border/60 pb-5">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-sm bg-secondary text-accent ring-1 ring-border/60 transition-colors duration-300 group-hover:ring-accent/40">
-                      {category.icon}
+                    <div className="mt-6 border-t border-border/70 pt-5">
+                      <div className="mb-3 flex items-center justify-between">
+                        <span className="font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
+                          Technologies
+                        </span>
+                      </div>
+
+                      <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                        {category.skills.map(skill => (
+                          <li key={skill.name}>
+                            <div className="group/tile flex h-full min-h-11 items-center gap-2.5 rounded-lg border border-border/70 bg-background px-3 py-2.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/50 hover:bg-secondary/60 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+                              <span className="flex shrink-0 items-center justify-center text-muted-foreground transition-colors duration-200">
+                                {skill.icon}
+                              </span>
+                              <span className="text-sm leading-snug font-medium text-secondary-foreground transition-colors duration-200">
+                                {skill.name}
+                              </span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <div className="min-w-0">
-                      <h2 className="font-display text-xl font-medium text-card-foreground">
-                        {category.title}
-                      </h2>
-                    </div>
-                  </header>
-
-                  <p className="relative mt-5 max-w-[52ch] text-base leading-relaxed text-muted-foreground">
-                    {category.description}
-                  </p>
-
-                  <ul className={`relative mt-6 grid gap-2 ${cols}`}>
-                    {category.skills.map(skill => (
-                      <li key={skill.name}>
-                        <div className="group/tile flex h-full items-center gap-2.5 rounded-sm bg-card px-3 py-2.5 ring-1 ring-border/60 transition-all duration-200 hover:-translate-y-0.5 hover:ring-accent/50">
-                          <span className="shrink-0 text-muted-foreground transition-colors duration-200 group-hover/tile:text-accent">
-                            {skill.icon}
-                          </span>
-                          <span className="text-base font-medium leading-snug text-secondary-foreground transition-colors duration-200 group-hover/tile:text-foreground">
-                            {skill.name}
-                          </span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </article>
+                  </CardContent>
+                </Card>
               );
             })}
           </div>

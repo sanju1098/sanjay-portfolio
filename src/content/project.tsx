@@ -1,5 +1,17 @@
 import { Github, Zap } from "lucide-react";
 
+type Project = {
+  name: string;
+  subtitle: string;
+  description: string;
+  live?: string;
+  liveLabel?: string;
+  repo?: string;
+  images: { src: string; alt: string }[];
+  category?: string[];
+  stack: string[];
+};
+
 export const workProfiles = [
   {
     profileName: "GitHub",
@@ -15,7 +27,7 @@ export const workProfiles = [
   },
 ];
 
-export const projects = [
+export const projects: Project[] = [
   {
     name: "AstraMind – RAG PDF Chatbot",
     subtitle: "Retrieval Augmented Generation",
@@ -54,42 +66,42 @@ export const projects = [
       "LangChain",
     ],
   },
-  {
-    name: "Real-Time Chat Application",
-    subtitle: "Real-time messaging platform",
-    repo: "https://github.com/sanju1098/real-time-chat-fullstack",
-    images: [
-      {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788884254/d02d136f-9bbb-4796-bbe6-565df5af1fef.png",
-        alt: "Chat App - Home Page",
-      },
-      {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788883859/1097f58c-c84d-4b71-928a-b6a32a61a7fe.png",
-        alt: "Chat App - Typing Message",
-      },
-      {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788883727/770a20f4-555a-4b71-81e0-c9922dff106d.png",
-        alt: "Chat App - Login Page",
-      },
-    ],
-    description:
-      "Full-stack real-time chat application supporting one-to-one and group conversations, typing indicators, online presence, delivery and read receipts, JWT authentication, rate limiting, and Redis-powered horizontal Socket.IO scaling.",
-    category: ["Full-Stack", "Node.js", "Express", "Socket.io"],
-    stack: [
-      "React",
-      "Vite",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "Socket.io",
-      "MongoDB",
-      "Mongoose",
-      "Redis",
-      "JWT",
-      "Docker",
-      "GitHub Actions",
-    ],
-  },
+  // {
+  //   name: "Real-Time Chat Application",
+  //   subtitle: "Real-time messaging platform",
+  //   repo: "https://github.com/sanju1098/real-time-chat-fullstack",
+  //   images: [
+  //     {
+  //       src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788884254/d02d136f-9bbb-4796-bbe6-565df5af1fef.png",
+  //       alt: "Chat App - Home Page",
+  //     },
+  //     {
+  //       src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788883859/1097f58c-c84d-4b71-928a-b6a32a61a7fe.png",
+  //       alt: "Chat App - Typing Message",
+  //     },
+  //     {
+  //       src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788883727/770a20f4-555a-4b71-81e0-c9922dff106d.png",
+  //       alt: "Chat App - Login Page",
+  //     },
+  //   ],
+  //   description:
+  //     "Full-stack real-time chat application supporting one-to-one and group conversations, typing indicators, online presence, delivery and read receipts, JWT authentication, rate limiting, and Redis-powered horizontal Socket.IO scaling.",
+  //   category: ["Full-Stack", "Node.js", "Express", "Socket.io"],
+  //   stack: [
+  //     "React",
+  //     "Vite",
+  //     "TypeScript",
+  //     "Node.js",
+  //     "Express.js",
+  //     "Socket.io",
+  //     "MongoDB",
+  //     "Mongoose",
+  //     "Redis",
+  //     "JWT",
+  //     "Docker",
+  //     "GitHub Actions",
+  //   ],
+  // },
   {
     name: "PromptStack",
     subtitle: "AI prompt management platform",
@@ -317,6 +329,7 @@ export const projects = [
     name: "sleep-with-delay",
     subtitle: "TypeScript async utility package",
     live: "https://www.npmjs.com/package/sleep-with-delay",
+    liveLabel: "View on npm",
     repo: "https://github.com/sanju1098/sleep-with-delay",
     images: [
       {

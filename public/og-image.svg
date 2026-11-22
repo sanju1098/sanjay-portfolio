@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7f7f2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eeeee8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c94f2d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bc4220;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+    <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#d1d1c8" stroke-width="0.5" stroke-opacity="0.5"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <!-- Ambient glow -->
+  <ellipse cx="600" cy="280" rx="400" ry="150" fill="url(#accentGradient)" opacity="0.08" filter="blur(80px)" />
+
+  <!-- Content -->
+  <text x="600" y="250" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="64" font-weight="700" fill="#171717" letter-spacing="-1.28px">Sanjay Kumar S R</text>
+  <text x="600" y="320" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="32" font-weight="600" fill="url(#accentGradient)" letter-spacing="-0.64px">Senior Frontend Engineer</text>
+  <text x="600" y="380" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="20" fill="#666660">Building accessible, scalable interfaces with React, TypeScript & Next.js</text>
+
+  <!-- Bottom accent line -->
+  <line x1="400" y1="450" x2="800" y2="450" stroke="url(#accentGradient)" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Tech tags -->
+  <g font-family="DM Mono, monospace" font-size="14" font-weight="500" fill="#666660" letter-spacing="0.18em">
+    <text x="450" y="500" text-anchor="middle" text-transform="uppercase">React</text>
+    <text x="600" y="500" text-anchor="middle" text-transform="uppercase">TypeScript</text>
+    <text x="750" y="500" text-anchor="middle" text-transform="uppercase">Next.js</text>
+  </g>
+
+  <!-- Decorative braces -->
+  <text x="100" y="580" font-family="DM Mono, monospace" font-size="120" font-weight="700" fill="#c94f2d" opacity="0.15">{ }</text>
+  <text x="1000" y="580" font-family="DM Mono, monospace" font-size="120" font-weight="700" fill="#c94f2d" opacity="0.15">{ }</text>
+</svg>

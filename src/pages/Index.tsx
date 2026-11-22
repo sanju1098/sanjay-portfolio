@@ -1,288 +1,375 @@
-import React, { useState } from "react";
+import type { FC } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowDownToLine,
-  ArrowRight,
-  ExternalLink,
-  LoaderCircle,
-} from "lucide-react";
-import { services, stats } from "@/content/home";
+import { Suspense, lazy } from "react";
+import { ArrowDownToLine, ArrowRight, ArrowUpRight } from "lucide-react";
+import { addValuesSection, approach, pillars, services } from "@/content/home";
 import resumeUrl from "@/assets/Resume.pdf";
 import { projects } from "@/content/project";
+import { ProjectCard } from "@/components/project-card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
-const Index: React.FC = React.memo(() => {
-  const [loadedImageSrcs, setLoadedImageSrcs] = useState<Set<string>>(
-    () => new Set(),
-  );
+const exploring = ["Node.js", "Express.js", "MongoDB", "AI Integration"];
 
-  const markImageLoaded = (src: string) => {
-    setLoadedImageSrcs(previous =>
-      previous.has(src) ? previous : new Set(previous).add(src),
-    );
-  };
+const techBadge =
+  "h-7 rounded-md border-accent/20 bg-accent/5 px-3 font-mono text-xs font-normal text-card-foreground";
 
-  return (
-    <>
-      <section className="relative overflow-hidden px-6 pt-32 pb-8 md:pt-44">
-        <div
-          className="pointer-events-none absolute inset-0 grid-field"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-130 glow-accent"
-          aria-hidden
-        />
+// Lazy load heavy visual components to improve initial load time
+const HeroVisual = lazy(() =>
+  import("@/components/hero-visual").then(m => ({ default: m.HeroVisual })),
+);
+const HeroBackdrop = lazy(() =>
+  import("@/components/hero-backdrop").then(m => ({ default: m.HeroBackdrop })),
+);
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="rise">
-            <div className="inline-block">
-              <p className="label-mono mb-2">Sanjay Kumar S R</p>
-            </div>
+const Index: FC = () => (
+  <>
+    {/* Hero */}
+    <section
+      className="relative overflow-hidden px-6 pt-24 pb-12"
+      aria-labelledby="hero-heading">
+      <Suspense fallback={null}>
+        <HeroBackdrop />
+      </Suspense>
 
-            <h1 className="mt-4 max-w-[24ch] text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-card-foreground md:text-6xl">
-              Senior frontend engineer building accessible, scalable interfaces.
-            </h1>
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="rise">
+          <h1
+            id="hero-heading"
+            tabIndex={0}
+            className="mt-6 font-display text-3xl leading-[1.08] font-bold tracking-tight text-card-foreground sm:text-5xl lg:text-[2.6rem] xl:text-[3.4rem]">
+            <span className="block">Frontend engineer</span>
+            <span className="block text-accent">building accessible,</span>
+            <span className="block">scalable interfaces</span>
+          </h1>
 
-            <p className="mt-8 max-w-[62ch] text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-              5+ years building accessible, high-performance web apps in React,
-              TypeScript, and Next.js.
-              <br />
-              At Publicis Sapient, the Cruise Detail Page variant I shipped
-              lifted booking conversion by 27% for P&O Cruises and 18% for
-              Cunard.
-              <br />
-              Earlier: a 75+ component design system used by three teams, and a
-              Lighthouse score taken from 63 to 90+.
-              <br />
-              Now building on the backend and AI side with Node.js, Express, and
-              the Vercel AI SDK.
-            </p>
+          <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-pretty text-muted-foreground md:text-lg">
+            5+ years building accessible, high-performance web apps in React,
+            TypeScript, and Next.js. Now extending into backend and AI with
+            Node.js, Express, and the Vercel AI SDK.
+          </p>
 
-            <div className="mt-10 flex flex-col flex-wrap gap-3 md:flex-row">
-              <a
-                href={resumeUrl}
-                download="Sanjay Kumar S R_Resume.pdf"
-                rel="noreferrer"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-medium text-primary-foreground ring-1 ring-primary transition-all hover:brightness-110 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-                <ArrowDownToLine className="size-4" aria-hidden />
+          <div className="mt-9 flex flex-col flex-wrap gap-4 sm:flex-row">
+            <Button variant="default" asChild className="group">
+              <a href={resumeUrl} download="Sanjay Kumar S R_Resume.pdf">
+                <ArrowDownToLine
+                  className="size-4 transition-transform group-hover:translate-y-0.5"
+                  aria-hidden="true"
+                />
                 Download résumé
               </a>
+            </Button>
 
-              <Link
-                to="/projects"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-border bg-secondary px-6 text-base font-medium text-secondary-foreground transition-all hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+            <Button variant="secondary" asChild className="group">
+              <Link to="/projects">
                 View projects
-                <ArrowRight className="size-4 opacity-70" aria-hidden />
+                <ArrowRight
+                  className="size-4 transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
+            </Button>
+          </div>
+
+          <ul className="mt-12 grid grid-cols-2 gap-4 xl:grid-cols-4">
+            {pillars.map(({ icon: Icon, title, text }) => (
+              <li key={title}>
+                <Icon className="size-6 text-accent" aria-hidden />
+                <p className="mt-2 font-mono text-sm tracking-[0.12em] text-card-foreground uppercase">
+                  {title}
+                </p>
+                <p className="mt-1 text-sm leading-snug text-muted-foreground">
+                  {text}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <Suspense fallback={null}>
+          <HeroVisual />
+        </Suspense>
+      </div>
+    </section>
+
+    {/* Beyond writing code */}
+    <section className="px-6 pt-12 pb-4" aria-labelledby="beyond-heading">
+      <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 md:flex-row md:items-end">
+        <h2
+          id="beyond-heading"
+          className="max-w-3xl font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
+          Beyond writing code.
+          <span className="block text-accent">
+            Building experiences that matter.
+          </span>
+        </h2>
+
+        <p className="max-w-sm text-sm leading-relaxed text-muted-foreground md:text-base">
+          Thoughtful engineering is about understanding the problem, choosing
+          the right tools, and delivering solutions that last.
+        </p>
+      </div>
+    </section>
+
+    {/* Engineering philosophy and development approach */}
+    <section className="px-6 pb-12" aria-labelledby="philosophy-heading">
+      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
+        <div className="relative flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-panel p-7 md:p-10">
+          <div
+            className="pointer-events-none absolute -top-20 -right-20 size-80 rounded-full bg-accent/10 blur-[100px]"
+            aria-hidden
+          />
+
+          <div className="relative">
+            <div className="flex items-center gap-2">
+              <span className="size-2 rounded-full bg-accent" aria-hidden />
+              <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+                Engineering philosophy
+              </span>
             </div>
 
-            <dl className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {stats.map(stat => {
-                return (
-                  <div
-                    key={stat.label}
-                    className="rounded-md border border-border bg-panel p-4 panel-hover">
-                    <dt className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">
-                      {stat.label}
-                    </dt>
-                    <dd className="mt-2 text-base font-medium text-card-foreground">
-                      {stat.value}
-                    </dd>
-                  </div>
-                );
-              })}
-            </dl>
-          </div>
-        </div>
-      </section>
+            <h3
+              id="philosophy-heading"
+              className="mt-5 max-w-xl font-display text-3xl leading-tight font-semibold tracking-tight text-card-foreground md:text-5xl">
+              Good software starts with
+              <span className="text-accent"> good decisions.</span>
+            </h3>
 
-      <section className="px-6 pb-8 pt-4">
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.4fr_0.6fr]">
-          <div className="rounded-md border border-border bg-panel p-7 shadow-panel">
-            <p className="label-mono">Product-first engineering</p>
-            <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
-              Product thinking, frontend craft.
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-              I ship features that are measured, not just built: A/B-tested
-              personalization at Publicis Sapient, and 10+ controlled releases
-              behind feature flags with zero production incidents. I also build
-              the foundations: reusable components, TanStack Query for data,
-              Redux Toolkit for state, and validated multi-step forms.
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+              My approach combines frontend craftsmanship with practical
+              engineering decisions. From structuring reusable React
+              applications to integrating backend services, I focus on building
+              maintainable, reliable and user-focused products.
             </p>
           </div>
 
-          <div className="rounded-md border border-border bg-panel p-7 shadow-panel">
-            <p className="label-mono">Core focus</p>
-            <ul className="mt-5 space-y-3 text-base text-muted-foreground md:text-lg list-disc list-inside marker:text-accent">
-              <li>
-                Design systems that ship 2.5x more tested components per sprint
-              </li>
-              <li>Accessibility: WCAG compliance raised from 50% to 80%</li>
-              <li>Streaming AI interfaces serving 1,000+ daily messages</li>
+          <div className="relative mt-12 border-t border-border pt-6">
+            <p className="font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
+              Currently exploring
+            </p>
+
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {exploring.map(item => (
+                <li key={item}>
+                  <Badge variant="outline" className={techBadge}>
+                    {item}
+                  </Badge>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-      </section>
 
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-7xl">
-          <>
-            <h2 className="font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
-              What I do
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                My core is frontend engineering: React, TypeScript, and Next.js,
-                with design systems, accessibility, and performance built in.
-                I’m extending that into backend and AI work with Node.js,
-                Express, and the Vercel AI SDK.
-              </p>
-            </p>
-          </>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {services.map((service, index) => {
-              return (
-                <article
-                  key={index}
-                  className="rounded-md bg-panel p-7 ring-1 ring-border panel-hover">
-                  <div className="flex size-12 items-center justify-center rounded-sm bg-accent/10 text-accent ring-1 ring-accent/30">
-                    {service.icon}
-                  </div>
-                  <h3 className="mt-6 text-2xl font-medium text-card-foreground">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                    {service.description}
-                  </p>
-                </article>
-              );
-            })}
+        <div className="rounded-xl border border-border bg-background/60 p-7 md:p-9">
+          <div className="flex items-center justify-between">
+            <h3 className="label-mono text-xs">How I approach development</h3>
+            <span className="font-mono text-xs text-accent">
+              {approach.length} steps
+            </span>
           </div>
-        </div>
-      </section>
 
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-4xl">
-                Recent projects
-              </h2>
+          <ol className="mt-2">
+            {approach.map(step => (
+              <li
+                key={step.number}
+                className="flex gap-5 border-b border-border py-5 first:pt-4 last:border-0 last:pb-0">
+                <span className="pt-1 font-mono text-xs text-accent">
+                  {step.number}
+                </span>
+
+                <div className="flex-1">
+                  <h4 className="font-display text-xl font-medium text-card-foreground">
+                    {step.title}
+                  </h4>
+
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    {/* Capabilities */}
+    <section className="px-6 py-12" aria-labelledby="capabilities-heading">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-2xl">
+          <p className="label-mono">Capabilities</p>
+          <h2
+            id="capabilities-heading"
+            className="mt-4 font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
+            From interface to implementation.
+          </h2>
+
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+            I work across the application lifecycle, from translating product
+            requirements into polished interfaces to connecting them with
+            backend services and APIs.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {services.map(service => (
+            <article
+              key={service.title}
+              className="group rounded-xl border border-border bg-panel p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+              <div className="flex size-12 items-center justify-center rounded-lg bg-accent/10 text-accent ring-1 ring-accent/20">
+                {service.icon}
+              </div>
+
+              <h3 className="mt-6 font-display text-xl font-semibold text-card-foreground">
+                {service.title}
+              </h3>
+
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                {service.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Experience and value */}
+    <section className="px-6 py-12" aria-labelledby="experience-heading">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-xl border border-border bg-panel p-7 md:p-10">
+        <div
+          className="pointer-events-none absolute -top-20 -right-20 size-72 rounded-full bg-accent/10 blur-[100px]"
+          aria-hidden
+        />
+
+        <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="size-2 rounded-full bg-accent" aria-hidden />
+              <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+                Professional experience
+              </span>
             </div>
 
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 font-mono text-base uppercase tracking-widest text-accent hover:underline">
-              All projects
-              <ArrowRight className="size-4" aria-hidden />
-            </Link>
-          </div>
-
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {projects.slice(0, 3).map(project => {
-              const projectUrl = project.live || project.repo;
-              const image = project.images[0];
-              const imageSrc = image?.src ?? "";
-              const isImageLoading =
-                imageSrc.length > 0 && !loadedImageSrcs.has(imageSrc);
-
-              return (
-                <div key={project.name}>
-                  <div className="block h-full rounded-md bg-panel p-6 ring-1 ring-border/70 panel-hover">
-                    <span
-                      className="relative block aspect-video w-full rounded-sm"
-                      aria-busy={isImageLoading}>
-                      {isImageLoading && (
-                        <span
-                          className="absolute inset-0 z-10 flex items-center justify-center bg-background/60"
-                          role="status"
-                          aria-label="Loading image">
-                          <LoaderCircle
-                            className="size-8 animate-spin text-accent"
-                            aria-hidden
-                          />
-                        </span>
-                      )}
-                      {imageSrc && (
-                        <img
-                          ref={image => {
-                            if (image?.complete && image.naturalWidth > 0) {
-                              markImageLoaded(imageSrc);
-                            }
-                          }}
-                          src={imageSrc}
-                          alt={image?.alt || `${project.name} project preview`}
-                          loading="lazy"
-                          decoding="async"
-                          onLoad={() => markImageLoaded(imageSrc)}
-                          onError={() => markImageLoaded(imageSrc)}
-                          className={`block size-full rounded-sm object-contain object-center transition-opacity duration-200 ${
-                            isImageLoading ? "opacity-0" : "opacity-100"
-                          }`}
-                        />
-                      )}
-                    </span>
-
-                    <div className="mt-5 flex flex-col items-start gap-2">
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-display text-xl font-medium text-card-foreground">
-                          {project.name}
-                        </h3>
-
-                        <a
-                          href={projectUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Open ${project.name}`}
-                          className="text-muted-foreground transition-colors hover:text-foreground">
-                          <ExternalLink size={18} />
-                        </a>
-                      </div>
-
-                      <div className="flex flex-row flex-wrap gap-1.5">
-                        {project?.category?.map(category => (
-                          <span key={category} className="chip-accent">
-                            {category}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <p className="mt-2 text-base text-muted-foreground">
-                      {project.subtitle}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 rounded-md bg-panel p-10 ring-1 ring-border/70 md:flex-row md:items-center">
-          <div>
-            <h2 className="font-display text-2xl font-medium text-card-foreground md:text-3xl">
-              Hiring for a senior frontend role?
+            <h2
+              id="experience-heading"
+              className="mt-5 max-w-2xl font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-4xl">
+              Engineering solutions for{" "}
+              <span className="text-accent">real-world products.</span>
             </h2>
-            <p className="mt-3 max-w-[52ch] text-base text-muted-foreground">
-              I’m open to senior frontend roles where the interface is central
-              to the product. I’m also growing on the backend, so full-stack
-              scope is welcome.
+
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+              At Publicis Sapient, I work on enterprise digital experiences,
+              contributing to frontend architecture, application development,
+              and integrations across product modules. My work includes Adobe
+              Experience Manager integrations and Adobe Target feature flags for
+              controlled, environment-specific releases.
             </p>
           </div>
+
+          <div className="border-t border-border pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
+            <h3 className="label-mono text-xs">How I add value</h3>
+
+            <ul className="mt-6 space-y-6">
+              {addValuesSection.map(item => (
+                <li key={item.title} className="flex gap-4">
+                  <span
+                    className="mt-2 size-1.5 shrink-0 rounded-full bg-accent"
+                    aria-hidden
+                  />
+
+                  <div>
+                    <h4 className="font-display text-lg font-medium text-card-foreground">
+                      {item.title}
+                    </h4>
+
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Selected work */}
+    <section className="px-6 py-12" aria-labelledby="projects-heading">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p className="label-mono">Selected work</p>
+
+            <h2
+              id="projects-heading"
+              className="mt-4 font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
+              Things I’ve built.
+            </h2>
+
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+              A selection of personal projects and practical experiments where
+              ideas turn into working applications.
+            </p>
+          </div>
+
           <Link
-            to="/contact"
-            className="inline-flex h-12 items-center gap-2 rounded-sm bg-primary px-6 text-base font-medium text-primary-foreground ring-1 ring-primary transition-all hover:brightness-110 active:scale-[0.97]">
-            Get in touch
-            <ArrowRight className="size-4" aria-hidden />
+            to="/projects"
+            className="group inline-flex items-center gap-2 font-mono text-sm tracking-widest text-accent uppercase transition-colors hover:text-foreground">
+            Explore all projects
+            <ArrowUpRight
+              className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+              aria-hidden
+            />
           </Link>
         </div>
-      </section>
-    </>
-  );
-});
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {projects.slice(0, 3).map(project => (
+            <ProjectCard key={project.name} project={project} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Contact CTA */}
+    <section className="px-6 py-12" aria-labelledby="contact-heading">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-xl border border-border bg-panel p-8 md:p-12">
+        <div
+          className="pointer-events-none absolute -top-32 -right-20 size-96 rounded-full bg-accent/10 blur-[120px]"
+          aria-hidden
+        />
+
+        <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-center">
+          <div className="max-w-2xl">
+            <p className="label-mono">Have a project in mind?</p>
+
+            <h2
+              id="contact-heading"
+              className="mt-4 font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
+              Let’s build something{" "}
+              <span className="text-accent">meaningful.</span>
+            </h2>
+
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+              Interested in working together or discussing an engineering
+              opportunity? I’d be happy to connect.
+            </p>
+          </div>
+
+          <Button variant="default" asChild className="group">
+            <Link to="/about#contact">
+              Start a conversation
+              <ArrowRight
+                className="size-4 transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  </>
+);
 
 export default Index;
