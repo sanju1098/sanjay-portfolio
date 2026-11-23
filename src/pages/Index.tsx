@@ -1,16 +1,22 @@
 import type { FC } from "react";
 import { Link } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import { ArrowDownToLine, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownToLine, ArrowRight } from "lucide-react";
 import { addValuesSection, approach, pillars, services } from "@/content/home";
 import resumeUrl from "@/assets/Resume.pdf";
 import { projects } from "@/content/project";
 import { ProjectCard } from "@/components/project-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { SectionHeader } from "@/components/ui/card";
+import { PageSectionHeader } from "@/components/page-section-header";
 
-const exploring = ["Node.js", "Express.js", "MongoDB", "AI Integration"];
+const exploring = [
+  "Node.js",
+  "Express.js",
+  "MongoDB",
+  "Backend Engineering",
+  "AI Integration",
+];
 
 const techBadge =
   "h-7 rounded-md border-accent/20 bg-accent/5 px-3 font-mono text-xs font-normal text-card-foreground";
@@ -38,14 +44,14 @@ const Index: FC = () => (
             tabIndex={-1}
             className="mt-6 font-display text-3xl leading-[1.08] font-bold tracking-tight text-card-foreground outline-none sm:text-5xl lg:text-[2.6rem] xl:text-[3.4rem]">
             <span className="block">Senior frontend engineer</span>
-            <span className="block text-accent">building accessible,</span>
-            <span className="block">scalable interfaces</span>
+            <span className="block text-accent">building performant,</span>
+            <span className="block">accessible experiences.</span>
           </h1>
 
           <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-pretty text-muted-foreground md:text-lg">
-            5+ years building accessible, high-performance frontend applications
-            with React, TypeScript, and Next.js — with growing full-stack
-            capability across Node.js, Express, and AI-powered features.
+            5+ years engineering enterprise applications with React, Next.js,
+            and TypeScript. Focused on scalable UI architecture, performance,
+            accessibility, design systems, and AI-powered applications.
           </p>
 
           <div className="mt-9 flex flex-col flex-wrap gap-4 sm:flex-row">
@@ -98,13 +104,14 @@ const Index: FC = () => (
           className="max-w-3xl font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
           Beyond writing code.
           <span className="block text-accent">
-            Building experiences that matter.
+            Building experiences that last.
           </span>
         </h2>
 
         <p className="max-w-sm text-sm leading-relaxed text-muted-foreground md:text-base">
-          Thoughtful engineering is about understanding the problem, choosing
-          the right tools, and delivering solutions that last.
+          Thoughtful engineering is about understanding the problem, making the
+          right technical decisions, and building accessible, performant
+          solutions that create lasting value. value.
         </p>
       </div>
     </section>
@@ -128,15 +135,18 @@ const Index: FC = () => (
             <h3
               id="philosophy-heading"
               className="mt-5 max-w-xl font-display text-3xl leading-tight font-semibold tracking-tight text-card-foreground md:text-5xl">
-              Good software starts with
-              <span className="text-accent"> good decisions.</span>
+              Good engineering starts with
+              <span className="text-accent">
+                {" "}
+                understanding the problem.
+              </span>{" "}
             </h3>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-              My approach combines frontend craftsmanship with practical
-              engineering decisions. From structuring reusable React
-              applications to integrating backend services, I focus on building
-              maintainable, reliable and user-focused products.
+              I believe great applications come from thoughtful technical
+              decisions. I focus on building accessible, performant, and
+              maintainable frontend systems — combining strong UI engineering
+              with practical architecture and seamless integrations.
             </p>
           </div>
 
@@ -192,11 +202,11 @@ const Index: FC = () => (
 
     <section className="px-6 py-12" aria-labelledby="capabilities-heading">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
+        <PageSectionHeader
           label="Capabilities"
-          heading="From interface to"
-          headingHighlight=" implementation."
-          subtext="I work across the application lifecycle, from translating product requirements into polished interfaces to connecting them with backend services and APIs."
+          heading="Engineering across the"
+          headingHighlight=" application lifecycle."
+          subtext="I build enterprise-grade frontend applications, scalable UI systems, and intelligent product experiences — from translating complex requirements into polished interfaces to integrating APIs and AI-powered services."
         />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -245,11 +255,11 @@ const Index: FC = () => (
             </h2>
 
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-              At Publicis Sapient, I work on enterprise digital experiences,
-              contributing to frontend architecture, application development,
-              and integrations across product modules. My work includes Adobe
-              Experience Manager integrations and Adobe Target feature flags for
-              controlled, environment-specific releases.
+              Building enterprise applications across travel, financial
+              services, and enterprise software. My experience spans frontend
+              architecture, design systems, performance optimization,
+              accessibility, API integrations, and AI-powered application
+              development.
             </p>
           </div>
 
@@ -285,7 +295,12 @@ const Index: FC = () => (
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
-            <p className="label-mono">Selected work</p>
+            <div className="flex items-center gap-2">
+              <span className="size-2 rounded-full bg-accent" aria-hidden />
+              <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+                Selected work
+              </span>
+            </div>
 
             <h2
               id="projects-heading"
@@ -294,8 +309,9 @@ const Index: FC = () => (
             </h2>
 
             <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-              A selection of personal projects and practical experiments where
-              ideas turn into working applications.
+              A collection of personal projects and practical experiments where
+              I explore ideas, solve problems, and turn concepts into working
+              applications.
             </p>
           </div>
 
@@ -303,7 +319,7 @@ const Index: FC = () => (
             to="/projects"
             className="group inline-flex items-center gap-2 font-mono text-sm tracking-widest text-accent uppercase transition-colors hover:text-foreground">
             Explore all projects
-            <ArrowUpRight
+            <ArrowRight
               className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
               aria-hidden
             />
@@ -337,8 +353,9 @@ const Index: FC = () => (
             </h2>
 
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Interested in working together or discussing an engineering
-              opportunity? I’d be happy to connect.
+              Whether you're looking to build a great product, solve a complex
+              engineering challenge, or discuss an opportunity, I'd be happy to
+              connect.
             </p>
           </div>
 

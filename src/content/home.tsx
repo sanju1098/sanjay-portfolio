@@ -37,22 +37,22 @@ export const pillars = [
   {
     icon: Accessibility,
     title: "Accessible",
-    text: "WCAG-first interfaces for every user.",
+    text: "Building inclusive interfaces with WCAG, semantic HTML, and screen-reader support.",
   },
   {
     icon: Gauge,
-    title: "Performant",
-    text: "Fast by default, measured with Lighthouse.",
+    title: "Performance-driven",
+    text: "Optimizing load times, rendering, and Core Web Vitals.",
   },
   {
     icon: Layers,
     title: "Scalable",
-    text: "Design systems and reusable components.",
+    text: "Engineering reusable components and maintainable design systems.",
   },
   {
     icon: Code2,
-    title: "Full-stack minded",
-    text: "Building frontend experiences and backend APIs.",
+    title: "AI-powered",
+    text: "Building intelligent applications with LLMs, RAG, and streaming interfaces.",
   },
 ];
 
@@ -61,25 +61,25 @@ export const approach = [
     number: "01",
     title: "Understand",
     description:
-      "Translate product requirements into clear technical solutions.",
+      "Break down product requirements, user needs, and technical constraints into clear engineering solutions.",
   },
   {
     number: "02",
     title: "Architect",
     description:
-      "Structure applications with reusable components and maintainable patterns.",
+      "Structure maintainable applications with reusable components, design systems, and scalable patterns.",
   },
   {
     number: "03",
-    title: "Integrate",
+    title: "Engineer",
     description:
-      "Connect interfaces with APIs, application state and backend services.",
+      "Build responsive interfaces, integrate APIs, manage application state, and connect backend services.",
   },
   {
     number: "04",
-    title: "Refine",
+    title: "Optimize",
     description:
-      "Improve accessibility, performance, reliability and user experience.",
+      "Validate accessibility, improve performance, test reliability, and continuously refine the user experience.",
   },
 ];
 
@@ -88,37 +88,37 @@ export const services = [
     icon: <Code size={24} />,
     title: "Frontend Development",
     description:
-      "Engineering responsive, production-ready applications with React, Next.js, TypeScript, and modern frontend patterns. Building everything from complex forms and interactive interfaces to authentication flows and role-based applications.",
+      "Building production-ready applications with React, Next.js, TypeScript, and modern frontend patterns. Experienced in complex forms, interactive workflows, authentication, role-based access, and API-driven interfaces.",
   },
   {
     icon: <Paintbrush size={24} />,
     title: "Design Systems & UI Engineering",
     description:
-      "Developing reusable component libraries and consistent design systems using ShadCN UI, Material UI, Tailwind CSS, and Styled Components. Translating design specifications into accessible, scalable user interfaces.",
+      "Building reusable component libraries and consistent design systems using Material UI, ShadCN UI, Tailwind CSS, and Styled Components. Developing accessible, WCAG-aligned components adopted across three engineering teams.",
   },
   {
     icon: <Layers size={24} />,
     title: "Frontend Architecture",
     description:
-      "Designing maintainable frontend architectures with modular components, TanStack Query, and Redux Toolkit. Establishing scalable patterns for application structure, component reusability, and state management.",
+      "Designing modular, maintainable frontend architectures using reusable components, Redux Toolkit, Redux Saga, TanStack Query, and Context API. Establishing scalable patterns for application structure, data fetching, caching, and state management.",
   },
   {
     icon: <ShieldCheck size={24} />,
     title: "Accessibility, Testing & Performance",
     description:
-      "Building inclusive and performant applications with accessibility validation using NVDA and VoiceOver, automated testing with Jest and React Testing Library, CI/CD workflows using GitHub Actions, code splitting, and lazy loading.",
+      "Building accessible, high-performance applications through code splitting, lazy loading, image optimization, and caching. Experienced in Core Web Vitals, Lighthouse, WCAG, NVDA, VoiceOver, Jest, and React Testing Library.",
   },
   {
     icon: <Server size={24} />,
     title: "Backend & API Development",
     description:
-      "Developing backend foundations with Node.js and Express.js, building REST APIs, implementing authentication and authorization, integrating databases, and connecting frontend applications with secure backend services.",
+      "Expanding into backend engineering with Node.js and Express.js. Exploring REST API development, authentication, authorization, middleware, database integration, and connecting frontend applications with backend services.",
   },
   {
     icon: <Sparkles size={24} />,
     title: "AI & RAG Engineering",
     description:
-      "Building AI-powered applications and retrieval-augmented generation (RAG) solutions using LLM APIs and modern AI development tools. Developing intelligent application experiences and streaming conversational interfaces.",
+      "Building AI-powered applications using LLM APIs, Google Gemini, and Vercel AI SDK. Hands-on experience with streaming conversational interfaces, RAG pipelines, PDF ingestion, embeddings, and semantic search using PostgreSQL and pgvector.",
   },
 ];
 
@@ -127,24 +127,24 @@ export const addValuesSection = [
     number: "01",
     title: "Reusable architecture",
     description:
-      "Creating maintainable component structures and shared frontend foundations.",
+      "Building reusable component libraries, design systems, and modular frontend foundations for consistent and maintainable applications.",
   },
   {
     number: "02",
     title: "Reliable integrations",
     description:
-      "Connecting applications with APIs, CMS platforms, and external services.",
+      "Integrating REST APIs, Adobe Experience Manager, Adobe Target, authentication services, and third-party platforms.",
   },
   {
     number: "03",
-    title: "Quality-driven delivery",
+    title: "Performance & accessibility",
     description:
-      "Considering accessibility, performance, testing, and maintainability throughout development.",
+      "Improving application performance, Core Web Vitals, and WCAG compliance through optimization, testing, and accessibility best practices.",
   },
   {
     number: "04",
-    title: "Cross-functional collaboration",
+    title: "End-to-end delivery",
     description:
-      "Working with design, product, QA, and engineering teams to deliver complete features.",
+      "Translating product requirements into production-ready features while collaborating with design, product, QA, and engineering teams.",
   },
 ];
