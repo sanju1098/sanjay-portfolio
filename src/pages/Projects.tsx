@@ -80,7 +80,7 @@ const Projects: FC = () => (
                 key={project.name}
                 variant="interactive"
                 padding="none"
-                className="flex h-full flex-col">
+                className="flex h-full flex-col overflow-hidden">
                 <AccentLine />
                 <div className="flex items-center justify-between gap-3 border-b border-border bg-background px-4 py-3">
                   <div className="flex items-center gap-3">
@@ -96,9 +96,9 @@ const Projects: FC = () => (
                 </div>
 
                 <CardContent className="flex-1 p-3 sm:p-5 lg:p-6">
-                  <div className="grid flex-1 lg:grid-cols-12 lg:items-stretch">
+                  <div className="grid flex-1 gap-6 lg:grid-cols-12 lg:items-stretch lg:gap-10">
                     <div
-                      className={`lg:col-span-5 ${isReversed ? "lg:order-2" : ""}`}>
+                      className={`lg:col-span-5 lg:self-center ${isReversed ? "lg:order-2" : ""}`}>
                       <div className="relative overflow-hidden rounded-xl bg-background">
                         <ProjectCarousel
                           name={project.name}
