@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FC } from "react";
-import { ArrowUpRight, Code2, LoaderCircle, Image } from "lucide-react";
+import { ArrowUpRight, Code2, ImageIcon, LoaderCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { projects } from "@/content/project";
@@ -25,12 +25,11 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
     if (element?.complete && element.naturalWidth > 0) setIsLoading(false);
   }, []);
 
-  const primaryUrl = project.live || project.repo || "";
-  const primaryLabel = project.live ? "Live demo" : "View source";
-  const host = getHost(primaryUrl);
+  const host = getHost(project.live || project.repo || "");
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-panel transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_6px_0_0_var(--signal)] active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--signal)] active:duration-100 has-[a:focus-visible]:-translate-y-1 has-[a:focus-visible]:border-accent/60 has-[a:focus-visible]:shadow-[0_6px_0_0_var(--signal)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:translate-y-0 motion-reduce:has-[a:focus-visible]:translate-y-0">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-panel transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_6px_0_0_var(--signal)] has-[a:focus-visible]:-translate-y-1 has-[a:focus-visible]:border-accent/60 has-[a:focus-visible]:shadow-[0_6px_0_0_var(--signal)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[a:focus-visible]:translate-y-0">
+      {/* Line that draws across the top */}
       <span
         className="pointer-events-none absolute inset-x-0 top-0 z-20 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100 group-has-[a:focus-visible]:scale-x-100 motion-reduce:transition-none"
         aria-hidden
@@ -53,7 +52,7 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
       <div
         className="relative aspect-video overflow-hidden bg-background"
         aria-busy={isLoading}>
-        {isLoading && (
+        {isLoading ? (
           <div
             className="absolute inset-0 z-10 flex items-center justify-center bg-background/70"
             role="status">
@@ -63,46 +62,25 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
             />
             <span className="sr-only">Loading project preview</span>
           </div>
-        )}
+        ) : null}
 
-        {/* Image only on desktop (lg: and above) - hidden on mobile/tablet */}
-        {imageSrc && (
-          <div className="relative hidden h-full w-full lg:block">
-            <img
-              ref={imageRef}
-              src={imageSrc}
-              alt={image?.alt || `${project.name} project preview`}
-              loading="lazy"
-              decoding="async"
-              onLoad={() => setIsLoading(false)}
-              onError={() => setIsLoading(false)}
-              className={`size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.07] motion-reduce:transition-none motion-reduce:group-hover:scale-100 ${
-                isLoading ? "opacity-0" : "opacity-100"
-              }`}
-            />
-          </div>
-        )}
-
-        {/* Mobile/Tablet placeholder with icon */}
-        {imageSrc && (
-          <div className="flex h-full items-center justify-center bg-background/50 lg:hidden">
-            <div className="p-4 text-center">
-              <Image
-                className="mx-auto mb-3 size-12 text-muted-foreground/50"
-                aria-hidden
-              />
-              <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
-                Preview available on desktop
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* No image fallback - show on all screens */}
-        {!imageSrc && (
+        {imageSrc ? (
+          <img
+            ref={imageRef}
+            src={imageSrc}
+            alt={image?.alt || `${project.name} project preview`}
+            loading="lazy"
+            decoding="async"
+            onLoad={() => setIsLoading(false)}
+            onError={() => setIsLoading(false)}
+            className={`size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.07] motion-reduce:transition-none motion-reduce:group-hover:scale-100 ${
+              isLoading ? "opacity-0" : "opacity-100"
+            }`}
+          />
+        ) : (
           <div className="flex h-full items-center justify-center bg-background/50">
             <div className="p-4 text-center">
-              <Image
+              <ImageIcon
                 className="mx-auto mb-3 size-12 text-muted-foreground/50"
                 aria-hidden
               />
@@ -113,64 +91,48 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
           </div>
         )}
 
-        {(project.live || project.repo) && (
-          <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex translate-y-full items-center justify-end gap-3 bg-linear-to-t from-background/95 via-background/70 to-transparent p-3 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 group-hover:opacity-100 group-has-[a:focus-visible]:translate-y-0 group-has-[a:focus-visible]:opacity-100 motion-reduce:transition-none lg:block"
-            aria-hidden>
-            <div className="flex items-center justify-end gap-2">
-              {project.live && (
-                <Button
-                  asChild
-                  variant="default"
-                  size="xs"
-                  className="h-7 px-2.5 text-[11px]">
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Live demo
-                    <ArrowUpRight className="size-3" aria-hidden />
-                  </a>
-                </Button>
-              )}
+        {/* Action keys. Hidden until hover on devices that can hover, always
+            visible on touch screens. */}
+        {project.live || project.repo ? (
+          <div className="absolute inset-x-0 bottom-0 z-20 flex items-center justify-end gap-2 bg-linear-to-t from-background/95 via-background/70 to-transparent p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none [@media(hover:hover)]:translate-y-full [@media(hover:hover)]:opacity-0">
+            {project.live ? (
+              <Button asChild className="h-8 px-3 text-xs">
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Live demo
+                  <ArrowUpRight className="size-3.5" aria-hidden />
+                  <span className="sr-only">
+                    {" "}
+                    of {project.name} (opens in a new tab)
+                  </span>
+                </a>
+              </Button>
+            ) : null}
 
-              {project.repo && (
-                <Button
-                  asChild
-                  variant="secondary"
-                  size="xs"
-                  className="h-7 px-2.5 text-[11px]">
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <Code2 className="size-3" aria-hidden />
-                    Source code
-                  </a>
-                </Button>
-              )}
-            </div>
+            {project.repo ? (
+              <Button asChild variant="secondary" className="h-8 px-3 text-xs">
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <Code2 className="size-3.5" aria-hidden />
+                  Source code
+                  <span className="sr-only">
+                    {" "}
+                    of {project.name} (opens in a new tab)
+                  </span>
+                </a>
+              </Button>
+            ) : null}
           </div>
-        )}
+        ) : null}
       </div>
 
       <div className="flex flex-1 flex-col p-6">
         <h3 className="font-display text-xl font-semibold text-card-foreground">
-          {primaryUrl ? (
-            <a
-              href={primaryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="outline-none after:absolute after:inset-0 after:z-10">
-              {project.name}
-              <span className="sr-only">
-                {" "}
-                ({primaryLabel.toLowerCase()}, opens in a new tab)
-              </span>
-            </a>
-          ) : (
-            project.name
-          )}
+          {project.name}
         </h3>
 
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -183,7 +145,7 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
               <Badge
                 key={category}
                 variant="outline"
-                className="h-6 rounded-md border-accent/20 bg-accent/5 font-mono font-normal text-card-foreground transition-colors hover:border-accent/50 hover:bg-accent/10">
+                className="h-6 rounded-md border-accent/20 bg-accent/5 font-mono font-normal text-card-foreground">
                 {category}
               </Badge>
             ))}
