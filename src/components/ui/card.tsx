@@ -1,10 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-/**
- * Reusable Card component with consistent styling
- * Replaces duplicate card patterns across pages
- */
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "default" | "elevated" | "interactive" | "panel";
   hover?: boolean;
@@ -56,9 +52,6 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
 );
 Card.displayName = "Card";
 
-/**
- * CardHeader - consistent header for cards
- */
 interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   subtitle?: string;
@@ -104,9 +97,6 @@ const CardHeader = ({
   </div>
 );
 
-/**
- * CardContent - consistent content wrapper
- */
 interface CardContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const CardContent = ({ className, children, ...props }: CardContentProps) => (
@@ -115,9 +105,6 @@ const CardContent = ({ className, children, ...props }: CardContentProps) => (
   </div>
 );
 
-/**
- * CardFooter - consistent footer for cards
- */
 interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const CardFooter = ({ className, children, ...props }: CardFooterProps) => (
@@ -128,9 +115,6 @@ const CardFooter = ({ className, children, ...props }: CardFooterProps) => (
   </div>
 );
 
-/**
- * AccentLine - animated top border for interactive cards
- */
 interface AccentLineProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
 const AccentLine = ({ className, ...props }: AccentLineProps) => (
@@ -144,9 +128,6 @@ const AccentLine = ({ className, ...props }: AccentLineProps) => (
   />
 );
 
-/**
- * SectionHeader - consistent section header across pages
- */
 interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string;
   heading: string;
@@ -186,12 +167,14 @@ const SectionHeader = ({
           {label}
         </p>
       </div>
-      <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
-        {heading}
-        {headingHighlight && (
-          <span className="block text-accent">{headingHighlight}</span>
-        )}
-      </h2>
+      {heading && (
+        <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
+          {heading}
+          {headingHighlight && (
+            <span className="block text-accent">{headingHighlight}</span>
+          )}
+        </h2>
+      )}
       {subtext && (
         <p className="mt-5 max-w-[56ch] text-base leading-relaxed text-muted-foreground md:text-lg">
           {subtext}

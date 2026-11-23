@@ -80,9 +80,9 @@ const Header = () => {
         className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link
           to="/"
-          aria-label="Sanjay Kumar S R, home"
           className="group rounded-md font-display text-2xl font-semibold tracking-tight text-card-foreground transition-colors outline-none hover:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background">
           Sanjay<span className="text-accent">.</span>SR
+          <span className="sr-only"> — Home</span>
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">

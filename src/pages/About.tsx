@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { certificates, socialLinks, workAchievements } from "@/content/about";
 import { EMAIL } from "@/content/layout";
 import resumeUrl from "@/assets/Resume.pdf";
+import { optimizedCloudinaryUrl } from "@/lib/cloudinary";
 import {
   Card,
   CardHeader,
@@ -21,6 +22,8 @@ import {
   AccentLine,
   SectionHeader,
 } from "@/components/ui/card";
+
+const BADGE_IMAGE_WIDTH = 88;
 
 const profile = {
   email: EMAIL,
@@ -191,11 +194,12 @@ const About: React.FC = React.memo(() => {
               />
               <CardContent className="flex flex-1 flex-col">
                 <p className="text-base leading-7 text-muted-foreground">
-                  I'm a Senior Experience Engineer at Publicis Sapient, building
-                  Next.js features for Cunard and P&O Cruises. My work includes
-                  personalization variants, A/B testing, AEM feature flags,
-                  brand and locale-specific configurations, Jest tests, and
-                  SonarQube quality gates in CI.
+                  I'm a Senior Frontend Engineer (titled Senior Experience
+                  Engineer) at Publicis Sapient, building Next.js features for
+                  Cunard and P&O Cruises. My work includes personalization
+                  variants, A/B testing, AEM feature flags, brand and
+                  locale-specific configurations, Jest tests, and SonarQube
+                  quality gates in CI.
                 </p>
 
                 <p className="mt-4 text-base leading-7 text-muted-foreground">
@@ -249,9 +253,15 @@ const About: React.FC = React.memo(() => {
                           <div className="flex items-start gap-3">
                             <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-background p-1.5">
                               <img
-                                src={item.badgeImage}
+                                src={optimizedCloudinaryUrl(
+                                  item.badgeImage,
+                                  BADGE_IMAGE_WIDTH,
+                                )}
                                 alt=""
+                                width={44}
+                                height={44}
                                 loading="lazy"
+                                decoding="async"
                                 className="size-full object-contain"
                               />
                             </span>
@@ -301,9 +311,15 @@ const About: React.FC = React.memo(() => {
                         <div className="flex items-start gap-3">
                           <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-background p-1.5">
                             <img
-                              src={item.badgeImage}
+                              src={optimizedCloudinaryUrl(
+                                item.badgeImage,
+                                BADGE_IMAGE_WIDTH,
+                              )}
                               alt=""
+                              width={44}
+                              height={44}
                               loading="lazy"
+                              decoding="async"
                               className="size-full object-contain"
                             />
                           </span>

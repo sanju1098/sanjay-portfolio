@@ -2,9 +2,12 @@ import { useEffect, useRef, useState, type FC } from "react";
 import { ArrowUpRight, Code2, ImageIcon, LoaderCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { optimizedCloudinaryUrl } from "@/lib/cloudinary";
 import type { projects } from "@/content/project";
 
 type Project = (typeof projects)[number];
+
+const CARD_IMAGE_WIDTH = 840;
 
 const getHost = (url: string) => {
   try {
@@ -29,7 +32,6 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
 
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-panel transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_6px_0_0_var(--signal)] has-[a:focus-visible]:-translate-y-1 has-[a:focus-visible]:border-accent/60 has-[a:focus-visible]:shadow-[0_6px_0_0_var(--signal)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[a:focus-visible]:translate-y-0">
-      {/* Line that draws across the top */}
       <span
         className="pointer-events-none absolute inset-x-0 top-0 z-20 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100 group-has-[a:focus-visible]:scale-x-100 motion-reduce:transition-none"
         aria-hidden
@@ -67,7 +69,7 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
         {imageSrc ? (
           <img
             ref={imageRef}
-            src={imageSrc}
+            src={optimizedCloudinaryUrl(imageSrc, CARD_IMAGE_WIDTH)}
             alt={image?.alt || `${project.name} project preview`}
             loading="lazy"
             decoding="async"
@@ -91,8 +93,6 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
           </div>
         )}
 
-        {/* Action keys. Hidden until hover on devices that can hover, always
-            visible on touch screens. */}
         {project.live || project.repo ? (
           <div className="absolute inset-x-0 bottom-0 z-20 flex items-center justify-end gap-2 bg-linear-to-t from-background/95 via-background/70 to-transparent p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none [@media(hover:hover)]:translate-y-full [@media(hover:hover)]:opacity-0">
             {project.live ? (
