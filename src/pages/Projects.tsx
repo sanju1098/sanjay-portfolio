@@ -4,32 +4,27 @@ import { ProjectCarousel } from "@/components/project-carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projects, workProfiles } from "@/content/project";
-import {
-  Card,
-  CardContent,
-  AccentLine,
-  SectionHeader,
-} from "@/components/ui/card";
+import { PageSectionHeader } from "@/components/page-section-header";
 
 const actionButton = "h-10 w-full px-4 text-sm sm:w-auto";
 
 const Projects: FC = () => (
   <>
-    <section className="relative px-6 pt-32 pb-14 md:pt-40 md:pb-20">
+    <section className="relative px-6 pt-32 pb-10">
       <div className="rise mx-auto max-w-7xl">
-        <SectionHeader
+        <PageSectionHeader
           label="PERSONAL WORK / EXPERIMENTS"
           heading="Building things"
           headingHighlight=" beyond the brief."
-          subtext="Personal builds, side projects, and technical experiments. Exploring frontend engineering, full-stack development, and ideas that turn into something useful."
+          subtext="Personal projects, engineering experiments, and ideas brought to life through code. Exploring modern frontend architecture, AI-powered applications, and full-stack development."
           action={
-            <div className="flex flex-col gap-5 lg:flex-row lg:items-end">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
               <div className="flex items-center gap-3 font-mono text-xs tracking-wide text-muted-foreground">
                 <span className="text-card-foreground">
                   {String(projects.length).padStart(2, "0")}
                 </span>
                 <span className="h-px w-8 bg-border" aria-hidden />
-                <span>Projects & explorations</span>
+                <span>Selected projects & experiments</span>
               </div>
               <ul className="flex flex-wrap gap-2 lg:justify-end">
                 {workProfiles.map(profile => (
@@ -37,13 +32,13 @@ const Projects: FC = () => (
                     <Button
                       asChild
                       variant="secondary"
-                      className="h-10 px-4 text-sm">
+                      className="h-10 gap-2 rounded-full px-4 text-sm transition-colors hover:bg-accent">
                       <a
                         href={profile.link}
                         target="_blank"
                         rel="noopener noreferrer">
                         {profile.icon}
-                        {profile.profileName}
+                        <span>{profile.profileName}</span>
                         <ArrowUpRight
                           className="size-3.5 opacity-60"
                           aria-hidden
@@ -76,26 +71,20 @@ const Projects: FC = () => (
             const liveLabel = project.liveLabel ?? "Live preview";
 
             return (
-              <Card
-                key={project.name}
-                variant="interactive"
-                padding="none"
-                className="flex h-full flex-col overflow-hidden">
-                <AccentLine />
-                <div className="flex items-center justify-between gap-3 border-b border-border bg-background px-4 py-3">
-                  <div className="flex items-center gap-3">
-                    <span className="flex gap-1.5" aria-hidden>
-                      <span className="size-2 rounded-full bg-muted-foreground/40 transition-colors duration-300 group-hover:bg-accent" />
-                      <span className="size-2 rounded-full bg-muted-foreground/40 transition-colors duration-300 group-hover:bg-accent" />
-                      <span className="size-2 rounded-full bg-accent" />
-                    </span>
-                    <span className="font-mono text-[11px] tracking-wide text-muted-foreground">
-                      {String(index + 1).padStart(2, "0")} / {project.subtitle}
-                    </span>
-                  </div>
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-panel transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_6px_0_0_var(--signal)] has-[a:focus-visible]:-translate-y-1 has-[a:focus-visible]:border-accent/60 has-[a:focus-visible]:shadow-[0_6px_0_0_var(--signal)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[a:focus-visible]:translate-y-0">
+                <div className="flex items-center gap-3 border-b border-border bg-background px-4 py-2.5">
+                  <span className="flex gap-1.5" aria-hidden>
+                    <span className="size-2 rounded-full bg-muted-foreground/40 transition-colors duration-300 group-hover:bg-accent" />
+                    <span className="size-2 rounded-full bg-muted-foreground/40 transition-colors duration-300 group-hover:bg-accent" />
+                    <span className="size-2 rounded-full bg-accent" />
+                  </span>
+
+                  <span className="truncate font-mono text-[11px] text-muted-foreground">
+                    {String(index + 1).padStart(2, "0")} / {project.subtitle}
+                  </span>
                 </div>
 
-                <CardContent className="flex-1 p-3 sm:p-5 lg:p-6">
+                <div className="mt-6 flex-1 p-3 sm:p-5 lg:p-6">
                   <div className="grid flex-1 gap-6 lg:grid-cols-12 lg:items-stretch lg:gap-10">
                     <div
                       className={`lg:col-span-5 lg:self-center ${isReversed ? "lg:order-2" : ""}`}>
@@ -189,8 +178,8 @@ const Projects: FC = () => (
                       )}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </article>
             );
           })}
         </div>

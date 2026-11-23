@@ -1,23 +1,17 @@
 import React from "react";
 import { skillCategories } from "@/content/skills";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  AccentLine,
-  SectionHeader,
-} from "@/components/ui/card";
+import { PageSectionHeader } from "@/components/page-section-header";
 
 const Skills: React.FC = React.memo(() => {
   return (
     <>
-      <section className="relative px-6 pt-32 pb-14 md:pt-40 md:pb-20">
+      <section className="relative px-6 pt-32 pb-10">
         <div className="rise relative mx-auto max-w-7xl">
-          <SectionHeader
-            label="TECHNICAL TOOLKIT / CAPABILITIES"
-            heading="The tools behind"
-            headingHighlight=" the work."
-            subtext="A growing toolkit shaped by building digital products. Strongest in frontend engineering, with expanding experience across backend development, quality, infrastructure, and AI-powered applications."
+          <PageSectionHeader
+            label="TECHNICAL TOOLKIT / EXPERTISE"
+            heading="Technologies powering"
+            headingHighlight=" the experience."
+            subtext="A collection of technologies, tools, and engineering practices I've worked with to build scalable enterprise applications. Strongest in React, Next.js, TypeScript, and frontend architecture, with hands-on exposure to backend development, databases, testing, and modern development workflows."
             action={
               <div className="flex flex-col gap-5 lg:flex-row lg:items-end">
                 <div className="flex items-center gap-3 font-mono text-xs tracking-wide text-muted-foreground">
@@ -25,14 +19,14 @@ const Skills: React.FC = React.memo(() => {
                     {String(skillCategories.length).padStart(2, "0")}
                   </span>
                   <span className="h-px w-8 bg-border" aria-hidden />
-                  <span>Skill categories</span>
+                  <span>Technology categories</span>
                 </div>
                 <div className="flex flex-wrap gap-2 lg:justify-end">
                   <span className="inline-flex items-center rounded-md bg-accent px-3 py-2 font-mono text-[11px] tracking-wide text-accent-foreground">
-                    Frontend focused
+                    Frontend expertise
                   </span>
                   <span className="inline-flex items-center rounded-md border border-border bg-secondary/50 px-3 py-2 font-mono text-[11px] tracking-wide text-muted-foreground">
-                    Full-stack growth
+                    Full-stack capabilities
                   </span>
                 </div>
               </div>
@@ -53,22 +47,29 @@ const Skills: React.FC = React.memo(() => {
           <div className="grid gap-6 lg:grid-cols-12">
             {skillCategories.map((category, index) => {
               return (
-                <Card
+                <div
                   key={category.title || index}
-                  variant="interactive"
-                  padding="lg"
-                  className="lg:col-span-6 lg:col-start-auto">
-                  <AccentLine />
-                  <CardHeader
-                    title={category.title}
-                    count={`${String(category.skills.length).padStart(2, "0")} ITEMS`}
-                    icon={
-                      <div className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-background text-accent transition-colors duration-300 group-hover:border-accent/40 group-hover:bg-accent/10">
-                        {category.icon}
+                  className="rounded-2xl border border-border bg-panel p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_6px_0_0_var(--signal)] active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--signal)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:translate-y-0 sm:p-8 lg:col-span-6 lg:col-start-auto">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex min-w-0 items-center gap-3">
+                        <div className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-background text-accent transition-colors duration-300 group-hover:border-accent/40 group-hover:bg-accent/10">
+                          <div className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-background text-accent transition-colors duration-300 group-hover:border-accent/40 group-hover:bg-accent/10">
+                            {category.icon}
+                          </div>
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="truncate font-display text-xl font-semibold tracking-tight text-card-foreground sm:text-2xl">
+                            {category.title}
+                          </h3>
+                        </div>
                       </div>
-                    }
-                  />
-                  <CardContent className="flex flex-1 flex-col">
+                      <span className="shrink-0 font-mono text-xs whitespace-nowrap text-muted-foreground">
+                        {`${String(category.skills.length).padStart(2, "0")} ITEMS`}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="mt-6 flex flex-1 flex-col">
                     <p className="max-w-[52ch] text-sm leading-7 text-muted-foreground sm:text-base">
                       {category.description}
                     </p>
@@ -95,8 +96,8 @@ const Skills: React.FC = React.memo(() => {
                         ))}
                       </ul>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               );
             })}
           </div>

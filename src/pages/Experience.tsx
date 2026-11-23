@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ArrowUpRight, LoaderCircle } from "lucide-react";
 import { workExperiences } from "@/content/experience";
 import { optimizedCloudinaryUrl } from "@/lib/cloudinary";
-import {
-  Card,
-  CardContent,
-  AccentLine,
-  SectionHeader,
-} from "@/components/ui/card";
+import { PageSectionHeader } from "@/components/page-section-header";
+import { Badge } from "@/components/ui/badge";
 
 const LOGO_IMAGE_WIDTH = 112;
 
@@ -43,13 +39,36 @@ const Experience: React.FC = React.memo(() => {
 
   return (
     <>
-      <section className="relative px-6 pt-32 pb-14 md:pt-40 md:pb-20">
+      <section className="relative px-6 pt-32 pb-10">
         <div className="rise mx-auto max-w-7xl">
-          <SectionHeader
+          <PageSectionHeader
             label="CAREER / PROFESSIONAL JOURNEY"
-            heading="A journey through"
-            headingHighlight=" engineering."
-            subtext="Over 5 years of professional experience building and evolving digital products across enterprise, airline, and cruise domains. From crafting scalable frontend architectures to collaborating across teams, each role has shaped how I approach engineering challenges and product development."
+            heading="Engineering experiences"
+            headingHighlight=" beyond the code."
+            subtext="5+ years of experience building enterprise applications and customer-facing digital products across financial services, travel, airline, and enterprise technology. Specializing in React, Next.js, TypeScript, scalable frontend architectures, design systems, performance optimization, and accessibility, with growing experience across backend development and AI-powered applications."
+            action={
+              <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+                <div className="flex items-center gap-3 font-mono text-xs tracking-wide text-muted-foreground">
+                  <span className="text-card-foreground">
+                    {String(workExperiences.length).padStart(2, "0")}
+                  </span>
+                  <span className="h-px w-8 bg-border" aria-hidden />
+                  <span>Professional experiences</span>
+                </div>
+
+                <ul className="flex flex-wrap gap-2 lg:justify-end">
+                  {["Enterprise Engineering"].map(focus => (
+                    <li key={focus}>
+                      <Badge
+                        variant="outline"
+                        className="h-9 rounded-full px-4 font-mono text-[11px] font-normal text-muted-foreground">
+                        {focus}
+                      </Badge>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            }
           />
         </div>
       </section>
@@ -61,8 +80,7 @@ const Experience: React.FC = React.memo(() => {
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
-              <Card variant="panel" padding="lg">
-                <AccentLine />
+              <div className="rounded-2xl border border-border bg-panel/60 p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_6px_0_0_var(--signal)] active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--signal)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:translate-y-0 sm:p-8">
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-xs tracking-[0.18em] text-accent uppercase">
                     OVERVIEW
@@ -77,12 +95,13 @@ const Experience: React.FC = React.memo(() => {
                     fontSize: "clamp(1.75rem, 2.5vw + 0.5rem, 2.75rem)",
                     lineHeight: "1.05",
                   }}>
-                  Career so far.
+                  Professional journey.
                 </h2>
 
                 <p className="mt-4 max-w-sm text-sm leading-6 text-muted-foreground">
-                  A progression of roles, teams, and challenges shaping how I
-                  approach product engineering.
+                  A timeline of roles, experiences, and engineering challenges
+                  that have shaped my approach to building scalable enterprise
+                  applications and digital products.
                 </p>
 
                 <nav aria-label="Jump to role" className="mt-8 hidden lg:block">
@@ -113,7 +132,7 @@ const Experience: React.FC = React.memo(() => {
                     ))}
                   </ul>
                 </nav>
-              </Card>
+              </div>
             </div>
           </div>
 
@@ -130,7 +149,7 @@ const Experience: React.FC = React.memo(() => {
                   data-role-item
                   data-index={index}
                   className="group relative scroll-mt-28">
-                  <Card variant="interactive" padding="lg" className="relative">
+                  <div className="relative rounded-2xl border border-border bg-panel p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_6px_0_0_var(--signal)] active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--signal)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:translate-y-0 sm:p-8">
                     <div className="flex items-center justify-between gap-3 border-b border-border bg-background px-4 py-3">
                       <div className="flex items-center gap-3">
                         <span className="flex gap-1.5" aria-hidden>
@@ -151,7 +170,7 @@ const Experience: React.FC = React.memo(() => {
                       )}
                     </div>
 
-                    <CardContent className="flex-1">
+                    <div className="mt-6 flex-1">
                       <div className="flex items-start gap-4 sm:gap-5">
                         <span
                           className="relative block size-12 shrink-0 overflow-hidden rounded-lg border border-border bg-background p-1.5 sm:size-14"
@@ -225,8 +244,8 @@ const Experience: React.FC = React.memo(() => {
                           ))}
                         </ul>
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 </li>
               );
             })}

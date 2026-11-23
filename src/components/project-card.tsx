@@ -32,6 +32,7 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
 
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-panel transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_6px_0_0_var(--signal)] has-[a:focus-visible]:-translate-y-1 has-[a:focus-visible]:border-accent/60 has-[a:focus-visible]:shadow-[0_6px_0_0_var(--signal)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[a:focus-visible]:translate-y-0">
+      {/* Top Border */}
       <span
         className="pointer-events-none absolute inset-x-0 top-0 z-20 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100 group-has-[a:focus-visible]:scale-x-100 motion-reduce:transition-none"
         aria-hidden
