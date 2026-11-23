@@ -1,8 +1,11 @@
 import { useState, type FC, type KeyboardEvent } from "react";
 import { ChevronLeft, ChevronRight, LoaderCircle } from "lucide-react";
+import { optimizedCloudinaryUrl } from "@/lib/cloudinary";
 
 const FALLBACK_IMAGE =
   "https://res.cloudinary.com/dwsalphhy/image/upload/v1788338164/ef104d58-b653-45be-afeb-510b4aa77c69.png";
+
+const CAROUSEL_IMAGE_WIDTH = 1200;
 
 const controlButton =
   "inline-flex size-8 items-center justify-center rounded-full bg-muted text-foreground ring-1 ring-border transition-all hover:scale-105 hover:bg-muted/70 active:scale-95 motion-reduce:transition-none motion-reduce:hover:scale-100";
@@ -39,7 +42,6 @@ export const ProjectCarousel: FC<{
         tabIndex={0}
         onKeyDown={onKeyDown}
         className="absolute inset-0 flex flex-col overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-ring">
-        {/* Image area: identical size for every project */}
         <div className="min-h-0 flex-1 px-3 pt-3">
           <div className="relative h-full overflow-hidden rounded-lg">
             <div
@@ -71,7 +73,10 @@ export const ProjectCarousel: FC<{
                           markLoaded(slide.src);
                         }
                       }}
-                      src={slide.src}
+                      src={optimizedCloudinaryUrl(
+                        slide.src,
+                        CAROUSEL_IMAGE_WIDTH,
+                      )}
                       alt={slide.alt}
                       width={1200}
                       height={750}
@@ -90,11 +95,10 @@ export const ProjectCarousel: FC<{
           </div>
         </div>
 
-        {/* Controls bar: always rendered so every card matches */}
         <div className="flex h-12 shrink-0 items-center justify-between gap-3 px-4">
           {count > 1 ? (
             <>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 {slides.map((slide, i) => (
                   <button
                     key={`${slide.src}-${i}`}
@@ -102,12 +106,16 @@ export const ProjectCarousel: FC<{
                     onClick={() => go(i)}
                     aria-label={`Show screenshot ${i + 1}`}
                     aria-current={i === index}
-                    className={`relative h-1.5 rounded-full transition-all after:absolute after:-inset-x-1 after:-inset-y-2.5 motion-reduce:transition-none ${
-                      i === index
-                        ? "w-6 bg-primary"
-                        : "w-3 bg-muted-foreground hover:bg-foreground"
-                    }`}
-                  />
+                    className="group flex size-6 items-center justify-center rounded-full transition-colors motion-reduce:transition-none">
+                    <span
+                      aria-hidden
+                      className={`block h-1.5 rounded-full transition-all motion-reduce:transition-none ${
+                        i === index
+                          ? "w-6 bg-primary"
+                          : "w-3 bg-muted-foreground group-hover:bg-foreground"
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
 

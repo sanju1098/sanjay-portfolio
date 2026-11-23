@@ -3,22 +3,18 @@ import { Loader as LoadIcon } from "lucide-react";
 const Loader = () => {
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-6">
-      {/* Background grid */}
       <div
         className="grid-field pointer-events-none absolute inset-0 opacity-40"
         aria-hidden
       />
 
-      {/* Ambient glow */}
       <div
         className="pointer-events-none absolute inset-x-0 top-1/2 mx-auto h-96 w-[min(800px,90%)] -translate-y-1/2 animate-[ambient-breathe_6s_ease-in-out_infinite] rounded-full bg-accent/15 blur-3xl motion-reduce:animate-none"
         aria-hidden
       />
 
       <div className="relative z-10 text-center">
-        {/* Animated terminal-style loader */}
         <div className="relative mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-xl border border-border bg-panel shadow-panel ring-1 ring-accent/20">
-          {/* Rotating border */}
           <div
             className="absolute inset-0 animate-[spin_1.2s_linear_infinite] rounded-xl border-2 border-transparent border-t-accent border-r-accent/50 motion-reduce:animate-none"
             aria-hidden
@@ -43,7 +39,6 @@ const Loader = () => {
           Please wait a moment while the portfolio loads.
         </p>
 
-        {/* Progress bar with animated segments */}
         <div className="mx-auto mt-8 h-2 w-72 overflow-hidden rounded-full bg-secondary">
           <div className="flex h-full gap-1">
             {[0, 1, 2, 3, 4, 5].map(i => (
@@ -57,7 +52,6 @@ const Loader = () => {
           </div>
         </div>
 
-        {/* Loading status text */}
         <div className="mt-6 flex items-center justify-center gap-2 font-mono text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1">
             <span

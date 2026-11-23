@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, LoaderCircle } from "lucide-react";
 import { workExperiences } from "@/content/experience";
+import { optimizedCloudinaryUrl } from "@/lib/cloudinary";
 import {
   Card,
   CardContent,
@@ -8,17 +9,18 @@ import {
   SectionHeader,
 } from "@/components/ui/card";
 
+const LOGO_IMAGE_WIDTH = 112;
+
 const Experience: React.FC = React.memo(() => {
   const [activeIndex, setActiveIndex] = useState(0);
-  // const [loadedImageSrcs, setLoadedImageSrcs] = useState<Set<string>>(
-  //   () => new Set(),
-  // );
+  const [loadedImageSrcs, setLoadedImageSrcs] = useState<Set<string>>(
+    () => new Set(),
+  );
 
-  // const markImageLoaded = (src: string) => {
-  //   setLoadedImageSrcs(previous =>
-  //     previous.has(src) ? previous : new Set(previous).add(src),
-  //   );
-  // };
+  const markImageLoaded = (src: string) =>
+    setLoadedImageSrcs(previous =>
+      previous.has(src) ? previous : new Set(previous).add(src),
+    );
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -119,7 +121,7 @@ const Experience: React.FC = React.memo(() => {
             {workExperiences.map((exp, index) => {
               const company = exp.company;
               const isCurrent = index === 0;
-              // const isImageLoading = !loadedImageSrcs.has(exp.logo);
+              const isImageLoading = !loadedImageSrcs.has(exp.logo);
 
               return (
                 <li
@@ -143,7 +145,7 @@ const Experience: React.FC = React.memo(() => {
                       </div>
 
                       {isCurrent && (
-                        <span className="inline-flex items-center rounded-md border border-accent/20 bg-accent/10 px-2.5 py-0.5 font-mono text-[10px] font-medium text-accent">
+                        <span className="inline-flex items-center rounded-md bg-accent px-2.5 py-0.5 font-mono text-[10px] font-medium text-accent-foreground">
                           CURRENT
                         </span>
                       )}
@@ -151,7 +153,7 @@ const Experience: React.FC = React.memo(() => {
 
                     <CardContent className="flex-1">
                       <div className="flex items-start gap-4 sm:gap-5">
-                        {/* <span
+                        <span
                           className="relative block size-12 shrink-0 overflow-hidden rounded-lg border border-border bg-background p-1.5 sm:size-14"
                           aria-busy={isImageLoading}>
                           {isImageLoading && (
@@ -174,7 +176,10 @@ const Experience: React.FC = React.memo(() => {
                                 markImageLoaded(exp.logo);
                               }
                             }}
-                            src={exp.logo}
+                            src={optimizedCloudinaryUrl(
+                              exp.logo,
+                              LOGO_IMAGE_WIDTH,
+                            )}
                             alt={`${company} logo`}
                             width={44}
                             height={44}
@@ -186,7 +191,7 @@ const Experience: React.FC = React.memo(() => {
                               isImageLoading ? "opacity-0" : "opacity-100"
                             }`}
                           />
-                        </span> */}
+                        </span>
 
                         <div className="min-w-0 flex-1 pb-3">
                           <h3 className="font-display text-xl leading-tight font-semibold tracking-tight text-card-foreground sm:text-2xl">

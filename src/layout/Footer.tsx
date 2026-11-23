@@ -32,8 +32,8 @@ const Footer = () => {
           </div>
 
           <nav aria-label="Social links" className="md:justify-self-end">
-            <ul className="mt-4 grid-cols-2 space-y-2.5 gap-x-6">
-              <p className="label-mono">Elsewhere</p>
+            <p className="label-mono">Elsewhere</p>
+            <ul className="mt-4 space-y-2.5">
               {footerLinks.map(({ name, href, icon: Icon }) => (
                 <li key={name}>
                   <a
@@ -66,7 +66,7 @@ const Footer = () => {
           <button
             type="button"
             onClick={scrollToTop}
-            className="group flex items-center justify-center gap-1 font-mono text-sm! text-primary uppercase transition-all duration-300 hover:border-accent/40 hover:text-accent">
+            className="group flex items-center justify-center gap-1 font-mono text-sm! text-accent uppercase transition-all duration-300 hover:text-foreground">
             Back to top
             <ArrowUp
               className="size-5 transition-transform duration-300 group-hover:-translate-y-1"

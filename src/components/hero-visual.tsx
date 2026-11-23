@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { orbitIcons } from "@/content/home";
 import { Check, Database, Keyboard } from "lucide-react";
-import { ClaudeIcon } from "./icons";
+import { ClaudeIcon } from "./icons/brand-icons";
 
 const drift = {
   a: "animate-[float_8s_ease-in-out_infinite] motion-reduce:animate-none",
@@ -38,21 +38,18 @@ const OrbitRing: FC = () => (
 
 const UiPrimitives: FC = () => (
   <div className="absolute top-1 left-[2%] flex items-center gap-4">
-    {/* Toggle switch */}
     <span className={drift.b}>
       <span className="flex h-6 w-11 items-center rounded-full bg-accent p-0.5">
         <span className="ml-auto size-5 rounded-full bg-accent-foreground" />
       </span>
     </span>
 
-    {/* Checkbox */}
     <span className={drift.d}>
       <span className="flex size-6 items-center justify-center rounded-md border-2 border-accent bg-accent/15 text-accent">
         <Check className="size-4" strokeWidth={3} aria-hidden />
       </span>
     </span>
 
-    {/* Text field with blinking caret */}
     <span className={drift.a}>
       <span className="flex h-9 w-24 items-center rounded-md border border-border bg-background px-2.5 font-mono text-[11px] text-muted-foreground">
         name
@@ -60,7 +57,6 @@ const UiPrimitives: FC = () => (
       </span>
     </span>
 
-    {/* Focus ring */}
     <span className={drift.e}>
       <span className="relative block size-9 rounded-md border border-border bg-panel">
         <span className="absolute -inset-1.5 animate-pulse rounded-lg border-2 border-accent motion-reduce:animate-none" />
@@ -99,7 +95,6 @@ export const HeroVisual: FC = () => {
     <div
       className="relative isolate mx-auto hidden w-full max-w-xl pt-16 pb-24 lg:block"
       aria-hidden>
-      {/* Floating decoration, drawn behind the laptop and cards */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <OrbitRing />
         <UiPrimitives />
@@ -143,7 +138,6 @@ export const HeroVisual: FC = () => {
         <div className="-mx-4 h-3 rounded-b-2xl bg-muted ring-1 ring-border" />
       </div>
 
-      {/* Experience card */}
       <div className="absolute top-0 right-0 w-[48%] rounded-md border border-border bg-panel p-4 shadow-panel">
         <div className="flex items-center justify-between">
           <p className="font-mono text-xs text-card-foreground">
@@ -191,7 +185,6 @@ export const HeroVisual: FC = () => {
         </div>
       </div>
 
-      {/* Terminal */}
       <div className="absolute bottom-0 left-0 w-[46%] rounded-md border border-border bg-panel p-4 font-mono text-[11px] leading-relaxed shadow-panel">
         <div className="mb-3 flex items-center justify-between">
           <WindowDots />

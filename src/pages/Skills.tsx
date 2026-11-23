@@ -28,7 +28,7 @@ const Skills: React.FC = React.memo(() => {
                   <span>Skill categories</span>
                 </div>
                 <div className="flex flex-wrap gap-2 lg:justify-end">
-                  <span className="inline-flex items-center rounded-md border border-accent/30 bg-accent/10 px-3 py-2 font-mono text-[11px] tracking-wide text-accent">
+                  <span className="inline-flex items-center rounded-md bg-accent px-3 py-2 font-mono text-[11px] tracking-wide text-accent-foreground">
                     Frontend focused
                   </span>
                   <span className="inline-flex items-center rounded-md border border-border bg-secondary/50 px-3 py-2 font-mono text-[11px] tracking-wide text-muted-foreground">

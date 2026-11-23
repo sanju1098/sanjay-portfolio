@@ -8,13 +8,13 @@ import { projects } from "@/content/project";
 import { ProjectCard } from "@/components/project-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SectionHeader } from "@/components/ui/card";
 
 const exploring = ["Node.js", "Express.js", "MongoDB", "AI Integration"];
 
 const techBadge =
   "h-7 rounded-md border-accent/20 bg-accent/5 px-3 font-mono text-xs font-normal text-card-foreground";
 
-// Lazy load heavy visual components to improve initial load time
 const HeroVisual = lazy(() =>
   import("@/components/hero-visual").then(m => ({ default: m.HeroVisual })),
 );
@@ -24,7 +24,6 @@ const HeroBackdrop = lazy(() =>
 
 const Index: FC = () => (
   <>
-    {/* Hero */}
     <section
       className="relative overflow-hidden px-6 pt-24 pb-12"
       aria-labelledby="hero-heading">
@@ -36,17 +35,17 @@ const Index: FC = () => (
         <div className="rise">
           <h1
             id="hero-heading"
-            tabIndex={0}
-            className="mt-6 font-display text-3xl leading-[1.08] font-bold tracking-tight text-card-foreground sm:text-5xl lg:text-[2.6rem] xl:text-[3.4rem]">
-            <span className="block">Frontend engineer</span>
+            tabIndex={-1}
+            className="mt-6 font-display text-3xl leading-[1.08] font-bold tracking-tight text-card-foreground outline-none sm:text-5xl lg:text-[2.6rem] xl:text-[3.4rem]">
+            <span className="block">Senior frontend engineer</span>
             <span className="block text-accent">building accessible,</span>
             <span className="block">scalable interfaces</span>
           </h1>
 
           <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-pretty text-muted-foreground md:text-lg">
-            5+ years building accessible, high-performance web apps in React,
-            TypeScript, and Next.js. Now extending into backend and AI with
-            Node.js, Express, and the Vercel AI SDK.
+            5+ years building accessible, high-performance frontend applications
+            with React, TypeScript, and Next.js — with growing full-stack
+            capability across Node.js, Express, and AI-powered features.
           </p>
 
           <div className="mt-9 flex flex-col flex-wrap gap-4 sm:flex-row">
@@ -92,7 +91,6 @@ const Index: FC = () => (
       </div>
     </section>
 
-    {/* Beyond writing code */}
     <section className="px-6 pt-12 pb-4" aria-labelledby="beyond-heading">
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 md:flex-row md:items-end">
         <h2
@@ -111,7 +109,6 @@ const Index: FC = () => (
       </div>
     </section>
 
-    {/* Engineering philosophy and development approach */}
     <section className="px-6 pb-12" aria-labelledby="philosophy-heading">
       <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
         <div className="relative flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-panel p-7 md:p-10">
@@ -193,23 +190,14 @@ const Index: FC = () => (
       </div>
     </section>
 
-    {/* Capabilities */}
     <section className="px-6 py-12" aria-labelledby="capabilities-heading">
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-2xl">
-          <p className="label-mono">Capabilities</p>
-          <h2
-            id="capabilities-heading"
-            className="mt-4 font-display text-3xl font-semibold tracking-tight text-card-foreground md:text-5xl">
-            From interface to implementation.
-          </h2>
-
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            I work across the application lifecycle, from translating product
-            requirements into polished interfaces to connecting them with
-            backend services and APIs.
-          </p>
-        </div>
+        <SectionHeader
+          label="Capabilities"
+          heading="From interface to"
+          headingHighlight=" implementation."
+          subtext="I work across the application lifecycle, from translating product requirements into polished interfaces to connecting them with backend services and APIs."
+        />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {services.map(service => (
@@ -233,7 +221,6 @@ const Index: FC = () => (
       </div>
     </section>
 
-    {/* Experience and value */}
     <section className="px-6 py-12" aria-labelledby="experience-heading">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-xl border border-border bg-panel p-7 md:p-10">
         <div
@@ -294,7 +281,6 @@ const Index: FC = () => (
       </div>
     </section>
 
-    {/* Selected work */}
     <section className="px-6 py-12" aria-labelledby="projects-heading">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
@@ -332,7 +318,6 @@ const Index: FC = () => (
       </div>
     </section>
 
-    {/* Contact CTA */}
     <section className="px-6 py-12" aria-labelledby="contact-heading">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-xl border border-border bg-panel p-8 md:p-12">
         <div
