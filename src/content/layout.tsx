@@ -1,4 +1,5 @@
 import { Github, Linkedin } from "lucide-react";
+import { IoLogoMedium } from "react-icons/io5";
 
 export const EMAIL = "sanjaykumar.sr1011@gmail.com";
 
@@ -20,5 +21,10 @@ export const footerLinks = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/sanjay-kumar-s-r/",
     icon: Linkedin,
+  },
+  {
+    name: "Medium",
+    href: "https://medium.com/@sanjay--kumar",
+    icon: IoLogoMedium,
   },
 ];
