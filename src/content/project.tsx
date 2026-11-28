@@ -66,42 +66,75 @@ export const projects: Project[] = [
       "LangChain",
     ],
   },
-  // {
-  //   name: "Real-Time Chat Application",
-  //   subtitle: "Real-time messaging platform",
-  //   repo: "https://github.com/sanju1098/real-time-chat-fullstack",
-  //   images: [
-  //     {
-  //       src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788884254/d02d136f-9bbb-4796-bbe6-565df5af1fef.png",
-  //       alt: "Chat App - Home Page",
-  //     },
-  //     {
-  //       src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788883859/1097f58c-c84d-4b71-928a-b6a32a61a7fe.png",
-  //       alt: "Chat App - Typing Message",
-  //     },
-  //     {
-  //       src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788883727/770a20f4-555a-4b71-81e0-c9922dff106d.png",
-  //       alt: "Chat App - Login Page",
-  //     },
-  //   ],
-  //   description:
-  //     "Full-stack real-time chat application supporting one-to-one and group conversations, typing indicators, online presence, delivery and read receipts, JWT authentication, rate limiting, and Redis-powered horizontal Socket.IO scaling.",
-  //   category: ["Full-Stack", "Node.js", "Express", "Socket.io"],
-  //   stack: [
-  //     "React",
-  //     "Vite",
-  //     "TypeScript",
-  //     "Node.js",
-  //     "Express.js",
-  //     "Socket.io",
-  //     "MongoDB",
-  //     "Mongoose",
-  //     "Redis",
-  //     "JWT",
-  //     "Docker",
-  //     "GitHub Actions",
-  //   ],
-  // },
+  {
+    name: "Store MFE – Micro Frontend App",
+    subtitle: "Webpack Module Federation",
+    live: "https://store-web-mfe.vercel.app/",
+    repo: "https://github.com/sanju1098/micro-frontend-application",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1795858604/68687f8e-af26-4af4-b2b4-b7d783ab90d0.png",
+        alt: "Store MFE - Home Page",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1795858647/9812a44e-2458-4b7c-b0c5-cda3526ffacc.png",
+        alt: "Store MFE - Products Page",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1795858675/d8845df7-1316-4f3c-8950-0d9f455f2ddf.png",
+        alt: "Store MFE - Cart Page",
+      },
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1795858657/e46910a1-3583-4c85-b4cb-9802dcd015aa.png",
+        alt: "Store MFE - Orders Page",
+      },
+    ],
+    description:
+      "Online store built as a micro frontend application: a React shell loads four independently deployed remotes (product, cart, orders, user) at runtime with Webpack 5 Module Federation. Remotes communicate through typed browser events and shared storage helpers, backed by a shared workspace package for components, types, and a Tailwind v4 theme. A remote that fails to load shows a fallback instead of breaking the app. Includes multi-stage Docker builds served by nginx and per-app Vercel deployments.",
+    category: [
+      "Micro Frontend",
+      "Webpack",
+      "Module Federation",
+      "React",
+      "TypeScript",
+    ],
+    stack: [
+      "React 19",
+      "TypeScript",
+      "Webpack 5",
+      "Module Federation",
+      "React Router 7",
+      "Tailwind CSS 4",
+      "npm Workspaces",
+      "Docker",
+      "Nginx",
+      "Vercel",
+    ],
+  },
+  {
+    name: "Incident Management System",
+    subtitle: "Incident management API",
+    repo: "https://github.com/sanju1098/incident-management-system",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788337601/f34b4e34-d9bd-4d0e-98f4-4c696aabf54c.png",
+        alt: "Incident Management System API",
+      },
+    ],
+    description:
+      "Backend API for incident management with JWT authentication, refresh tokens, role-based access control, user and team management, file uploads, validation, and protected REST endpoints.",
+    category: ["Backend", "Node.js", "Express"],
+    stack: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Zod",
+      "Cloudinary",
+      "REST APIs",
+    ],
+  },
   {
     name: "PromptStack",
     subtitle: "AI prompt management platform",
@@ -146,30 +179,6 @@ export const projects: Project[] = [
       "Mongoose",
       "Gemini",
       "Groq",
-    ],
-  },
-  {
-    name: "Incident Management System",
-    subtitle: "Incident management API",
-    repo: "https://github.com/sanju1098/incident-management-system",
-    images: [
-      {
-        src: "https://res.cloudinary.com/dwsalphhy/image/upload/v1788337601/f34b4e34-d9bd-4d0e-98f4-4c696aabf54c.png",
-        alt: "Incident Management System API",
-      },
-    ],
-    description:
-      "Backend API for incident management with JWT authentication, refresh tokens, role-based access control, user and team management, file uploads, validation, and protected REST endpoints.",
-    category: ["Backend", "Node.js", "Express"],
-    stack: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Mongoose",
-      "JWT",
-      "Zod",
-      "Cloudinary",
-      "REST APIs",
     ],
   },
   {
